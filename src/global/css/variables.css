@@ -1,0 +1,79 @@
+/*============================ TEMPLATE STYLE ===========================*/
+/*@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat+Alternates:wght@400;500;600;700&family=Montserrat:wght@400;600&display=swap');
+
+
+:root {
+    /*============================  COLORS ===========================*/
+    --colorNav: #7A7A7A;
+    --colorNavHover: #533C73;
+    --colorMainButton: #F8A161;
+    --colorSecondaryButton: #c4c4c4;
+    --colorSecondaryBg: #ECE4F8;
+    --colorMainBg: #e8e8e8;
+    --colorMainSection: #7a7a7a;
+    --colorSecondarySection: #D0D6F9;
+    --colorThirdSection: #E9DCFB;
+    --colorFooter: #504460;
+    --colorMainTitle: #e8e8e8;
+    --colorSecondaryTitle: #7a7a7a;
+    --colorMainSubtitle: #4C68CC;
+    --colorSecondarySubtitle: #533C73;
+    --colorMainText: #0000;
+    --colorSecondaryText: #ffff;
+    --colorMainIcons: #0000; /*starts*/
+    --colorSecondaryIcons: #0000;
+    --colorMainHover: #7a7a7a;
+    --colorSecondaryHover: #7a7a7a;
+    --colorMainBorder: #7a7a7a;
+    --colorSecondaryBorder: #7a7a7a;
+    --AboutUs: #222E58;
+    /*========== Font and typography ==========*/
+    --font-body: "Montserrat", sans-serif;
+    --font-h1: "Comfortaa", cursive;
+    --font-h2: "Montserrat Alternates", sans-serif;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /* Font size for large devices */
+
+    --fontBigSize: 1.5rem; /*name´s mentor, us*/
+    --fontH1Size: 3.75rem; /*titles - 60px*/
+    --fontH2Size: 2.5rem; /*subtitles - 40px*/
+    --fontH3Size: 2rem; /*subtitles in sections*/
+    --fontNormalSize: 1rem; /*normal text*/
+    --fontSmallSize: 0.625rem; /*footer*/
+    --fontSmallerSize: 0.5rem; /*...*/
+
+
+    /*========== Margenes Bottom ==========*/
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mb-0-25: 0.25rem;
+    --mb-0-5: 0.5rem;
+    --mb-0-75: 0.75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*===================  Margin, Padding and Border  ===============*/
+    --borderRadius: 1.875rem;
+    --marginMain-7-5: 7.5rem;
+    --paddingMain: 0.625rem;
+    /*to consider*/
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}

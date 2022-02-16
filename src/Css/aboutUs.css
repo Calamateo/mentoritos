@@ -1,0 +1,391 @@
+
+body{
+  overflow-x: hidden;
+}
+
+.space-between-sections {
+  margin-bottom: 10rem; /*160px*/
+}
+
+#navbar {
+  position: sticky !important;
+  top: 0;
+  background-color: white;
+  z-index: 100000;
+}
+
+nav {
+  font-family: var(--font-h2);
+}
+
+a {
+  text-decoration: none;
+}
+
+nav a {
+  color: var(--colorNav) !important;
+}
+
+nav a:hover {
+  color: var(--colorNavHover) !important;
+}
+.form-input {
+  background-color: var(--colorSecondaryBg) !important;
+  border-style: none !important;
+  font-family: var(--font-body) !important;
+}
+
+/*--Start of aboutUs-main.css--*/
+h2 {
+  font-family: var(--font-h1);
+  font-size: var(--fontH3Size);
+  font-weight: var(--font-bold);
+  color: var(--colorMainSubtitle);
+}
+
+h2 strong {
+  color: var(--colorSecondarySubtitle) !important;
+}
+
+h3 {
+  font-family: var(--font-h2);
+  font-weight: var(--font-bold);
+  color: var(--colorSecondarySubtitle);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--font-medium);
+  color: black;
+}
+
+#main .carousel-inner img {
+  max-height: 70vh;
+  /*si le pongo más se mueve la imagen con el texto cada que cambia*/
+  object-fit: contain;
+  filter: grayscale(5%);
+}
+
+#carousel {
+  position: relative;
+}
+
+.valores h5 {
+  font-family: var(--font-title1);
+  font-size: var(--fontH1Size);
+}
+
+.valores p {
+  font-family: var(--font-title1);
+  font-size: var(--fontSmallerSize);
+}
+
+#main .card {
+  box-shadow: 0 0 30px rgba(204, 187, 187, 0.22);
+  overflow: hidden;
+  border-radius: 15px;
+  height: 100px;
+  width: 100%;
+}
+
+#main .card img {
+  height: 50px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/*--End of aboutUs-main.css--*/
+
+/*--Start of aboutUs-team.css--*/
+.espacio {
+  background: #D0E4F5 url("https://p4.wallpaperbetter.com/wallpaper/955/69/70/minimalism-space-stars-wallpaper-preview.jpg") no-repeat local 0 0;
+  background-size: cover;
+}
+  
+
+.bg-primary {
+   background-color: (--AboutUs)  !important;
+}
+
+.desaparece {
+    /* Aqui se le añade un color de fondo y se desaparece el texto */
+    background-color: #4C68CC;
+    visibility: hidden !important;
+}
+
+.imagen:hover {
+  /* Se agranda la imagen al pasar el puntero */
+  width: 100% !important;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.imagen figure:hover > img {
+  /* Aqui se quita el redondeado */
+  border-radius: 5px !important;
+  transition: 1s;
+  width: 100% !important;
+}
+
+.imagen figure:hover > .desaparece {
+  /* Se hace visible lo invisible */
+  visibility: visible !important;
+}
+
+.imagen figure:hover > .desaparece h4 {
+  /* aqui se hace el efecto de juntarse */
+  margin-top: 15px;
+  margin-bottom: 20px;
+  transition: 1s;
+}
+
+.imagen figure .desaparece h4 {
+  /* aqui se aleja el texxto */
+  margin-bottom: 160px;
+}
+
+#cards-info-space p, #video-aboutUs p {
+  color: white !important;
+}
+
+/*--End of aboutUs-team.css--*/
+
+/*--Start of aboutUs-video.css--*/
+#video-abouUs {
+  font-family: var(--font-body);
+}
+
+.container {
+  padding: 0 15%;
+}
+
+.card-video {
+    position: relative;
+    overflow: hidden;
+    background: #533C73;
+    padding: 15px 10px;
+    border-radius: 30px;
+}
+
+.drop {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.drop i {
+    display: block;
+    cursor: pointer;
+    font-size: 40px;
+    color:  #4C68CC;
+}
+
+.drop i:hover {
+    color: var(--colorMainSubtitle);
+}
+
+.drop-rotate {
+  transform: rotate(180deg);
+}
+
+.drop-active {
+  height: 230px !important;
+}
+
+.color-border-card {
+  border: 1px solid var(--colorMainButton) !important;
+  border-radius: var(--borderRadius) !important;
+}
+
+.card-description {
+  height: 0px;
+  transition: all 0.6s ease;
+}
+
+.card-description-text h3 {
+    font-size: var(--fontH3Size);
+    font-family: var(--font-title);
+    font-weight: var(--font-semi-bold);
+    text-transform: uppercase;
+    color: var(--colorSecondaryText);
+    padding: 25px 10px 8px 10px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.card-description-text p {
+  font-family: var(--font-body);
+  font-size: var(--fontNormalSize);
+  padding: 2px 10px;
+  text-align: justify;
+}
+
+/*
+iframe {
+    display: block;
+    max-width: 500%;
+    height: auto;
+}
+*/
+/*--End of aboutUs-video.css--*/
+
+/*--Start of aboutUs-timeLine.css--*/
+/*esto es la linea central */
+#timeline-aboutUs h3 {
+  color: var(--colorH2);
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  /* estilo*/
+  content: "";
+  background: #000000;
+  width: 5px;
+  height: 85%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*esto son los contenedores */
+
+.timeline-item {
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 3rem;
+    color: white;
+    /*separcacion entre tarejetas*/
+}
+
+.timeline-item::after {
+  /*este codigoes para hacerlo escalonado*/
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*los contenedores pare (losde la derecha)*/
+.timeline-item:nth-child(even) .timeline-content {
+  float: right;
+  padding: 40px 30px 10px 30px;
+}
+
+.timeline-content {
+    position: relative;
+    width: 45%;
+    padding: 10px 30px;
+    border-radius: 30px;
+    background: #533C73;
+    /*fondo de los contenedores*/
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: -15px;
+}
+
+.timeline-content::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  right: -15px;
+}
+
+/*este es el estylo de la fecha*/
+
+.date {
+    background: #4C68CC;
+    display: inline-block;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.timeline-item:nth-child(even) .date {
+    width: fit-content;
+    background: #4C68CC;
+    display: inline-block;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.point-line {
+    width: 30px;
+    height: 30px;
+    background: #4C68CC;
+    border-radius: 30%;
+    position: absolute;
+    left: 50%;
+    margin-top: 0px;
+    margin-left: -15px;
+}
+
+.buttons {
+  color: white !important;
+  background-color: var(--colorMainButton) !important;
+  font-family: var(--font-h2);
+  border-style: none !important;
+}
+
+#contact-form input {
+  border: 0;
+  border-bottom: 0.1em;
+  border-color: #000;
+  outline: none;
+  border-style: solid;
+  width: 25rem;
+  padding: 0 12px;
+}
+
+#contact-form input:focus {
+  border-bottom: 2px solid #00d015;
+}
+
+#contact-form textarea {
+  width: 400px;
+  border-radius: 0.625rem;
+  padding: 1.2rem 1.7rem;
+  border-style: none;
+  background-color: #ede9e9;
+  outline: none;
+}
+
+#contact-form button {
+  font-size: 1.3rem;
+}
+
+footer {
+  height: 15rem;
+  background-color: var(--colorFooter);
+}
+
+footer a {
+  text-decoration: none;
+  color: #ede9e9;
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: var(--colorMainButton);
+}
+
+footer i {
+  font-size: 2rem;
+  margin-left: 0.5rem;
+}
+/*--End of aboutUs-timeLine.css--*/

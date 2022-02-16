@@ -1,0 +1,44 @@
+#japones {
+    background-image: url(../global/assets/images/home/course-galery/Cocina\ japonesa.jpg);
+}
+#fisica{
+    background-image: url(../global/assets/images/home/course-galery/Fisica.jpg);
+}
+#toefl {
+    background-image: url(../global/assets/images/home/course-galery/Examen\ TOEFL.jpg);
+}
+#guitarra {
+    background-image: url(../global/assets/images/home/course-galery/Guitarra.jpg);
+    
+}
+#canto{
+    background-image: url(../global/assets/images/home/course-galery/Canto.jpg);
+}
+#programacion{
+    background-image: url(../global/assets/images/home/course-galery/Programación-Csharp.jpg); 
+    background-position: 10% 0;
+}
+#yoga{
+    background-image: url(../global/assets/images/home/course-galery/yoga.jpg);
+}
+
+#teatro { 
+    background-image: url(../global/assets/images/home/course-galery/Teatro.jpg); background-position: 50% 0; 
+}
+#geografia{ 
+    background-image: url(../global/assets/images/home/course-galery/Geogrfía.jpg);  background-position: 10% 0; 
+}
+#pintura{ 
+    background-image: url(../global/assets/images/home/course-galery/Pintura.jpg); }
+#partitura{ background-image: url(../global/assets/images/home/course-galery/Partitura.jpg); }
+#calculo{
+    background-image: url(../global/assets/images/home/course-galery/Cálculo.jpg); }
+#idioma{ 
+    background-image: url(../global/assets/images/home/course-galery/Idiomas.jpg); }
+#lol{ background-image: url(../global/assets/images/home/course-galery/LoL.jpg); }
+#cocina{ background-image: url(../global/assets/images/home/course-galery/Cocina.jpg); }
+#java{ background-image: url(../global/assets/images/home/course-galery/Programación\ Java.jpg); }
+#diseño{ background-image: url(../global/assets/images/home/course-galery/Diseño-personaje.jpg); }
+#ballet{ background-image: url(../global/assets/images/home/course-galery/Ballet.jpg); background-position: 80% 0; }
+#photo{ background-image: url(../global/assets/images/home/course-galery/Photoshop.jfif); background-position: 50% 0; }
+#foto{ background-image: url(../global/assets/images/home/course-galery/Fotografía.jpg); }
