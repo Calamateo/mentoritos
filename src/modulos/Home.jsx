@@ -9,7 +9,7 @@ function Home() {
 
     return (
         <div className='mt-4 pt-4'>
-
+            {/* inicio */}
             {/* <!-- banner --> */}
             <section id="banner" className="container-xxl text-center space-between-sections pt-3 mt-3">
                 <div className="row" id="banner-info">
@@ -80,7 +80,7 @@ function Home() {
                     </div>
                 </div>
             </section>
-            {/* <!-- short about us --> */}
+            {/* <!-- short about us -->*/}
 
             {/* <!-- filter --> */}
             <section id="home-filter">
