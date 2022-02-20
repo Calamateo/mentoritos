@@ -1,42 +1,49 @@
+import React from 'react'
 import AboutUs from "./modulos/AboutUs";
 import Home from "./modulos/Home";
 import Navbar from "./modulos/Navbar";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import SingUp from "./modulos/SingUp";
 import Login from "./modulos/Login";
-
+import { auth } from './firebase'
 
 function App() {
 
+  const [firebaseUser, setFirebaseUser] = React.useState(false)
 
-  return (
-    <div>
-      <Router>
+  React.useEffect(() => {
+    auth.onAuthStateChanged(user => {
+      console.log(user)
+      if (user) {
+        setFirebaseUser(user)
+      } else {
+        setFirebaseUser(null)
+      }
+    })
+  }, [])
+
+  return firebaseUser !== false ? (
+    <Router>
+      <div >
+        <Navbar firebaseUser={firebaseUser} />
         <Switch>
-
-          <Route path="/aboutUS">
-            <Navbar />
+          <Route path="/login">
+            <Login login1={false} />
+          </Route>
+          <Route path="/aboutUs">
             <AboutUs />
           </Route>
-
-          <Route path="/login">
-
-            <Login />
-          </Route>
-
           <Route path="/singUp">
-            <Login esRegistro={true} />
+            <Login login1={true} />
           </Route>
-
           <Route path="/" exact>
-            <Navbar />
             <Home />
           </Route>
-
         </Switch>
-      </Router>
-    </div>
-  );
+      </div>
+    </Router>
+  ) : (
+    <div>Cargando...</div>
+  )
 }
 
 export default App;

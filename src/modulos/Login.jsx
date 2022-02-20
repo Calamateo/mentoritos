@@ -1,14 +1,26 @@
 import React from 'react'
-import { auth, db } from '../firebase'
+import { auth, bd } from '../firebase'
 import { withRouter } from 'react-router-dom'
+import '../Css/singUP.css'
 
 const Login = (props) => {
 
     const [email, setEmail] = React.useState('')
     const [pass, setPass] = React.useState('')
     const [error, setError] = React.useState(null)
+    const [nombre, setNombre] = React.useState('')
+    const [apellido, setApellido] = React.useState('')
+    const [ciudad, setCiudad] = React.useState('')
+    const [estado, setEstado] = React.useState('')
+    const [usuario, setUsuario] = React.useState('')
+
+
 
     const [esRegistro, setEsRegistro] = React.useState(false)
+    React.useEffect(() => {
+        console.log(props.login1);
+        setEsRegistro(props.login1);
+    }, [props.login1])
 
     const procesarDatos = e => {
         e.preventDefault()
@@ -45,7 +57,7 @@ const Login = (props) => {
             setEmail('')
             setPass('')
             setError(null)
-            props.history.push('/admin')
+            props.history.push('/')
         } catch (error) {
             console.log(error)
             if (error.code === 'auth/invalid-email') {
@@ -65,18 +77,26 @@ const Login = (props) => {
         try {
             const res = await auth.createUserWithEmailAndPassword(email, pass)
             console.log(res.user)
-            await db.collection('usuarios').doc(res.user.email).set({
+            await bd.collection('usuarios').doc(res.user.email).set({
                 email: res.user.email,
                 uid: res.user.uid
             })
-            await db.collection(res.user.uid).add({
-                name: 'Tarea de ejemplo',
-                fecha: Date.now()
+            await bd.collection(res.user.uid).add({
+                firstName: nombre,
+                lastName: apellido,
+                city: ciudad,
+                estate: estado,
+                user: usuario
             })
             setEmail('')
             setPass('')
+            setApellido('')
+            setNombre('')
+            setCiudad('')
+            setEstado('')
+            setUsuario('')
             setError(null)
-            props.history.push('/admin')
+            props.history.push('/')
         } catch (error) {
             console.log(error)
             if (error.code === 'auth/invalid-email') {
@@ -87,7 +107,14 @@ const Login = (props) => {
             }
         }
 
-    }, [email, pass, props.history])
+    }, [email, pass, props.history, nombre, apellido, ciudad, estado, usuario])
+
+
+
+
+
+
+
 
     return (
         <div className="form-section">
@@ -102,19 +129,35 @@ const Login = (props) => {
                         <div class="row justify-content-center">
                             <div class="col-md-6 card py-5 px-4" style={{ backgroundColor: "beige" }}>
                                 <div class="form-container ">
-                                    <form class="needs-validation w-100" novalidate>
+                                    <form class="needs-validation w-100" onSubmit={procesarDatos} >
                                         <div class="row">
                                             <div class="col-md-12">
+                                                {
+                                                    error ? (
+                                                        <div className="alert alert-danger">
+                                                            {error}
+                                                        </div>
+                                                    ) : null
+                                                }
                                                 <label for="validationTooltip01">Nombre</label>
-                                                <input type="text" class="form-control form-input" id="validationTooltip01"
-                                                    placeholder="Nombre" required />
+                                                <input
+                                                    type="text"
+                                                    class="form-control form-input"
+                                                    id="validationTooltip01"
+                                                    placeholder="Nombre"
+                                                    onChange={e => setNombre(e.target.value)}
+                                                    value={nombre} />
                                                 <div class="valid-tooltip">
                                                     ¡Se ve bien!
                                                 </div>
-
                                                 <label for="validationTooltip02">Apellido</label>
-                                                <input type="text" class="form-control form-input" id="validationTooltip02"
-                                                    placeholder="Apellido" required />
+                                                <input
+                                                    type="text"
+                                                    class="form-control form-input"
+                                                    id="validationTooltip02"
+                                                    placeholder="Apellido"
+                                                    onChange={e => setApellido(e.target.value)}
+                                                    value={apellido} />
                                                 <div class="valid-tooltip">
                                                     ¡Se ve bien!
                                                 </div>
@@ -124,37 +167,61 @@ const Login = (props) => {
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
                                                     </div>
-                                                    <input type="text" class="form-control form-input" id="validationTooltipUsername"
-                                                        placeholder="Usuario" aria-describedby="validationTooltipUsernamePrepend" required />
+                                                    <input
+                                                        type="text"
+                                                        class="form-control form-input"
+                                                        id="validationTooltipUsername"
+                                                        placeholder="Usuario"
+                                                        onChange={e => setUsuario(e.target.value)}
+                                                        value={usuario} />
                                                     <div class="invalid-tooltip">
                                                         Por favor elige otro usuario
                                                     </div>
                                                 </div>
 
                                                 <label for="validationTooltip03">Ciudad</label>
-                                                <input type="text" class="form-control form-input" id="validationTooltip03"
-                                                    placeholder="Ciudad" required />
+                                                <input
+                                                    type="text"
+                                                    class="form-control form-input"
+                                                    id="validationTooltip03"
+                                                    placeholder="Ciudad"
+                                                    onChange={e => setCiudad(e.target.value)}
+                                                    value={ciudad}
+                                                />
                                                 <div class="invalid-tooltip">
                                                     El nombre de la ciudad es invalido. Prueba otra vez.
                                                 </div>
 
                                                 <label for="validationTooltip04">Estado</label>
-                                                <input type="text" class="form-control form-input" id="validationTooltip04"
-                                                    placeholder="Estado" required />
+                                                <input
+                                                    type="text"
+                                                    class="form-control form-input"
+                                                    id="validationTooltip04"
+                                                    placeholder="Estado"
+                                                    onChange={e => setEstado(e.target.value)}
+                                                    value={estado}
+                                                />
                                                 <div class="invalid-tooltip">
                                                     Por favor introduce un estado valido.
                                                 </div>
 
                                                 <label for="exampleInputEmail1">Correo electrónico</label>
-                                                <input type="email" class="form-control form-input" id="exampleInputEmail1"
-                                                    aria-describedby="emailHelp" placeholder="Introduce tu correo electrónico" />
-                                                <small id="emailHelp" class="form-text text-muted">No compartiremos tu correo con nadie
-                                                    más.</small>
-
+                                                <input
+                                                    type="email"
+                                                    class="form-control form-input mb-2"
+                                                    placeholder="Ingrese Email"
+                                                    onChange={e => setEmail(e.target.value)}
+                                                    value={email}
+                                                />
                                                 <div>
                                                     <label for="exampleInputPassword1">Contraseña</label>
-                                                    <input type="password" class="form-control form-input" id="exampleInputPassword1"
-                                                        placeholder="Contraseña" />
+                                                    <input
+                                                        type="password"
+                                                        className="form-control form-input mb-2"
+                                                        placeholder="Ingrese Contraseña"
+                                                        onChange={e => setPass(e.target.value)}
+                                                        value={pass}
+                                                    />
                                                 </div>
                                                 <div class="form-check">
                                                     <input type="checkbox" class="form-check-input " id="exampleCheck1" />
