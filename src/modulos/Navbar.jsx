@@ -44,24 +44,24 @@ function Navbar(props) {
                                 id="navbarNavAltMarkup">
                                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                                     <li className="nav-item">
-                                        <Link className="nav-link" href="../../mentorsMenu/html/mentorsMenu.html">mentores</Link>
+                                        <Link className="nav-link" to="/mentorsMenu">mentores</Link>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink className="nav-link" to="/aboutUs">sobre nosotros</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" href="../../mentorProfile/html/mentorProfile.html">mi perfil</Link>
+                                        <Link className="nav-link" to="/mentorProfile">mi perfil</Link>
                                     </li>
                                     <li className="nav-item dropstart">
-                                        <a className="nav-link dropdown-toggle" href="!#" id="navbarDropdownMenuLink" role="button"
+                                        <Link className="nav-link dropdown-toggle" to="!#" id="navbarDropdownMenuLink" role="button"
                                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <img id="profileImg"
                                                 src={fotoPerfil}
                                                 width="40" height="40" className="rounded-circle" alt="" />
-                                        </a>
+                                        </Link>
                                         <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                            <li><a className="dropdown-item" href="!#">Editar perfil</a></li>
+                                            <li><Link className="dropdown-item" to="!#">Editar perfil</Link></li>
                                             <li><span className="dropdown-item" style={{ cursor: "pointer" }} onClick={() => cerrarSesion()}>Cerrar sesión</span></li>
                                         </ul>
                                     </li>
@@ -91,13 +91,13 @@ function Navbar(props) {
                                 id="navbarNavAltMarkup">
                                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                                     <li className="nav-item">
-                                        <Link className="nav-link" href="../../mentorsMenu/html/mentorsMenu.html">mentores</Link>
+                                        <Link className="nav-link" to="/mentorsMenu">mentores</Link>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink className="nav-link" to="/aboutUs">sobre nosotros</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" href="../../mentorProfile/html/mentorProfile.html">mi perfil</Link>
+                                        <Link className="nav-link" to="/mentorProfile">mi perfil</Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link to='/singUp' className="btn ms-lg-4 me-lg-3 rounded-pill buttons">crea una cuenta</Link>

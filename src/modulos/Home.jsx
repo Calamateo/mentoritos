@@ -11,7 +11,7 @@ function Home() {
         <div className='mt-4 pt-4'>
             {/* inicio */}
             {/* <!-- banner --> */}
-            <section id="banner" className="container-xxl text-center space-between-sections pt-3 mt-3">
+            <section id="banner" className="container-xl text-center space-between-sections pt-3 mt-3">
                 <div className="row" id="banner-info">
                     {/* <!-- <div className="col-1"> 
                 Column
@@ -88,7 +88,7 @@ function Home() {
                     <form action="">
                         <div className="row">
                             <div className="col">
-                                <label for="subject" className="mb-1">materia</label>
+                                <label htmlFor="subject" className="mb-1">materia</label>
                                 <br />
                                 <input type="text" list="subjects" id="subject" name="subject" className="rounded-pill px-3"
                                     placeholder="Busca materias" />
@@ -102,7 +102,7 @@ function Home() {
                                 </datalist>
                             </div>
                             <div className="col">
-                                <label for="modality" className="mb-1">modalidad</label>
+                                <label htmlFor="modality" className="mb-1">modalidad</label>
                                 <br />
                                 <input type="text" list="modalities" id="modality" name="modality" className="rounded-pill px-3"
                                     placeholder="Busca modalidades" />
@@ -112,7 +112,7 @@ function Home() {
                                 </datalist>
                             </div>
                             <div className="col">
-                                <label for="price" className="mb-1">precio</label>
+                                <label htmlFor="price" className="mb-1">precio</label>
                                 <br />
                                 <input type="text" list="prices" id="price" name="price" className="rounded-pill px-3"
                                     placeholder="Busca precios" />

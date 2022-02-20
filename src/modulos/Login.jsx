@@ -120,18 +120,18 @@ const Login = (props) => {
         <div className="form-section">
             <div className="text-center container-xxl">
                 {
-                    esRegistro ? (<section class="form-section">
-                        <div class="text-form">
+                    esRegistro ? (<section className="form-section">
+                        <div className="text-form">
                             <h2>Te damos la bienvenida a </h2>
                             <h1>Mentoritos</h1>
                             <p className='text-white'>Por favor llena los siguientes campos para crear tu cuenta.</p>
                         </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-6 card py-5 px-4" style={{ backgroundColor: "beige" }}>
-                                <div class="form-container ">
-                                    <form class="needs-validation w-100" onSubmit={procesarDatos} >
-                                        <div class="row">
-                                            <div class="col-md-12">
+                        <div className="row justify-content-center">
+                            <div className="col-md-6 card py-5 px-4" style={{ backgroundColor: "beige" }}>
+                                <div className="form-container ">
+                                    <form className="needs-validation w-100" onSubmit={procesarDatos} >
+                                        <div className="row">
+                                            <div className="col-md-12">
                                                 {
                                                     error ? (
                                                         <div className="alert alert-danger">
@@ -139,82 +139,82 @@ const Login = (props) => {
                                                         </div>
                                                     ) : null
                                                 }
-                                                <label for="validationTooltip01">Nombre</label>
+                                                <label htmlFor="validationTooltip01">Nombre</label>
                                                 <input
                                                     type="text"
-                                                    class="form-control form-input"
+                                                    className="form-control form-input"
                                                     id="validationTooltip01"
                                                     placeholder="Nombre"
                                                     onChange={e => setNombre(e.target.value)}
                                                     value={nombre} />
-                                                <div class="valid-tooltip">
+                                                <div className="valid-tooltip">
                                                     ¡Se ve bien!
                                                 </div>
-                                                <label for="validationTooltip02">Apellido</label>
+                                                <label htmlFor="validationTooltip02">Apellido</label>
                                                 <input
                                                     type="text"
-                                                    class="form-control form-input"
+                                                    className="form-control form-input"
                                                     id="validationTooltip02"
                                                     placeholder="Apellido"
                                                     onChange={e => setApellido(e.target.value)}
                                                     value={apellido} />
-                                                <div class="valid-tooltip">
+                                                <div className="valid-tooltip">
                                                     ¡Se ve bien!
                                                 </div>
 
-                                                <label for="validationTooltipUsername">Nombre de usuario</label>
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                                                <label htmlFor="validationTooltipUsername">Nombre de usuario</label>
+                                                <div className="input-group">
+                                                    <div className="input-group-prepend">
+                                                        <span className="input-group-text" id="validationTooltipUsernamePrepend">@</span>
                                                     </div>
                                                     <input
                                                         type="text"
-                                                        class="form-control form-input"
+                                                        className="form-control form-input"
                                                         id="validationTooltipUsername"
                                                         placeholder="Usuario"
                                                         onChange={e => setUsuario(e.target.value)}
                                                         value={usuario} />
-                                                    <div class="invalid-tooltip">
+                                                    <div className="invalid-tooltip">
                                                         Por favor elige otro usuario
                                                     </div>
                                                 </div>
 
-                                                <label for="validationTooltip03">Ciudad</label>
+                                                <label htmlFor="validationTooltip03">Ciudad</label>
                                                 <input
                                                     type="text"
-                                                    class="form-control form-input"
+                                                    className="form-control form-input"
                                                     id="validationTooltip03"
                                                     placeholder="Ciudad"
                                                     onChange={e => setCiudad(e.target.value)}
                                                     value={ciudad}
                                                 />
-                                                <div class="invalid-tooltip">
+                                                <div className="invalid-tooltip">
                                                     El nombre de la ciudad es invalido. Prueba otra vez.
                                                 </div>
 
-                                                <label for="validationTooltip04">Estado</label>
+                                                <label htmlFor="validationTooltip04">Estado</label>
                                                 <input
                                                     type="text"
-                                                    class="form-control form-input"
+                                                    className="form-control form-input"
                                                     id="validationTooltip04"
                                                     placeholder="Estado"
                                                     onChange={e => setEstado(e.target.value)}
                                                     value={estado}
                                                 />
-                                                <div class="invalid-tooltip">
+                                                <div className="invalid-tooltip">
                                                     Por favor introduce un estado valido.
                                                 </div>
 
-                                                <label for="exampleInputEmail1">Correo electrónico</label>
+                                                <label htmlFor="exampleInputEmail1">Correo electrónico</label>
                                                 <input
                                                     type="email"
-                                                    class="form-control form-input mb-2"
+                                                    className="form-control form-input mb-2"
                                                     placeholder="Ingrese Email"
                                                     onChange={e => setEmail(e.target.value)}
                                                     value={email}
                                                 />
                                                 <div>
-                                                    <label for="exampleInputPassword1">Contraseña</label>
+                                                    <label htmlFor="exampleInputPassword1">Contraseña</label>
                                                     <input
                                                         type="password"
                                                         className="form-control form-input mb-2"
@@ -223,9 +223,9 @@ const Login = (props) => {
                                                         value={pass}
                                                     />
                                                 </div>
-                                                <div class="form-check">
-                                                    <input type="checkbox" class="form-check-input " id="exampleCheck1" />
-                                                    <label class="form-check-label" for="exampleCheck1">Acepto términos y
+                                                <div className="form-check">
+                                                    <input type="checkbox" className="form-check-input " id="exampleCheck1" />
+                                                    <label className="form-check-label" htmlFor="exampleCheck1">Acepto términos y
                                                         condiciones</label>
                                                 </div>
                                                 <button
@@ -255,8 +255,8 @@ const Login = (props) => {
                                             </div>
                                         </div>
                                     </form>
-                                    {/* <div class="col form-img" class="">
-                                    <img src="../../global/assets/images/signUp/onlineclass.svg" class="form-img" alt="mentorito" />
+                                    {/* <div className="col form-img" className="">
+                                    <img src="../../global/assets/images/signUp/onlineclass.svg" className="form-img" alt="mentorito" />
                                 </div> */}
 
                                 </div>
@@ -265,17 +265,17 @@ const Login = (props) => {
                     </section>)
                         :
                         (
-                            <section class="form-section">
-                                <div class="text-form">
+                            <section className="form-section">
+                                <div className="text-form">
                                     <h2>Te damos la bienvenida a </h2>
                                     <h1>Mentoritos</h1>
                                     <p className='text-white'>Por favor llena los siguientes campos.</p>
                                 </div>
 
 
-                                <div class="row justify-content-center">
-                                    <div class="col-md-6 card py-5 px-4" style={{ backgroundColor: "beige" }}>
-                                        <div class="form-container ">
+                                <div className="row justify-content-center">
+                                    <div className="col-md-6 card py-5 px-4" style={{ backgroundColor: "beige" }}>
+                                        <div className="form-container ">
                                             <form onSubmit={procesarDatos}>
                                                 {
                                                     error ? (
