@@ -43,12 +43,10 @@ const sofi = require.context('../global/assets/images', true);
                             <p className="text-start">Guadalajara, Jalisco</p>
                         </div>
                         <div className="d-flex justify-content-between">
-                            <p>Duración de la clase:</p>
-                            <p>1 hr</p>
+                            <p>sa.aguilarvaldez@gmail.com</p>
                         </div>
                         <div className="d-flex justify-content-between">
-                            <p>Costo por hora:</p>
-                            <p>$200</p>
+                            <p>¡Hola! Me llamo Sofía y estoy buscando un mentor para aprender matemáticas.</p>
                         </div>
                     </div>
 
@@ -62,8 +60,8 @@ const sofi = require.context('../global/assets/images', true);
                     <div className="card-body" id="drop-description">
                         <div className="accordion accordion-flush" id="accordionFlushExample">
                             <AcordionItem numAcordion = "One" acorTitle="Sobre mí" mentorInformation = {mentorP.sobremi}/>
-                            <AcordionItem numAcordion = "Two" acorTitle="Educación" mentorInformation = {mentorP.educacion}/>
-                            <AcordionItem numAcordion = "Three" acorTitle="Datos curiosos" mentorInformation = {mentorP.datosCuriosos}/>
+                            <AcordionItem numAcordion = "Two" acorTitle="Logros" mentorInformation = {mentorP.educacion}/>
+                            <AcordionItem numAcordion = "Three" acorTitle="Intereses" mentorInformation = {mentorP.datosCuriosos}/>
                         </div>
                         
                         {/*<!-- Photo Gallery-->*/}
@@ -76,7 +74,7 @@ const sofi = require.context('../global/assets/images', true);
                                     {/*{/*<img class="card-img-top"
                                         src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
     alt="Card image cap">*/}
-                                    <img src={imageAbout('./about-us/avatar.png')} className="card-img-top" alt="..." />
+                                    {/*<img src={imageAbout('./about-us/avatar.png')} className="card-img-top" alt="..." />*/}
                                 </div>
                             </div>
                             <div class="col-md-3" style={{float:"left"}}>
