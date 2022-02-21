@@ -47,7 +47,7 @@ function Navbar(props) {
                                         <NavLink className="nav-link" to="/aboutUs">sobre nosotros</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/mentorProfile">mi perfil</Link>
+                                        <Link className="nav-link" to="/mentorsProfile">mi perfil</Link>
                                     </li>
                                     <li className="nav-item dropstart">
                                         <Link className="nav-link dropdown-toggle" to="!#" id="navbarDropdownMenuLink" role="button"
@@ -94,7 +94,7 @@ function Navbar(props) {
                                         <NavLink className="nav-link" to="/aboutUs">sobre nosotros</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/mentorProfile">mi perfil</Link>
+                                        <Link className="nav-link" to="/mentorsProfile">mi perfil</Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link to='/singUp' className="btn ms-lg-4 me-lg-3 rounded-pill buttons">crea una cuenta</Link>
