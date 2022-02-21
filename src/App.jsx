@@ -8,6 +8,7 @@ import Login from "./modulos/Login";
 import { auth } from './firebase'
 import Configuracion from './modulos/Configuracion';
 import { MentorsProfileModule } from './modulos/MentorsProfileModules';
+import MentorMenu from './modulos/MentorMenu';
 
 let mentorProfile = {
   "name": "Merida valiente",
@@ -63,6 +64,9 @@ function App() {
           </Route>
           <Route path="/" exact>
             <Home />
+          </Route>
+          <Route path="/mentorsMenu" exact>
+            <MentorMenu />
           </Route>
           <Route path="/mentorsProfile">
             <MentorsProfileModule mentorP={mentorProfile} />
