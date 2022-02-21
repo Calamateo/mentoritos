@@ -52,7 +52,7 @@ function Home() {
             {/* <!-- /Dummie Section --> */}
 
             {/* <!-- short about us --> */}
-            <section id="short-aboutUs" className="container-xl-fluid pt-5" style={{ paddingBottom: "3rem" }}>
+            <section id="short-aboutUs" className="container-xl-fluid pt-5 space-between-sections" style={{ paddingBottom: "3rem" }}>
                 <div className="container-xl">
                     <div className="row mb-3">
                         <div className="col-8">
@@ -81,6 +81,85 @@ function Home() {
                 </div>
             </section>
             {/* <!-- short about us -->*/}
+
+            {/* <!-- value proposal --> */}
+            <section id="value-proposal" className="space-between-sections value-proposal">
+                <div className="container-xl mt-5">
+                    <div className="row">
+                        <div className="col">
+                            <h2 className="text-center">Mentoritos te ofrece</h2>
+                        </div>
+                    </div>
+                    <div className="row text-center mt-5">
+                        <div className="col">
+                            <div className="circule mx-auto" >
+                                <p className="my-auto circulito">primer clase gratis</p>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="circule mx-auto">
+                                <div>
+                                    <i className="fas fa-calendar-check" style={{ fontSize: "4rem" }}></i>
+                                </div>
+                                <div className="pt-3">
+                                    <p className="my-auto">horarios flexibles</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="circule mx-auto">
+                                <p className="my-auto">oportunidad de clases presenciales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* <!-- value proposal --> */}
+
+            {/* <!-- easy steps --> */}
+            <section id="easy-steps" className="space-between-sections">
+                <div className="container-xl">
+                    <div className="row">
+                        <div className="col">
+                            <h2 style={{ textAlign: "right" }}>Encuentra tu mentor favorito facilmente</h2>
+                        </div>
+                    </div>
+                    <div className="row my-5">
+                        <div className="col-1"></div>
+                        <div className="col">
+                            <div className="step-bar">
+                                <div className="circule">
+                                    <p className="my-auto">1</p>
+                                </div>
+                                <p className="my-auto">Elige un tema a estudiar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row my-5">
+                        <div className="col-3"></div>
+                        <div className="col">
+                            <div className="step-bar">
+                                <div className="circule">
+                                    <p className="my-auto">2</p>
+                                </div>
+                                <p className="my-auto">Busca su categoría</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-1"></div>
+                        <div className="col">
+                            <div className="step-bar">
+                                <div className="circule">
+                                    <p className="my-auto">3</p>
+                                </div>
+                                <p className="my-auto">Conoce a nuestros mentores</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* <!-- easy steps --> */}
 
             {/* <!-- filter --> */}
             <section id="home-filter">
@@ -332,85 +411,6 @@ function Home() {
             </section>
             {/* <!-- featured mentors --> */}
 
-            {/* <!-- value proposal --> */}
-            <section id="value-proposal" className="space-between-sections value-proposal">
-                <div className="container-xl">
-                    <div className="row">
-                        <div className="col">
-                            <h2 className="text-center">Mentoritos te ofrece</h2>
-                        </div>
-                    </div>
-                    <div className="row text-center mt-5">
-                        <div className="col">
-                            <div className="circule mx-auto" >
-                                <p className="my-auto circulito">primer clase gratis</p>
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="circule mx-auto">
-                                <div>
-                                    <i className="fas fa-calendar-check" style={{ fontSize: "4rem" }}></i>
-                                </div>
-                                <div className="pt-3">
-                                    <p className="my-auto">horarios flexibles</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="circule mx-auto">
-                                <p className="my-auto">oportunidad de clases presenciales</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* <!-- value proposal --> */}
-
-            {/* <!-- easy steps --> */}
-            <section id="easy-steps" className="space-between-sections">
-                <div className="container-xl">
-                    <div className="row">
-                        <div className="col">
-                            <h2 style={{ textAlign: "right" }}>Encuentra tu mentor favorito facilmente</h2>
-                        </div>
-                    </div>
-                    <div className="row my-5">
-                        <div className="col-1"></div>
-                        <div className="col">
-                            <div className="step-bar">
-                                <div className="circule">
-                                    <p className="my-auto">1</p>
-                                </div>
-                                <p className="my-auto">Elige un tema a estudiar</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row my-5">
-                        <div className="col-3"></div>
-                        <div className="col">
-                            <div className="step-bar">
-                                <div className="circule">
-                                    <p className="my-auto">2</p>
-                                </div>
-                                <p className="my-auto">Busca su categoría</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-1"></div>
-                        <div className="col">
-                            <div className="step-bar">
-                                <div className="circule">
-                                    <p className="my-auto">3</p>
-                                </div>
-                                <p className="my-auto">Conoce a nuestros mentores</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* <!-- easy steps --> */}
-
             {/* <!-- categories --> */}
             <section className="space-between-sections">
                 <div className="container-xl" >
@@ -559,7 +559,7 @@ function Home() {
 
             {/* <!-- contact form --> */}
             <section id="contact-form" className="space-between-sections">
-            <ContactForm/>
+                <ContactForm />
             </section>
             {/* <!-- contact form --> */}
 
