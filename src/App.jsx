@@ -4,15 +4,15 @@ import Home from "./modulos/Home";
 import Navbar from "./modulos/Navbar";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Login from "./modulos/Login";
-import {MentorsProfile} from "./modulos/MentorsProfile";
+
 import { auth } from './firebase'
 import Configuracion from './modulos/Configuracion';
 
 let mentorProfile = {
-  "name":"Merida valiente",
-  "sobremi":"hola yo soy merida valiente",
+  "name": "Merida valiente",
+  "sobremi": "hola yo soy merida valiente",
   "educacion": "por el momento no tengo educacion",
-  "datosCuriosos":"Soy super ensenando"
+  "datosCuriosos": "Soy super ensenando"
 }
 
 function App() {
@@ -61,12 +61,6 @@ function App() {
           <Route path="/singUp">
             <Login login1={true} />
           </Route>
-
-          
-          <Route path="/mentorsProfile">
-            <MentorsProfile mentorP = {mentorProfile}/>
-          </Route>
-
           <Route path="/" exact>
             <Home />
           </Route>

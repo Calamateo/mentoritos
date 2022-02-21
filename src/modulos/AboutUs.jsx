@@ -14,7 +14,7 @@ const AboutUs = () => {
 
             {/* <!-- Start of Carousel--> */}
             <main id="main">
-                <div className="container-xxl mb-5 pb-3">
+                <div className="container-xl mb-5 pb-3">
                     <h2 className="text-center">Somos <strong> el vínculo </strong> entre mentores y estudiantes para facilitar el
                         intercambio de conocimientos.</h2>
                 </div>
@@ -54,7 +54,7 @@ const AboutUs = () => {
 
             {/* <!-- mision vision valores --> */}
             <section id="valores" className="mt-5 text-center">
-                <div className="container-xxl">
+                <div className="container-xl">
                     <div className="row">
                         <div className="col"></div>
                         <div className="col-8">
@@ -69,7 +69,7 @@ const AboutUs = () => {
                         <div className="col"></div>
                     </div>
                 </div>
-                <div className="container-xxl">
+                <div className="container-xl">
                     <h2 className="py-5">Nuestros <strong>valores</strong></h2>
                     <div className="row row-cols-1 row-cols-md-3 ">
                         <div className="col">
@@ -111,7 +111,7 @@ const AboutUs = () => {
             {/* <!-- Inicio Cards de informacion personal --> */}
             <section id="cards-info-space" className="py-5 mt-5 espacio">
                 <h2 className="text-center">Nuestro <strong>equipo</strong></h2>
-                <div className="container-xxl text-white">
+                <div className="container-xl text-white">
                     <div className="row text-center ms-5 py-4">
                         <div className="col-12 col-sm-6 col-md-3">
                             <div className="card img-fluid imagen espacio w-75 border-0">
@@ -170,7 +170,7 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
-                <div className="container-xxl text-white">
+                <div className="container-xl text-white">
                     <div className="row text-center ms-5">
                         <div className="col-12 col-sm-6 col-md-3">
                             <div className="card img-fluid imagen espacio w-75 border-0">
@@ -472,7 +472,7 @@ const AboutUs = () => {
             {/* <!-- Fin de modal --> */}
 
             {/* <!-- Start of video-AboutUs section --> */}
-            <section id="video-aboutUs" className="container-xxl py-5 mt-5">
+            <section id="video-aboutUs" className="container-xl py-5 mt-5">
                 <h2 className="pb-5 text-center">Nuestra <strong>historia</strong></h2>
                 {/* <!-- Background container of the video section --> */}
                 <div className="">
@@ -484,7 +484,7 @@ const AboutUs = () => {
                                         <div className="c-backgorund">
                                             <div className="video-container pd-2">
                                                 <div className="video ratio ratio-16x9">
-                                                    <iframe className="container-xxl-fluid" width=" 660" height="415"
+                                                    <iframe className="container-xl-fluid" width=" 660" height="415"
                                                         src="https://www.youtube.com/embed/w-PoV_sIWos"
                                                         title="YouTube video player" frameBorder="0"
                                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -515,7 +515,7 @@ const AboutUs = () => {
 
             {/* <!--Start of Timeline--> */}
             <section id="timeline-aboutUs" className="timeline" style={{ marginBottom: "10rem" }}>
-                <div className="container-xxl">
+                <div className="container-xl">
                     <div className="timeline-item">
                         <div className="point-line"></div>
                         <div className="timeline-content js--fadeInLeft">
@@ -600,7 +600,7 @@ const AboutUs = () => {
 
             {/* <!-- footer --> */}
             <footer>
-                <div className="container-xxl">
+                <div className="container-xl">
                     <div className="row">
                         <div className="col py-5">
                             <br />
