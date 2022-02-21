@@ -1,7 +1,7 @@
 import React from 'react'
 import './menu.css'
 import '../Css/Inicio.css'
-
+import ContactForm from './contactUs'
 function Home() {
 
     const imageHome = require.context('../global/assets/images', true);
@@ -559,39 +559,7 @@ function Home() {
 
             {/* <!-- contact form --> */}
             <section id="contact-form" className="space-between-sections">
-                <div className="container-xl">
-                    <div className="row mb-5">
-                        <div className="col">
-                            <h2>Contacto</h2>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col">
-                            <div className="mx-auto" style={{ width: "700px" }}>
-                                <h3 className="text-center">Agradecemos tu tiempo para comunicarte con Mentoritos. ¿Cómo podemos
-                                    ayudarte?</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row mt-5">
-                        <div className="col">
-                            <div className="mx-auto text-center" style={{ width: "700px" }}>
-                                <form action="">
-                                    <input className="my-4" type="text" placeholder="Nombre" name="name" required />
-                                    <br />
-                                    <input className="mb-4" type="text" placeholder="Apellido" name="last-name" required />
-                                    <br />
-                                    <input className="mb-4" type="email" placeholder="Correo" name="e-mail" required />
-                                    <br />
-                                    <textarea className="my-4" name="messsage" id="" cols="30" rows="5" placeholder="Mensaje"
-                                        required></textarea>
-                                    <br />
-                                    <button type="submit" className="btn rounded-pill buttons">enviar</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <ContactForm/>
             </section>
             {/* <!-- contact form --> */}
 
