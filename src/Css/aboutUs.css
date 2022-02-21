@@ -223,6 +223,10 @@ p {
   text-align: justify;
 }
 
+.network {
+  color: #533C73;
+}
+
 /*
 iframe {
     display: block;

@@ -255,8 +255,10 @@ const AboutUs = () => {
                                             Actualmente me dedico a ser el gran Tlatoani, protector de la plataforma
                                             Mentoritos.
                                             <br /><br />
-                                            Mi pecado capital es: que amo jugar magic, lol y mobile legends,
-
+                                            Mi pecado capital es: que amo jugar magic, lol y mobile legends.
+                                            <br /><br />
+                                            <a href="https://github.com/loky27" target="_blanck" className='me-2'><i className="fab fa-github fs-2 network"></i></a>
+                                            <a href="https://www.linkedin.com/in/jonathandavidjimenez/" target="_blanck"><i className="fab fa-linkedin fs-2 network"></i></a>
                                         </small></p>
                                     </div>
                                 </div>
@@ -284,7 +286,11 @@ const AboutUs = () => {
                                             <br /><br />
                                             26 años y contando, originario de la tierra del tejuino, mi lema es “ La vida es
                                             un
-                                            don.. Saber vivir es un arte”. </small></p>
+                                            don.. Saber vivir es un arte”.
+                                            <br /><br />
+                                            <a href="https://github.com/Jorge-Mercado" target="_blanck" className='me-2'><i className="fab fa-github fs-2 network"></i></a>
+                                            <a href="https://www.linkedin.com/in/jorge-mercado9530/" target="_blanck"><i className="fab fa-linkedin fs-2 network"></i></a>
+                                            </small></p>
                                     </div>
                                 </div>
                             </div>
@@ -309,7 +315,11 @@ const AboutUs = () => {
                                             porque
                                             lo convertiré en realidad.
                                             <br /><br />
-                                            Voy a restaurar mi clan y matar una cierta persona. </small></p>
+                                            Voy a restaurar mi clan y matar una cierta persona.
+                                            <br /><br />
+                                            <a href="https://github.com/Calamateo" target="_blanck" className='me-2'><i className="fab fa-github fs-2 network"></i></a>
+                                            <a href="https://www.linkedin.com/in/calamateo/" target="_blanck"><i className="fab fa-linkedin fs-2 network"></i></a>
+                                            </small></p>
                                     </div>
                                 </div>
                             </div>
@@ -340,6 +350,9 @@ const AboutUs = () => {
                                             <br /><br />
                                             Mi lema es: ¡No voy a salir corriendo, ni me retracto de lo que digo!
                                             Ese es mi nindo: Mi camino ninja!
+                                            <br /><br />
+                                            <a href="https://github.com/LilyRabago0" target="_blanck" className='me-2'><i className="fab fa-github fs-2 network"></i></a>
+                                            <a href="https://www.linkedin.com/in/lilia-rabago/" target="_blanck"><i className="fab fa-linkedin fs-2 network"></i></a>
                                         </small></p>
                                     </div>
                                 </div>
@@ -368,7 +381,11 @@ const AboutUs = () => {
                                             todo lo bueno de cada situación y usarlo para mejorar.
 
                                             <br /><br />
-                                            El lema de mi vida es: “El no ya lo tienes, hazlo posible!” </small></p>
+                                            El lema de mi vida es: “El no ya lo tienes, hazlo posible!”
+                                            <br /><br />
+                                            <a href="https://github.com/CaroCarrillo" target="_blanck" className='me-2'><i className="fab fa-github fs-2 network"></i></a>
+                                            <a href="https://www.linkedin.com/in/carolina-carrillo-57416a182/" target="_blanck"><i className="fab fa-linkedin fs-2 network"></i></a>
+                                            </small></p>
                                     </div>
                                 </div>
                             </div>
@@ -398,7 +415,9 @@ const AboutUs = () => {
                                             Me gusta trabajar en mi crecimiento personal y sigo trabajando en desdramatizar
                                             el
                                             fracaso y aplicar los 4 acuerdos en mi vida.
-
+                                            <br /><br />
+                                            <a href="https://github.com/reginaroji" target="_blanck" className='me-2'><i className="fab fa-github fs-2 network"></i></a>
+                                            <a href="https://www.linkedin.com/in/regina-roji/" target="_blanck"><i className="fab fa-linkedin fs-2 network"></i></a>
 
                                         </small></p>
                                     </div>
@@ -429,7 +448,11 @@ const AboutUs = () => {
                                             proyectos que puedan seguir el día que no esté.
                                             <br /><br />
                                             Uno de ellos al cual le tengo mucho cariño es Mentoritos. Me gusta pensar que
-                                            ustedes le tienen cariño también.</small></p>
+                                            ustedes le tienen cariño también.
+                                            <br /><br />
+                                            <a href="https://github.com/sophisms" target="_blanck" className='me-2'><i className="fab fa-github fs-2 network"></i></a>
+                                            <a href="https://www.linkedin.com/in/aguilarsofia/" target="_blanck"><i className="fab fa-linkedin fs-2 network"></i></a>
+                                            </small></p>
                                     </div>
                                 </div>
                             </div>
@@ -461,7 +484,11 @@ const AboutUs = () => {
                                             <br /><br />
                                             Mi corazón está partido entre la tierra de las tortas de tamal y la tierra de
                                             las
-                                            mariposas monarca. </small></p>
+                                            mariposas monarca.
+                                            <br /><br />
+                                            <a href="https://github.com/rosecs" target="_blanck" className='me-2'><i className="fab fa-github fs-2 network"></i></a>
+                                            <a href="https://www.linkedin.com/in/rosa-laura-carrillo-soledad-9446791ba/" target="_blanck"><i className="fab fa-linkedin fs-2 network"></i></a>
+                                            </small></p>
                                     </div>
                                 </div>
                             </div>
@@ -593,7 +620,7 @@ const AboutUs = () => {
             {/* <!--End of Timeline--> */}
 
             {/* <!-- contact form --> */}
-            <section id="contact-form" class="space-between-sections">
+            <section id="contact-form" className="space-between-sections">
                 <ContactForm/>
             </section >
             {/* <!-- contact form --> */}
