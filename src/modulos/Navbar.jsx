@@ -31,7 +31,7 @@ function Navbar() {
                                 <NavLink className="nav-link" to="/aboutUs">sobre nosotros</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" href="../../mentorProfile/html/mentorProfile.html">mi perfil</Link>
+                            <Link className="nav-link" to="/mentorsProfile">mi perfil</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to='/singUp' className="btn ms-lg-4 me-lg-3 rounded-pill buttons">crea una cuenta</Link>
