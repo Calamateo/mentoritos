@@ -3,7 +3,7 @@ import '../Css/mentorsProfile.css'
 import {AcordionItem} from './mentorsProfileModules/AcordionItem'
 
 const MentorsProfileModule = ({mentorP}) =>{
-    const imageAbout = require.context('../global/assets/images', true);
+const imageAbout = require.context('../global/assets/images', true);
 
     return (    
         

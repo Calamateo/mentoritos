@@ -42,11 +42,6 @@ function App() {
     }
   }
 
-
-
-
-
-
   return firebaseUser !== false ? (
     <Router>
       <div >
@@ -62,9 +57,8 @@ function App() {
             <Login login1={true} />
           </Route>
 
-          
+    
           <Route path="/mentorsProfile">
-            <Navbar />
             <MentorsProfileModule mentorP = {mentorProfile}/>
           </Route>
 
