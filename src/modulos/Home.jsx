@@ -1,6 +1,6 @@
 import React from 'react'
 import './menu.css'
-import Styles from '../Css/Inicio.css'
+import '../Css/Inicio.css'
 
 function Home() {
 
@@ -9,9 +9,9 @@ function Home() {
 
     return (
         <div className='mt-4 pt-4'>
-
+            {/* inicio */}
             {/* <!-- banner --> */}
-            <section id="banner" className="container-xxl text-center space-between-sections pt-3 mt-3">
+            <section id="banner" className="container-xl text-center space-between-sections pt-3 mt-3">
                 <div className="row" id="banner-info">
                     {/* <!-- <div className="col-1"> 
                 Column
@@ -30,7 +30,7 @@ function Home() {
                                     <button className="btn btn-outline-success rounded-pill" type="submit">Buscar</button>
                                 </form>
                                 <p id="link-join" className="text-end" style={{ marginRight: "120px important" }}>¿Te gustaría enseñar?
-                                    <a href="#" className="highlighted-text">Únete aquí</a>
+                                    <a href="!#" className="highlighted-text">Únete aquí</a>
                                 </p>
                             </div>
                         </div>
@@ -80,7 +80,7 @@ function Home() {
                     </div>
                 </div>
             </section>
-            {/* <!-- short about us --> */}
+            {/* <!-- short about us -->*/}
 
             {/* <!-- filter --> */}
             <section id="home-filter">
@@ -88,7 +88,7 @@ function Home() {
                     <form action="">
                         <div className="row">
                             <div className="col">
-                                <label for="subject" className="mb-1">materia</label>
+                                <label htmlFor="subject" className="mb-1">materia</label>
                                 <br />
                                 <input type="text" list="subjects" id="subject" name="subject" className="rounded-pill px-3"
                                     placeholder="Busca materias" />
@@ -102,7 +102,7 @@ function Home() {
                                 </datalist>
                             </div>
                             <div className="col">
-                                <label for="modality" className="mb-1">modalidad</label>
+                                <label htmlFor="modality" className="mb-1">modalidad</label>
                                 <br />
                                 <input type="text" list="modalities" id="modality" name="modality" className="rounded-pill px-3"
                                     placeholder="Busca modalidades" />
@@ -112,7 +112,7 @@ function Home() {
                                 </datalist>
                             </div>
                             <div className="col">
-                                <label for="price" className="mb-1">precio</label>
+                                <label htmlFor="price" className="mb-1">precio</label>
                                 <br />
                                 <input type="text" list="prices" id="price" name="price" className="rounded-pill px-3"
                                     placeholder="Busca precios" />
@@ -165,7 +165,7 @@ function Home() {
                                                             <p className="card-text">Some quick example text to build on the card
                                                                 title and make up the bulk of the card's
                                                                 content.</p>
-                                                            <a href="#" className="btn btn-primary buttons rounded-pill">Go
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
                                                                 somewhere</a>
                                                         </div>
                                                     </div>
@@ -181,7 +181,7 @@ function Home() {
                                                             <p className="card-text">Some quick example text to build on the card
                                                                 title and make up the bulk of the card's
                                                                 content.</p>
-                                                            <a href="#" className="btn btn-primary buttons rounded-pill">Go
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
                                                                 somewhere</a>
                                                         </div>
                                                     </div>
@@ -197,59 +197,7 @@ function Home() {
                                                             <p className="card-text">Some quick example text to build on the card
                                                                 title and make up the bulk of the card's
                                                                 content.</p>
-                                                            <a href="#" className="btn btn-primary buttons rounded-pill">Go
-                                                                somewhere</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="carousel-item">
-                                        <div className="row">
-                                            <div className="col-md-4">
-                                                <div className="single-box">
-                                                    <div className="card mx-auto" style={{ width: "15rem" }}>
-                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
-                                                            alt="..." />
-                                                        <div className="card-body">
-                                                            <h5 className="card-title">Card title</h5>
-                                                            <p className="card-text">Some quick example text to build on the card
-                                                                title and make up the bulk of the card's
-                                                                content.</p>
-                                                            <a href="#" className="btn btn-primary buttons rounded-pill">Go
-                                                                somewhere</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4">
-                                                <div className="single-box">
-                                                    <div className="card mx-auto" style={{ width: "15rem" }}>
-                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
-                                                            alt="..." />
-                                                        <div className="card-body">
-                                                            <h5 className="card-title">Card title</h5>
-                                                            <p className="card-text">Some quick example text to build on the card
-                                                                title and make up the bulk of the card's
-                                                                content.</p>
-                                                            <a href="#" className="btn btn-primary buttons rounded-pill">Go
-                                                                somewhere</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4">
-                                                <div className="single-box">
-                                                    <div className="card mx-auto" style={{ width: "15rem" }}>
-                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
-                                                            alt="..." />
-                                                        <div className="card-body">
-                                                            <h5 className="card-title">Card title</h5>
-                                                            <p className="card-text">Some quick example text to build on the card
-                                                                title and make up the bulk of the card's
-                                                                content.</p>
-                                                            <a href="#" className="btn btn-primary buttons rounded-pill">Go
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
                                                                 somewhere</a>
                                                         </div>
                                                     </div>
@@ -269,7 +217,7 @@ function Home() {
                                                             <p className="card-text">Some quick example text to build on the card
                                                                 title and make up the bulk of the card's
                                                                 content.</p>
-                                                            <a href="#" className="btn btn-primary buttons rounded-pill">Go
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
                                                                 somewhere</a>
                                                         </div>
                                                     </div>
@@ -285,7 +233,7 @@ function Home() {
                                                             <p className="card-text">Some quick example text to build on the card
                                                                 title and make up the bulk of the card's
                                                                 content.</p>
-                                                            <a href="#" className="btn btn-primary buttons rounded-pill">Go
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
                                                                 somewhere</a>
                                                         </div>
                                                     </div>
@@ -301,7 +249,59 @@ function Home() {
                                                             <p className="card-text">Some quick example text to build on the card
                                                                 title and make up the bulk of the card's
                                                                 content.</p>
-                                                            <a href="#" className="btn btn-primary buttons rounded-pill">Go
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
+                                                                somewhere</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="carousel-item">
+                                        <div className="row">
+                                            <div className="col-md-4">
+                                                <div className="single-box">
+                                                    <div className="card mx-auto" style={{ width: "15rem" }}>
+                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
+                                                            alt="..." />
+                                                        <div className="card-body">
+                                                            <h5 className="card-title">Card title</h5>
+                                                            <p className="card-text">Some quick example text to build on the card
+                                                                title and make up the bulk of the card's
+                                                                content.</p>
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
+                                                                somewhere</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-md-4">
+                                                <div className="single-box">
+                                                    <div className="card mx-auto" style={{ width: "15rem" }}>
+                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
+                                                            alt="..." />
+                                                        <div className="card-body">
+                                                            <h5 className="card-title">Card title</h5>
+                                                            <p className="card-text">Some quick example text to build on the card
+                                                                title and make up the bulk of the card's
+                                                                content.</p>
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
+                                                                somewhere</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-md-4">
+                                                <div className="single-box">
+                                                    <div className="card mx-auto" style={{ width: "15rem" }}>
+                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
+                                                            alt="..." />
+                                                        <div className="card-body">
+                                                            <h5 className="card-title">Card title</h5>
+                                                            <p className="card-text">Some quick example text to build on the card
+                                                                title and make up the bulk of the card's
+                                                                content.</p>
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
                                                                 somewhere</a>
                                                         </div>
                                                     </div>
@@ -601,26 +601,26 @@ function Home() {
                     <div className="row">
                         <div className="col py-5">
                             <br />
-                            <a href="" className="mb-0 pt-5">Enseña con nosotros</a><br />
-                            <a href="" className="mb-0">FAQ</a><br />
-                            <a href="">Reportar malas prácticas</a>
+                            <a href="!#" className="mb-0 pt-5">Enseña con nosotros</a><br />
+                            <a href="!#" className="mb-0">FAQ</a><br />
+                            <a href="!#">Reportar malas prácticas</a>
                         </div>
                         <div className="col py-5">
                             <br />
-                            <a href="" className="mb-0 pt-5">Enseña con nosotros</a><br />
-                            <a href="" className="mb-0">FAQ</a><br />
-                            <a href="">Reportar malas prácticas</a>
+                            <a href="!#" className="mb-0 pt-5">Enseña con nosotros</a><br />
+                            <a href="!#" className="mb-0">FAQ</a><br />
+                            <a href="!#">Reportar malas prácticas</a>
                         </div>
                         <div className="col py-5">
                             <br />
-                            <a href="" className="mb-0 pt-5">Aviso de provacidad</a><br />
-                            <a href="" className="mb-0">Términos y condiciones</a><br />
+                            <a href="!#" className="mb-0 pt-5">Aviso de provacidad</a><br />
+                            <a href="!#" className="mb-0">Términos y condiciones</a><br />
                         </div>
                         <div className="col py-5">
                             <br />
-                            <a href="" className="mb-0 pt-5"><i className="fab fa-facebook-square"></i></a>
-                            <a href="" className="mb-0"><i className="fab fa-instagram"></i></a>
-                            <a href=""><i className="fab fa-twitter-square"></i></a>
+                            <a href="!#" className="mb-0 pt-5"><i className="fab fa-facebook-square"></i></a>
+                            <a href="!#" className="mb-0"><i className="fab fa-instagram"></i></a>
+                            <a href="!#"><i className="fab fa-twitter-square"></i></a>
                         </div>
                     </div>
                 </div>
