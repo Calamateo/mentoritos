@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router-dom'
 import meteoro from '../global/assets/images/meteorite2.jpg'
 import { cerrarSesionAccion } from '../Redux/mentoritoDucks'
 import { withRouter } from "react-router-dom";
-import fotoPerfil from '../global/assets/images/predeterminada.png'
 import { useDispatch } from 'react-redux'
 //import { bd } from '../firebase';
 import { useSelector } from 'react-redux'
@@ -16,13 +15,10 @@ function Navbar(props) {
         props.history.push('/')
     }
 
+
     const usuario = useSelector(store => store.usuario.user)
-
-
-
     return (
         <div>
-
             {
                 props.firebaseUser !== null ? (
                     <nav className="navbar navbar-expand-lg bg-white fixed-top">
@@ -51,7 +47,7 @@ function Navbar(props) {
                                         <NavLink className="nav-link" to="/aboutUs">sobre nosotros</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/mentorsProfile">mi perfil</Link>
+                                        <Link className="nav-link" to="/mentorProfile">mi perfil</Link>
                                     </li>
                                     <li className="nav-item dropstart">
                                         <Link className="nav-link dropdown-toggle" to="!#" id="navbarDropdownMenuLink" role="button"
@@ -112,7 +108,6 @@ function Navbar(props) {
                         </div>
                     </nav>)
             }
-
         </div>
     )
 }

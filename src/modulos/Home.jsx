@@ -52,8 +52,8 @@ function Home() {
             {/* <!-- /Dummie Section --> */}
 
             {/* <!-- short about us --> */}
-            <section id="short-aboutUs" className="container-xxl-fluid pt-5" style={{ paddingBottom: "3rem" }}>
-                <div className="container-xxl">
+            <section id="short-aboutUs" className="container-xl-fluid pt-5" style={{ paddingBottom: "3rem" }}>
+                <div className="container-xl">
                     <div className="row mb-3">
                         <div className="col-8">
                             <h2>Sobre nosotros</h2>
@@ -84,7 +84,7 @@ function Home() {
 
             {/* <!-- filter --> */}
             <section id="home-filter">
-                <div className="container-xxl-fluid text-center py-4">
+                <div className="container-xl-fluid text-center py-4">
                     <form action="">
                         <div className="row">
                             <div className="col">
@@ -135,7 +135,7 @@ function Home() {
             </section>
             {/* <!-- featured mentors --> */}
             <section id="featured-mentors" className="space-between-sections">
-                <div className="container-xxl mt-3 pt-5">
+                <div className="container-xl mt-3 pt-5">
                     <div className="row">
                         <div className="col">
                             <h2 className="text-center" style={{ zIndex: "200" }}>Nuestros mentores destacados</h2>
@@ -334,7 +334,7 @@ function Home() {
 
             {/* <!-- value proposal --> */}
             <section id="value-proposal" className="space-between-sections value-proposal">
-                <div className="container-xxl">
+                <div className="container-xl">
                     <div className="row">
                         <div className="col">
                             <h2 className="text-center">Mentoritos te ofrece</h2>
@@ -368,7 +368,7 @@ function Home() {
 
             {/* <!-- easy steps --> */}
             <section id="easy-steps" className="space-between-sections">
-                <div className="container-xxl">
+                <div className="container-xl">
                     <div className="row">
                         <div className="col">
                             <h2 style={{ textAlign: "right" }}>Encuentra tu mentor favorito facilmente</h2>
@@ -413,11 +413,11 @@ function Home() {
 
             {/* <!-- categories --> */}
             <section className="space-between-sections">
-                <div className="container-xxl" >
+                <div className="container-xl" >
                     <h2>Categorías</h2>
                     <h3 style={{ marginLeft: "6rem" }}>¿Qué te gustaría aprender hoy?</h3>
                 </div>
-                <div className="container-xxl mt-5">
+                <div className="container-xl mt-5">
                     {/* <!-- odd first --> */}
                     <div className="row row-categories text-white">
                         <div className="col-md-2 col-4 px-1">
@@ -559,7 +559,7 @@ function Home() {
 
             {/* <!-- contact form --> */}
             <section id="contact-form" className="space-between-sections">
-                <div className="container-xxl">
+                <div className="container-xl">
                     <div className="row mb-5">
                         <div className="col">
                             <h2>Contacto</h2>
@@ -597,7 +597,7 @@ function Home() {
 
             {/* <!-- footer --> */}
             <footer>
-                <div className="container-xxl">
+                <div className="container-xl">
                     <div className="row">
                         <div className="col py-5">
                             <br />
