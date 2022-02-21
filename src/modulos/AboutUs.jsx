@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Css/aboutUs.css'
-
+import ContactForm from './contactUs'
 
 
 const AboutUs = () => {
@@ -594,40 +594,8 @@ const AboutUs = () => {
 
             {/* <!-- contact form --> */}
             <section id="contact-form" class="space-between-sections">
-                <div class="container-xxl">
-                    <div class="row mb-5">
-                        <div class="col">
-                            <h2>Contacto</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="mx-auto" style={{ width: "700px" }}>
-                                <h3 class="text-center">Agradecemos tu tiempo para comunicarte con Mentoritos. ¿Cómo podemos
-                                    ayudarte?</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <div class="col">
-                            <div class="mx-auto text-center" style={{ width: "700px" }}>
-                                <form action="">
-                                    <input class="my-4" type="text" placeholder="Nombre" name="name" required />
-                                    <br />
-                                    <input class="mb-4" type="text" placeholder="Apellido" name="last-name" required />
-                                    <br />
-                                    <input class="mb-4" type="email" placeholder="Correo" name="e-mail" required />
-                                    <br />
-                                    <textarea class="my-4" name="messsage" id="" cols="30" rows="5" placeholder="Mensaje"
-                                        required></textarea>
-                                    <br />
-                                    <button type="submit" class="btn rounded-pill buttons">enviar</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                <ContactForm/>
+            </section >
             {/* <!-- contact form --> */}
 
             {/* <!-- footer --> */}
