@@ -4,7 +4,7 @@ import Home from "./modulos/Home";
 import Navbar from "./modulos/Navbar";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Login from "./modulos/Login";
-// import { MentorsProfileModule } from "./modulos/MentorsProfile";
+
 import { auth } from './firebase'
 import Configuracion from './modulos/Configuracion';
 import { MentorsProfileModule } from './modulos/MentorsProfileModules';
