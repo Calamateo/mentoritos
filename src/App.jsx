@@ -1,42 +1,82 @@
+import React from 'react'
 import AboutUs from "./modulos/AboutUs";
 import Home from "./modulos/Home";
 import Navbar from "./modulos/Navbar";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import SingUp from "./modulos/SingUp";
 import Login from "./modulos/Login";
 
+import { auth } from './firebase'
+import Configuracion from './modulos/Configuracion';
+import { MentorsProfileModule } from './modulos/MentorsProfileModules';
+
+let mentorProfile = {
+  "name": "Merida valiente",
+  "sobremi": "hola yo soy merida valiente",
+  "educacion": "por el momento no tengo educacion",
+  "datosCuriosos": "Soy super ensenando"
+}
 
 function App() {
 
+  const [firebaseUser, setFirebaseUser] = React.useState(false)
 
-  return (
-    <div>
-      <Router>
+  React.useEffect(() => {
+    const fetchUser = () => {
+      auth.onAuthStateChanged(user => {
+        console.log(user)
+        if (user) {
+          setFirebaseUser(user)
+        } else {
+          setFirebaseUser(null)
+        }
+      })
+    }
+    fetchUser()
+  }, [])
+
+  const RutaPrivada = ({ component, path, ...rest }) => {
+    if (localStorage.getItem('usuario')) {
+      const usuarioStorage = JSON.parse(localStorage.getItem('usuario'))
+      if (usuarioStorage.uid === firebaseUser.uid) {
+        return <Route component={component} path={path} {...rest} />
+      }
+    }
+  }
+
+
+
+
+
+  return firebaseUser !== false ? (
+    <Router>
+      <div >
+        <Navbar firebaseUser={firebaseUser} />
         <Switch>
-
-          <Route path="/aboutUS">
-            <Navbar />
+          <Route path="/login">
+            <Login login1={false} />
+          </Route>
+          <Route path="/aboutUs">
             <AboutUs />
           </Route>
-
-          <Route path="/login">
-
-            <Login />
-          </Route>
-
           <Route path="/singUp">
-            <Login esRegistro={true} />
+            <Login login1={true} />
           </Route>
-
           <Route path="/" exact>
-            <Navbar />
             <Home />
           </Route>
+          <Route path="/mentorsProfile">
+            <MentorsProfileModule mentorP={mentorProfile} />
+          </Route>
 
+          <RutaPrivada path="/configuracion" exact>
+            <Configuracion />
+          </RutaPrivada>
         </Switch>
-      </Router>
-    </div>
-  );
+      </div>
+    </Router>
+  ) : (
+    <div>Cargando...</div>
+  )
 }
 
 export default App;
