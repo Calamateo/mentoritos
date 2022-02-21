@@ -1,23 +1,21 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import meteoro from '../global/assets/images/meteorite2.jpg'
-import { auth } from '../firebase'
+import { cerrarSesionAccion } from '../Redux/mentoritoDucks'
 import { withRouter } from "react-router-dom";
 import fotoPerfil from '../global/assets/images/predeterminada.png'
+import { useDispatch } from 'react-redux'
 //import { bd } from '../firebase';
 
 
 
 function Navbar(props) {
-
-    console.log(props.firebaseUser);
+    const dispatch = useDispatch()
     const cerrarSesion = () => {
-        auth.signOut()
-            .then(() => {
-                // props.history.push('/')
-                console.log("salio");
-            })
+        dispatch(cerrarSesionAccion())
+        props.history.push('/')
     }
+
 
 
     return (
@@ -61,7 +59,7 @@ function Navbar(props) {
                                         </Link>
                                         <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                            <li><Link className="dropdown-item" to="!#">Editar perfil</Link></li>
+                                            <li><Link className="dropdown-item" to="/configuracion">Editar perfil</Link></li>
                                             <li><span className="dropdown-item" style={{ cursor: "pointer" }} onClick={() => cerrarSesion()}>Cerrar sesión</span></li>
                                         </ul>
                                     </li>
