@@ -7,6 +7,7 @@ import Login from "./modulos/Login";
 // import { MentorsProfileModule } from "./modulos/MentorsProfile";
 import { auth } from './firebase'
 import Configuracion from './modulos/Configuracion';
+import { MentorsProfileModule } from './modulos/MentorsProfileModules';
 
 let mentorProfile = {
   "name": "Merida valiente",
@@ -46,7 +47,6 @@ function App() {
 
 
 
-
   return firebaseUser !== false ? (
     <Router>
       <div >
@@ -64,6 +64,10 @@ function App() {
           <Route path="/" exact>
             <Home />
           </Route>
+          <Route path="/mentorsProfile">
+            <MentorsProfileModule mentorP={mentorProfile} />
+          </Route>
+
           <RutaPrivada path="/configuracion" exact>
             <Configuracion />
           </RutaPrivada>
