@@ -11,6 +11,10 @@ const Login = (props) => {
     const [email, setEmail] = React.useState('')
     const [pass, setPass] = React.useState('')
     const [error, setError] = React.useState(null)
+    const [nombre, setNombre] = React.useState('')
+    const [apellido, setApellido] = React.useState('')
+    const [ciudad, setCiudad] = React.useState('')
+    const [estado, setEstado] = React.useState('')
     const [usuario, setUsuario] = React.useState('')
 
 
@@ -76,20 +80,23 @@ const Login = (props) => {
         try {
             const res = await auth.createUserWithEmailAndPassword(email, pass)
             console.log(res.user)
-            await db.collection('usuario').doc(res.user.uid).set({
-                uid: res.user.uid,
+            await db.collection('usuario').doc(res.user.email).set({
                 email: res.user.email,
-                nombre: "",
-                fotoURL: ""
-
+                uid: res.user.uid
             })
             await db.collection(res.user.uid).add({
-                nombre: '',
+                firstName: nombre,
+                lastName: apellido,
+                city: ciudad,
+                estate: estado,
                 user: usuario
             })
             setEmail('')
             setPass('')
-
+            setApellido('')
+            setNombre('')
+            setCiudad('')
+            setEstado('')
             setUsuario('')
             setError(null)
             props.history.push('/')
@@ -103,29 +110,21 @@ const Login = (props) => {
             }
         }
 
-    }, [email, pass, props.history, usuario])
+    }, [email, pass, props.history, nombre, apellido, ciudad, estado, usuario])
 
 
     const dispatch = useDispatch()
 
     const loading = useSelector(store => store.usuario.loading)
-
-
-
+    const activo = useSelector(store => store.usuario.activo)
+    console.log(activo)
 
     React.useEffect(() => {
-        const fetchUser = () => {
-            auth.onAuthStateChanged(user => {
-                console.log(user)
-                if (user) {
-                    props.history.push('/')
-                } else {
-
-                }
-            })
+        // console.log(activo)
+        if (activo) {
+            props.history.push('/')
         }
-        fetchUser()
-    }, [props.history])
+    }, [activo, props.history])
 
 
 
@@ -153,20 +152,95 @@ const Login = (props) => {
                                                         </div>
                                                     ) : null
                                                 }
+                                                <label htmlFor="validationTooltip01">Nombre</label>
+                                                <input
+                                                    type="text"
+                                                    className="form-control form-input"
+                                                    id="validationTooltip01"
+                                                    placeholder="Nombre"
+                                                    onChange={e => setNombre(e.target.value)}
+                                                    value={nombre} />
+                                                <div className="valid-tooltip">
+                                                    ¡Se ve bien!
+                                                </div>
+                                                <label htmlFor="validationTooltip02">Apellido</label>
+                                                <input
+                                                    type="text"
+                                                    className="form-control form-input"
+                                                    id="validationTooltip02"
+                                                    placeholder="Apellido"
+                                                    onChange={e => setApellido(e.target.value)}
+                                                    value={apellido} />
+                                                <div className="valid-tooltip">
+                                                    ¡Se ve bien!
+                                                </div>
+
+                                                <label htmlFor="validationTooltipUsername">Nombre de usuario</label>
+                                                <div className="input-group">
+                                                    <div className="input-group-prepend">
+                                                        <span className="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                                                    </div>
+                                                    <input
+                                                        type="text"
+                                                        className="form-control form-input"
+                                                        id="validationTooltipUsername"
+                                                        placeholder="Usuario"
+                                                        onChange={e => setUsuario(e.target.value)}
+                                                        value={usuario} />
+                                                    <div className="invalid-tooltip">
+                                                        Por favor elige otro usuario
+                                                    </div>
+                                                </div>
+
+                                                <label htmlFor="validationTooltip03">Ciudad</label>
+                                                <input
+                                                    type="text"
+                                                    className="form-control form-input"
+                                                    id="validationTooltip03"
+                                                    placeholder="Ciudad"
+                                                    onChange={e => setCiudad(e.target.value)}
+                                                    value={ciudad}
+                                                />
+                                                <div className="invalid-tooltip">
+                                                    El nombre de la ciudad es invalido. Prueba otra vez.
+                                                </div>
+
+                                                <label htmlFor="validationTooltip04">Estado</label>
+                                                <input
+                                                    type="text"
+                                                    className="form-control form-input"
+                                                    id="validationTooltip04"
+                                                    placeholder="Estado"
+                                                    onChange={e => setEstado(e.target.value)}
+                                                    value={estado}
+                                                />
+                                                <div className="invalid-tooltip">
+                                                    Por favor introduce un estado valido.
+                                                </div>
+
+                                                <label htmlFor="exampleInputEmail1">Correo electrónico</label>
                                                 <input
                                                     type="email"
-                                                    className="form-control mb-2"
+                                                    className="form-control form-input mb-2"
                                                     placeholder="Ingrese Email"
                                                     onChange={e => setEmail(e.target.value)}
                                                     value={email}
                                                 />
-                                                <input
-                                                    type="password"
-                                                    className="form-control mb-2"
-                                                    placeholder="Ingrese Contraseña"
-                                                    onChange={e => setPass(e.target.value)}
-                                                    value={pass}
-                                                />
+                                                <div>
+                                                    <label htmlFor="exampleInputPassword1">Contraseña</label>
+                                                    <input
+                                                        type="password"
+                                                        className="form-control form-input mb-2"
+                                                        placeholder="Ingrese Contraseña"
+                                                        onChange={e => setPass(e.target.value)}
+                                                        value={pass}
+                                                    />
+                                                </div>
+                                                <div className="form-check">
+                                                    <input type="checkbox" className="form-check-input " id="exampleCheck1" />
+                                                    <label className="form-check-label" htmlFor="exampleCheck1">Acepto términos y
+                                                        condiciones</label>
+                                                </div>
                                                 <button
                                                     className="btn btn-dark me-1"
                                                     type="submit"
@@ -174,18 +248,18 @@ const Login = (props) => {
                                                     {esRegistro ? 'Registrar' : 'Acceder'}
                                                 </button>
                                                 <button
-                                                    className="btn"
-                                                    onClick={() => dispatch(ingresoUsuarioAccion())}
-                                                    disabled={loading}
-                                                >
-                                                    <img src={googleLogin} alt="" />
-                                                </button>
-                                                <button
                                                     className="btn btn-info me-1 "
                                                     type="button"
                                                     onClick={() => setEsRegistro(!esRegistro)}
                                                 >
                                                     {esRegistro ? '¿Ya tienes cuenta?' : '¿No tienes cuenta?'}
+                                                </button>
+                                                <button
+                                                    className="btn"
+                                                    onClick={() => dispatch(ingresoUsuarioAccion())}
+                                                    disabled={loading}
+                                                >
+                                                    <img src={googleLogin} alt="" />
                                                 </button>
                                                 {
                                                     !esRegistro ? (
