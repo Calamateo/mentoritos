@@ -3,6 +3,10 @@ import React from 'react'
 
 function MentorMenu() {
 
+    const myStyle = {
+        color: "#533C73"
+    }
+
     return (
         <div>
             {/* <!--inicio de modal de mentors-cards --> */}
@@ -107,7 +111,7 @@ function MentorMenu() {
             <div className="container" id="home">
 
                 <div className="text-center mt-3" style={{ color: "black" }}>
-                    <h2>Elige a tu <strong style={{ color: "var(--colorSecondarySubtitle);" }}>mentorito</strong> favorito</h2>
+                    <h2>Elige a tu <strong style={{ myStyle }}>mentorito</strong> favorito</h2>
                     <p>Aquí podrás encontrar una amplia variedad de mentores listos para acompañarte en tu proceso de aprendizaje.
                     </p>
 
