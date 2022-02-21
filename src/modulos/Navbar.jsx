@@ -49,6 +49,9 @@ function Navbar(props) {
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/mentorsProfile">mi perfil</Link>
                                     </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" to="/userProfile">mi perfil</Link>
+                                    </li>
                                     <li className="nav-item dropstart">
                                         <Link className="nav-link dropdown-toggle" to="!#" id="navbarDropdownMenuLink" role="button"
                                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
