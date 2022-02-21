@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 import fotoPerfil from '../global/assets/images/predeterminada.png'
 import { useDispatch } from 'react-redux'
 //import { bd } from '../firebase';
-
+import { useSelector } from 'react-redux'
 
 
 function Navbar(props) {
@@ -15,6 +15,8 @@ function Navbar(props) {
         dispatch(cerrarSesionAccion())
         props.history.push('/')
     }
+
+    const usuario = useSelector(store => store.usuario.user)
 
 
 
@@ -54,7 +56,7 @@ function Navbar(props) {
                                         <Link className="nav-link dropdown-toggle" to="!#" id="navbarDropdownMenuLink" role="button"
                                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <img id="profileImg"
-                                                src={fotoPerfil}
+                                                src={usuario.fotoURL}
                                                 width="40" height="40" className="rounded-circle" alt="" />
                                         </Link>
                                         <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
