@@ -15,7 +15,14 @@ const ContactForm = () => {
                 email:emaill
             }
             );
+            setname('')
+            setlastName('')
+            setmessage('')
+            setmessage('')
+            setemaill('')
+        e.preventDefault();
         }
+        
 
     return (
     <>
