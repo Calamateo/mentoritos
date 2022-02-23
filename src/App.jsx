@@ -8,7 +8,8 @@ import Login from "./modulos/Login";
 import { auth } from './firebase'
 import Configuracion from './modulos/Configuracion';
 import { MentorsProfileModule } from './modulos/MentorsProfileModules';
-import {UserProfileInformation} from './modulos/UserProfile'
+import { UserProfileInformation } from './modulos/UserProfile'
+import Loading from './modulos/Loading';
 
 let mentorProfile = {
   "name": "Merida valiente",
@@ -26,8 +27,11 @@ function App() {
       auth.onAuthStateChanged(user => {
         console.log(user)
         if (user) {
-          setFirebaseUser(user)
+          setTimeout(() => {
+            setFirebaseUser(user)
+          }, 3000)
         } else {
+
           setFirebaseUser(null)
         }
       })
@@ -62,13 +66,19 @@ function App() {
           <Route path="/singUp">
             <Login login1={true} />
           </Route>
+
+
+          <Route path="/loading">
+            <Loading />
+          </Route>
+
           <Route path="/" exact>
             <Home />
           </Route>
           <Route path="/mentorsProfile">
             <MentorsProfileModule mentorP={mentorProfile} />
           </Route>
-          
+
           <Route path="/userProfileInfo">
             <UserProfileInformation mentorP={mentorProfile} />
           </Route>
@@ -80,7 +90,9 @@ function App() {
       </div>
     </Router>
   ) : (
-    <div>Cargando...</div>
+    <div>
+      <Loading />
+    </div>
   )
 }
 
