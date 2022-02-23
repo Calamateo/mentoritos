@@ -1,4 +1,4 @@
-import { Provider } from "react-redux";
+//import { Provider } from "react-redux";
 import { auth, firebase, storage, db } from "../firebase";
 
 
@@ -11,7 +11,7 @@ const dataInicial = {
 //Types
 const LOADING ='LOADING'
 const USUARIO_ERROR ='USUARIO_ERROR'
-const USUARO_EXITO ='USUARO_EXITO'
+const USUARIO_EXITO ='USUARIO_EXITO'
 const CERRAR_SESION ='CERRAR_SESION'
 
 //Reducer
@@ -21,7 +21,7 @@ export default function usuarioReducer (state=dataInicial, action){
             return{...state,loading:true}
         case USUARIO_ERROR:
             return{...dataInicial}
-        case USUARO_EXITO:
+        case USUARIO_EXITO:
             return{...state,loading:false, user:action.payload, action:true}
         case CERRAR_SESION:
             return{...dataInicial}
@@ -31,17 +31,16 @@ export default function usuarioReducer (state=dataInicial, action){
 }//usuarioReducer
 
 //action
-export const ingresoUsuarioAccion =() => async (dispatch,props) => {
+export const ingresoUsuarioAccion = () => async(dispatch) => {
     dispatch({
         type: LOADING
-    })//Dispatch
+    })
     try {
-        //se accede a los servicios de Google
-        const provider = new firebase.auth.GoogleAuthProvider();
-        //aqui genera un Popup para ingresar por medio de google
-        const res = await auth.signInWithPopup(provider);
 
-        //aqui se crea el objeto para guardar datos
+        const provider = new firebase.auth.GoogleAuthProvider();
+        const res = await auth.signInWithPopup(provider)
+
+        console.log(res.user)
 
         const usuario = {
             uid: res.user.uid,
@@ -51,51 +50,32 @@ export const ingresoUsuarioAccion =() => async (dispatch,props) => {
         }//usuario
         
         //se guardaran los datos relacionados con el inicio de sesion
-        const usuarioDB = await db.collection('usuarios').doc(usuario.uid).get()
+        const usuarioDB = await db.collection('usuarios').doc(usuario.email).get()
         console.log(usuarioDB)
-        if (usuarioDB.exists) {
-            //Cuando el usuario exista en firebase
+        if(usuarioDB.exists){
+            // cuando existe el usuario en firestore
             dispatch({
-                type: USUARO_EXITO,
+                type: USUARIO_EXITO,
                 payload: usuarioDB.data()
-
             })
-            
-            localStorage.setItem('usuario',JSON.stringify(usuarioDB.data()))
-        }//if
-        else{
-            //No existe usuario en firebase
-            await db.collection('usuario').doc(usuario.uid).set(usuario)
+            localStorage.setItem('usuario', JSON.stringify(usuarioDB.data()))
+        }else{
+            // no existe el usuario en firestore
+            await db.collection('usuarios').doc(usuario.email).set(usuario)
             dispatch({
-                type:USUARO_EXITO,
-                payload: usuario,
-                
+                type: USUARIO_EXITO,
+                payload: usuario
             })
-            const foto = usuario.fotoURL 
-            const nombrePerfil = usuario.nombre
-            await db.collection(res.user.uid).doc(usuario.uid).set({
-                fotoPerfil: foto,
-                nombrePerfil: nombrePerfil,
-                sobreMi:"",
-                educacion:"",
-                datosCuriosos: "",
-                duracionClase: "",
-                costoClase:"",
-                materia: "",
-                videoURL: "https://youtu.be/5p2hwlq341Y"
-
-            })
-            localStorage.setItem('usuario',JSON.stringify(usuario))
-        }//else
-
-    }// try 
-    catch (error) {
+            localStorage.setItem('usuario', JSON.stringify(usuario))
+        }
+        
+    } catch (error) {
         console.log(error)
         dispatch({
-            type:USUARIO_ERROR
+            type: USUARIO_ERROR 
         })
-    }//catch
-}//ingresaUsuarioAccion
+    }
+}
 
 
 //Aqui se leera la informacion del usuario
@@ -103,7 +83,7 @@ export const leerUsuarioActivoAccion = () => (dispatch) =>{
     //leer la informacion en almacenamiento local
     if(localStorage.getItem('usuario')){
         dispatch({
-            type:USUARO_EXITO,
+            type:USUARIO_EXITO,
             payload:JSON.parse(localStorage.getItem('usuario'))
         })//dispatch
     }//if
@@ -112,11 +92,11 @@ export const leerUsuarioActivoAccion = () => (dispatch) =>{
 //Cerrar la sesion
 export const cerrarSesionAccion = () => (dispatch) => {
     auth.signOut()
-    localStorage.removeItem('usuario')
     dispatch({
-        type:CERRAR_SESION
-    })//Dispatch
-}//cerrarSesionAccion 
+        type: CERRAR_SESION
+    })
+    localStorage.removeItem('usuario')
+}
 
 //Actualizar datos
 export const actualizarUsuarioAccion = (nombreActualizado) => async (dispatch,getState) => {
@@ -138,7 +118,7 @@ export const actualizarUsuarioAccion = (nombreActualizado) => async (dispatch,ge
         }//usuario
 
         dispatch({
-            type:USUARO_EXITO,
+            type:USUARIO_EXITO,
             payload: usuario
         })
         localStorage.setItem('usuario',JSON.stringify(usuario))
@@ -172,7 +152,7 @@ export const editarFotoAccion = (imagenEditada) => async (dispatch, getState) =>
         }//usuario
 
         dispatch({
-            type:USUARO_EXITO,
+            type:USUARIO_EXITO,
             payload: usuario
         })//dispatch
 

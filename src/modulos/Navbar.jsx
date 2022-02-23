@@ -4,16 +4,23 @@ import meteoro from '../global/assets/images/meteorite2.jpg'
 import { cerrarSesionAccion } from '../Redux/mentoritoDucks'
 import { withRouter } from "react-router-dom";
 import { useDispatch } from 'react-redux'
-//import { bd } from '../firebase';
+//import { auth } from '../firebase';
 import { useSelector } from 'react-redux'
+
 
 
 function Navbar(props) {
     const dispatch = useDispatch()
-    const cerrarSesion = () => {
+
+    const cerrar = () => {
         dispatch(cerrarSesionAccion())
+        setTimeout(() => {
+            window.location.reload()
+        }, 500);
         props.history.push('/')
+
     }
+
 
 
     const usuario = useSelector(store => store.usuario.user)
@@ -62,7 +69,7 @@ function Navbar(props) {
                                         <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
                                             <li><Link className="dropdown-item" to="/configuracion">Editar perfil</Link></li>
-                                            <li><span className="dropdown-item" style={{ cursor: "pointer" }} onClick={() => cerrarSesion()}>Cerrar sesión</span></li>
+                                            <li><span className="dropdown-item" style={{ cursor: "pointer" }} onClick={() => cerrar()}>Cerrar sesión</span></li>
                                         </ul>
                                     </li>
 

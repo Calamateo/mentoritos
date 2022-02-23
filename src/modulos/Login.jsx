@@ -118,7 +118,9 @@ const Login = (props) => {
             auth.onAuthStateChanged(user => {
                 console.log(user)
                 if (user) {
-                    props.history.push('/')
+                    setTimeout(() => {
+                        props.history.push('/')
+                    }, 2500)
                 } else {
 
                 }

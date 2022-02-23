@@ -26,27 +26,27 @@ function App() {
     const fetchUser = () => {
       auth.onAuthStateChanged(user => {
         console.log(user)
-        if (user) {
-          setTimeout(() => {
+        setTimeout(() => {
+          if (user) {
             setFirebaseUser(user)
-          }, 3000)
-        } else {
+          } else {
 
-          setFirebaseUser(null)
-        }
+            setFirebaseUser(null)
+          }
+        }, 2500)
       })
     }
     fetchUser()
   }, [])
 
-  const RutaPrivada = ({ component, path, ...rest }) => {
-    if (localStorage.getItem('usuario')) {
-      const usuarioStorage = JSON.parse(localStorage.getItem('usuario'))
-      if (usuarioStorage.uid === firebaseUser.uid) {
-        return <Route component={component} path={path} {...rest} />
-      }
-    }
-  }
+  // const RutaPrivada = ({ component, path, ...rest }) => {
+  //   if (localStorage.getItem('usuario')) {
+  //     const usuarioStorage = JSON.parse(localStorage.getItem('usuario'))
+  //     if (usuarioStorage.uid === firebaseUser.uid) {
+  //       return <Route component={component} path={path} {...rest} />
+  //     }
+  //   }
+  // }
 
 
 
@@ -83,9 +83,9 @@ function App() {
             <UserProfileInformation mentorP={mentorProfile} />
           </Route>
 
-          <RutaPrivada path="/configuracion" exact>
+          <Route path="/configuracion" exact>
             <Configuracion />
-          </RutaPrivada>
+          </Route>
         </Switch>
       </div>
     </Router>
