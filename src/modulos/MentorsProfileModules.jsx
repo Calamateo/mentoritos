@@ -40,7 +40,7 @@ const MentorsProfileModule = ({ mentorP }) => {
                                         <i className="fas fa-ellipsis-h profile-icons icons-size"></i>
                                     </button>
                                     <ul id="dropdown" className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a className="dropdown-item" href="!#">Reportar</a></li>
+                                        <li><a className="dropdown-item" href="#">Reportar</a></li>
                                     </ul>
                                 </div>
                                 <div className="d-flex justify-content-start mt-3">
@@ -74,7 +74,7 @@ const MentorsProfileModule = ({ mentorP }) => {
                                         </iframe>
                                     </div>
                                 </div>
-                                <button type="button" className="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <button type="button" class="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Editar Perfil
                                 </button>
 
@@ -90,19 +90,19 @@ const MentorsProfileModule = ({ mentorP }) => {
 
 
 
-                                <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div className="modal-dialog">
-                                        <div className="modal-content">
-                                            <div className="modal-header">
-                                                <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <div className="modal-body">
+                                            <div class="modal-body">
                                                 ...
                                             </div>
-                                            <div className="modal-footer">
-                                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" className="btn btn-primary">Save changes</button>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
                                             </div>
                                         </div>
                                     </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import './menu.css'
 import '../Css/Inicio.css'
-
+import ContactForm from './contactUs'
 function Home() {
 
     const imageHome = require.context('../global/assets/images', true);
@@ -52,7 +52,7 @@ function Home() {
             {/* <!-- /Dummie Section --> */}
 
             {/* <!-- short about us --> */}
-            <section id="short-aboutUs" className="container-xl-fluid pt-5" style={{ paddingBottom: "3rem" }}>
+            <section id="short-aboutUs" className="container-xl-fluid pt-5 space-between-sections" style={{ paddingBottom: "3rem" }}>
                 <div className="container-xl">
                     <div className="row mb-3">
                         <div className="col-8">
@@ -81,6 +81,85 @@ function Home() {
                 </div>
             </section>
             {/* <!-- short about us -->*/}
+
+            {/* <!-- value proposal --> */}
+            <section id="value-proposal" className="space-between-sections value-proposal">
+                <div className="container-xl mt-5">
+                    <div className="row">
+                        <div className="col">
+                            <h2 className="text-center">Mentoritos te ofrece</h2>
+                        </div>
+                    </div>
+                    <div className="row text-center mt-5">
+                        <div className="col">
+                            <div className="circule mx-auto" >
+                                <p className="my-auto circulito">primer clase gratis</p>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="circule mx-auto">
+                                <div>
+                                    <i className="fas fa-calendar-check" style={{ fontSize: "4rem" }}></i>
+                                </div>
+                                <div className="pt-3">
+                                    <p className="my-auto">horarios flexibles</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="circule mx-auto">
+                                <p className="my-auto">oportunidad de clases presenciales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* <!-- value proposal --> */}
+
+            {/* <!-- easy steps --> */}
+            <section id="easy-steps" className="space-between-sections">
+                <div className="container-xl">
+                    <div className="row">
+                        <div className="col">
+                            <h2 style={{ textAlign: "right" }}>Encuentra tu mentor favorito facilmente</h2>
+                        </div>
+                    </div>
+                    <div className="row my-5">
+                        <div className="col-1"></div>
+                        <div className="col">
+                            <div className="step-bar">
+                                <div className="circule">
+                                    <p className="my-auto">1</p>
+                                </div>
+                                <p className="my-auto">Elige un tema a estudiar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row my-5">
+                        <div className="col-3"></div>
+                        <div className="col">
+                            <div className="step-bar">
+                                <div className="circule">
+                                    <p className="my-auto">2</p>
+                                </div>
+                                <p className="my-auto">Busca su categoría</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-1"></div>
+                        <div className="col">
+                            <div className="step-bar">
+                                <div className="circule">
+                                    <p className="my-auto">3</p>
+                                </div>
+                                <p className="my-auto">Conoce a nuestros mentores</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* <!-- easy steps --> */}
 
             {/* <!-- filter --> */}
             <section id="home-filter">
@@ -158,15 +237,25 @@ function Home() {
                                             <div className="col-md-4">
                                                 <div className="single-box">
                                                     <div className="card mx-auto" style={{ width: "15rem" }}>
-                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
+                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top featured"
                                                             alt="..." />
                                                         <div className="card-body">
-                                                            <h5 className="card-title">Card title</h5>
-                                                            <p className="card-text">Some quick example text to build on the card
-                                                                title and make up the bulk of the card's
-                                                                content.</p>
-                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
-                                                                somewhere</a>
+                                                            <h5 className="card-title">Andrea Jiménez</h5>
+                                                            <p className="card-text">Matemáticas</p>
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Conocer</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-md-4">
+                                                <div className="single-box">
+                                                    <div className="card mx-auto" style={{ width: "15rem"}}>
+                                                        <img src={imageHome('./mentor3.jpg')} className="card-img-top featured"
+                                                            alt="..." />
+                                                        <div className="card-body">
+                                                            <h5 className="card-title">Julio Ramirez</h5>
+                                                            <p className="card-text">Filosofía</p>
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Conocer</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -174,31 +263,12 @@ function Home() {
                                             <div className="col-md-4">
                                                 <div className="single-box">
                                                     <div className="card mx-auto" style={{ width: "15rem" }}>
-                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
+                                                        <img src={imageHome('./mentor2.jpg')} className="card-img-top featured"
                                                             alt="..." />
                                                         <div className="card-body">
-                                                            <h5 className="card-title">Card title</h5>
-                                                            <p className="card-text">Some quick example text to build on the card
-                                                                title and make up the bulk of the card's
-                                                                content.</p>
-                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
-                                                                somewhere</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4">
-                                                <div className="single-box">
-                                                    <div className="card mx-auto" style={{ width: "15rem" }}>
-                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
-                                                            alt="..." />
-                                                        <div className="card-body">
-                                                            <h5 className="card-title">Card title</h5>
-                                                            <p className="card-text">Some quick example text to build on the card
-                                                                title and make up the bulk of the card's
-                                                                content.</p>
-                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
-                                                                somewhere</a>
+                                                            <h5 className="card-title">María Cárdenas</h5>
+                                                            <p className="card-text">Yoga</p>
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Conocer</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -210,15 +280,12 @@ function Home() {
                                             <div className="col-md-4">
                                                 <div className="single-box">
                                                     <div className="card mx-auto" style={{ width: "15rem" }}>
-                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
+                                                        <img src={imageHome('./mentor6.jpg')} className="card-img-top featured"
                                                             alt="..." />
                                                         <div className="card-body">
-                                                            <h5 className="card-title">Card title</h5>
-                                                            <p className="card-text">Some quick example text to build on the card
-                                                                title and make up the bulk of the card's
-                                                                content.</p>
-                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
-                                                                somewhere</a>
+                                                            <h5 className="card-title">José Gutiérrez</h5>
+                                                            <p className="card-text">Inglés</p>
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Conocer</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -226,15 +293,12 @@ function Home() {
                                             <div className="col-md-4">
                                                 <div className="single-box">
                                                     <div className="card mx-auto" style={{ width: "15rem" }}>
-                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
+                                                        <img src={imageHome('./mentora2.jfif')} className="card-img-top featured"
                                                             alt="..." />
                                                         <div className="card-body">
-                                                            <h5 className="card-title">Card title</h5>
-                                                            <p className="card-text">Some quick example text to build on the card
-                                                                title and make up the bulk of the card's
-                                                                content.</p>
-                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
-                                                                somewhere</a>
+                                                            <h5 className="card-title">Lorena Estrada</h5>
+                                                            <p className="card-text">Acuarela</p>
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Conocer</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -242,15 +306,12 @@ function Home() {
                                             <div className="col-md-4">
                                                 <div className="single-box">
                                                     <div className="card mx-auto" style={{ width: "15rem" }}>
-                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
+                                                        <img src={imageHome('./mentor5.png')} className="card-img-top featured"
                                                             alt="..." />
                                                         <div className="card-body">
-                                                            <h5 className="card-title">Card title</h5>
-                                                            <p className="card-text">Some quick example text to build on the card
-                                                                title and make up the bulk of the card's
-                                                                content.</p>
-                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
-                                                                somewhere</a>
+                                                            <h5 className="card-title">Javier Perez</h5>
+                                                            <p className="card-text">Animación</p>
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Conocer</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -262,15 +323,12 @@ function Home() {
                                             <div className="col-md-4">
                                                 <div className="single-box">
                                                     <div className="card mx-auto" style={{ width: "15rem" }}>
-                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
+                                                        <img src={imageHome('./mentora1.jpg')} className="card-img-top featured"
                                                             alt="..." />
                                                         <div className="card-body">
-                                                            <h5 className="card-title">Card title</h5>
-                                                            <p className="card-text">Some quick example text to build on the card
-                                                                title and make up the bulk of the card's
-                                                                content.</p>
-                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
-                                                                somewhere</a>
+                                                            <h5 className="card-title">Karla Torres</h5>
+                                                            <p className="card-text">Entrenamiento personal</p>
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Conocer</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -278,15 +336,12 @@ function Home() {
                                             <div className="col-md-4">
                                                 <div className="single-box">
                                                     <div className="card mx-auto" style={{ width: "15rem" }}>
-                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
+                                                        <img src={imageHome('./mentor4.jpg')} className="card-img-top featured"
                                                             alt="..." />
                                                         <div className="card-body">
-                                                            <h5 className="card-title">Card title</h5>
-                                                            <p className="card-text">Some quick example text to build on the card
-                                                                title and make up the bulk of the card's
-                                                                content.</p>
-                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
-                                                                somewhere</a>
+                                                            <h5 className="card-title">Juan Navarro</h5>
+                                                            <p className="card-text">Programación</p>
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Conocer</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -294,15 +349,12 @@ function Home() {
                                             <div className="col-md-4">
                                                 <div className="single-box">
                                                     <div className="card mx-auto" style={{ width: "15rem" }}>
-                                                        <img src={imageHome('./mentor.jfif')} className="card-img-top"
+                                                        <img src={imageHome('./mentora4.jpg')} className="card-img-top featured"
                                                             alt="..." />
                                                         <div className="card-body">
-                                                            <h5 className="card-title">Card title</h5>
-                                                            <p className="card-text">Some quick example text to build on the card
-                                                                title and make up the bulk of the card's
-                                                                content.</p>
-                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Go
-                                                                somewhere</a>
+                                                            <h5 className="card-title">Elena Contreras</h5>
+                                                            <p className="card-text">Solfeo</p>
+                                                            <a href="!#" className="btn btn-primary buttons rounded-pill">Conocer</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -331,85 +383,6 @@ function Home() {
                 </div>
             </section>
             {/* <!-- featured mentors --> */}
-
-            {/* <!-- value proposal --> */}
-            <section id="value-proposal" className="space-between-sections value-proposal">
-                <div className="container-xl">
-                    <div className="row">
-                        <div className="col">
-                            <h2 className="text-center">Mentoritos te ofrece</h2>
-                        </div>
-                    </div>
-                    <div className="row text-center mt-5">
-                        <div className="col">
-                            <div className="circule mx-auto" >
-                                <p className="my-auto circulito">primer clase gratis</p>
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="circule mx-auto">
-                                <div>
-                                    <i className="fas fa-calendar-check" style={{ fontSize: "4rem" }}></i>
-                                </div>
-                                <div className="pt-3">
-                                    <p className="my-auto">horarios flexibles</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="circule mx-auto">
-                                <p className="my-auto">oportunidad de clases presenciales</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* <!-- value proposal --> */}
-
-            {/* <!-- easy steps --> */}
-            <section id="easy-steps" className="space-between-sections">
-                <div className="container-xl">
-                    <div className="row">
-                        <div className="col">
-                            <h2 style={{ textAlign: "right" }}>Encuentra tu mentor favorito facilmente</h2>
-                        </div>
-                    </div>
-                    <div className="row my-5">
-                        <div className="col-1"></div>
-                        <div className="col">
-                            <div className="step-bar">
-                                <div className="circule">
-                                    <p className="my-auto">1</p>
-                                </div>
-                                <p className="my-auto">Elige un tema a estudiar</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row my-5">
-                        <div className="col-3"></div>
-                        <div className="col">
-                            <div className="step-bar">
-                                <div className="circule">
-                                    <p className="my-auto">2</p>
-                                </div>
-                                <p className="my-auto">Busca su categoría</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-1"></div>
-                        <div className="col">
-                            <div className="step-bar">
-                                <div className="circule">
-                                    <p className="my-auto">3</p>
-                                </div>
-                                <p className="my-auto">Conoce a nuestros mentores</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* <!-- easy steps --> */}
 
             {/* <!-- categories --> */}
             <section className="space-between-sections">
@@ -559,39 +532,7 @@ function Home() {
 
             {/* <!-- contact form --> */}
             <section id="contact-form" className="space-between-sections">
-                <div className="container-xl">
-                    <div className="row mb-5">
-                        <div className="col">
-                            <h2>Contacto</h2>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col">
-                            <div className="mx-auto" style={{ width: "700px" }}>
-                                <h3 className="text-center">Agradecemos tu tiempo para comunicarte con Mentoritos. ¿Cómo podemos
-                                    ayudarte?</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row mt-5">
-                        <div className="col">
-                            <div className="mx-auto text-center" style={{ width: "700px" }}>
-                                <form action="">
-                                    <input className="my-4" type="text" placeholder="Nombre" name="name" required />
-                                    <br />
-                                    <input className="mb-4" type="text" placeholder="Apellido" name="last-name" required />
-                                    <br />
-                                    <input className="mb-4" type="email" placeholder="Correo" name="e-mail" required />
-                                    <br />
-                                    <textarea className="my-4" name="messsage" id="" cols="30" rows="5" placeholder="Mensaje"
-                                        required></textarea>
-                                    <br />
-                                    <button type="submit" className="btn rounded-pill buttons">enviar</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ContactForm />
             </section>
             {/* <!-- contact form --> */}
 

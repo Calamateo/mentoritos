@@ -1,9 +1,5 @@
 @import url("../global/css/variables.css");
 
-secundario {
-    
-}
-
 body {
     font-family: var(--font-body);
     font-size: var(--fontNormalSize);
@@ -361,3 +357,8 @@ footer i {
     height: 30vw;
     object-fit: cover;
 } */
+
+.featured {
+    height: 11rem !important;
+    object-fit: cover;
+}
