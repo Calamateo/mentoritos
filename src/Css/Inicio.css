@@ -1,5 +1,9 @@
 @import url("../global/css/variables.css");
 
+secundario {
+    
+}
+
 body {
     font-family: var(--font-body);
     font-size: var(--fontNormalSize);

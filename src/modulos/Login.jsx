@@ -119,6 +119,7 @@ const Login = (props) => {
                 console.log(user)
                 if (user) {
                     props.history.push('/')
+                    window.location.reload();
                 } else {
 
                 }

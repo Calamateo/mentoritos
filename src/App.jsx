@@ -65,7 +65,7 @@ function App() {
           <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/mentorsMenu" exact>
+          <Route path="/mentorsMenu">
             <MentorMenu />
           </Route>
           <Route path="/mentorsProfile">
