@@ -7,6 +7,7 @@ const imageAbout = require.context('../global/assets/images', true);
 
     return (    
         
+        
         <div className="container-xxl">
         <main className="pt-5 mt-5">
         <div className="row">

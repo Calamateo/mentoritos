@@ -1,5 +1,6 @@
 import React from 'react'
 import AboutUs from "./modulos/AboutUs";
+import MentorsMenu from "./modulos/MentorsMenu";
 import Home from "./modulos/Home";
 import Navbar from "./modulos/Navbar";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -65,6 +66,9 @@ function App() {
           <Route path="/" exact>
             <Home />
           </Route>
+          <Route path="/MentorsMenu">
+            <MentorsMenu />
+          </Route>
           <Route path="/mentorsProfile">
             <MentorsProfileModule mentorP={mentorProfile} />
           </Route>
@@ -72,6 +76,8 @@ function App() {
           <Route path="/userProfileInfo">
             <UserProfileInformation mentorP={mentorProfile} />
           </Route>
+
+          
 
           <RutaPrivada path="/configuracion" exact>
             <Configuracion />
