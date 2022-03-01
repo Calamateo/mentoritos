@@ -8,18 +8,164 @@ import googleLogin from '../global/assets/images/signUp/btn_google_signin_dark_p
 
 const Login = (props) => {
 
+    // const [email, setEmail] = React.useState('')
+    // const [pass, setPass] = React.useState('')
+    // const [error, setError] = React.useState(null)
+    // const [usuario, setUsuario] = React.useState('')
+
+
+
+    // const [esRegistro, setEsRegistro] = React.useState(false)
+    // React.useEffect(() => {
+    //     console.log(props.login1);
+    //     setEsRegistro(props.login1);
+    // }, [props.login1])
+
+    // const procesarDatos = e => {
+    //     e.preventDefault()
+    //     if (!email.trim() || !pass.trim()) {
+    //         console.log('Datos vacíos email!')
+    //         setError('Datos vacíos email!')
+    //         return
+    //     }
+    //     if (!pass.trim()) {
+    //         console.log('Datos vacíos pass!')
+    //         setError('Datos vacíos pass!')
+    //         return
+    //     }
+    //     if (pass.length < 6) {
+    //         console.log('6 o más carácteres')
+    //         setError('6 o más carácteres en pass')
+    //         return
+    //     }
+    //     console.log('correcto...')
+    //     setError(null)
+
+    //     if (esRegistro) {
+    //         registrar()
+    //     } else {
+    //         login()
+    //     }
+
+    // }
+
+    // const login = React.useCallback(async () => {
+    //     try {
+    //         const res = await auth.signInWithEmailAndPassword(email, pass)
+    //         console.log(res.user)
+    //         setEmail('')
+    //         setPass('')
+    //         setError(null)
+    //         props.history.push('/')
+    //     } catch (error) {
+    //         console.log(error)
+    //         if (error.code === 'auth/invalid-email') {
+    //             setError('Email no válido')
+    //         }
+    //         if (error.code === 'auth/user-not-found') {
+    //             setError('Email no registrado')
+    //         }
+    //         if (error.code === 'auth/wrong-password') {
+    //             setError('Contraseña incorrecta')
+    //         }
+    //     }
+    // }, [email, pass, props.history])
+
+    // const registrar = React.useCallback(async () => {
+
+    //     try {
+    //         const res = await auth.createUserWithEmailAndPassword(email, pass)
+    //         console.log(res.user)
+    //         await db.collection('usuario').doc(res.user.uid).set({
+    //             uid: res.user.uid,
+    //             email: res.user.email,
+    //             nombre: "",
+    //             fotoURL: ""
+
+    //         })
+    //         await db.collection(res.user.uid).add({
+    //             nombre: '',
+    //             user: usuario
+    //         })
+
+
+    //         const datas = {
+    //             nombre: res.user.email,
+    //             descripcion: res.user.uid,
+    //             url_Imagen: res.user.photoURL,
+    //             precio: "24"
+    //         };
+
+
+    //         var myHeaders = new Headers();
+    //         myHeaders.append("Content-Type", "application/json");
+
+    //         var raw = JSON.stringify(datas);
+
+    //         var requestOptions = {
+    //             method: 'POST',
+    //             headers: myHeaders,
+    //             body: raw,
+    //             redirect: 'follow'
+    //         };
+
+    //         fetch("http://localhost:8080/api/productos/", requestOptions)
+    //             .then(response => response.text())
+    //             .then(result => console.log(result))
+    //             .catch(error => console.log('error', error));
+
+
+
+
+
+    //         setEmail('')
+    //         setPass('')
+
+    //         setUsuario('')
+    //         setError(null)
+
+    //     } catch (error) {
+    //         console.log(error)
+    //         if (error.code === 'auth/invalid-email') {
+    //             setError('Email no válido')
+    //         }
+    //         if (error.code === 'auth/email-already-in-use') {
+    //             setError('Email ya utilizado')
+    //         }
+    //     }
+
+    // }, [email, pass, usuario])
+
+
+    const dispatch = useDispatch()
+
+    const loading = useSelector(store => store.usuario.loading)
+
+
+
+
+    React.useEffect(() => {
+        const fetchUser = () => {
+            auth.onAuthStateChanged(user => {
+                console.log(user)
+                if (user) {
+                    setTimeout(() => {
+                        props.history.push('/')
+                    }, 2500)
+                } else {
+
+                }
+            })
+        }
+        fetchUser()
+    }, [props.history])
+
+
     const [email, setEmail] = React.useState('')
     const [pass, setPass] = React.useState('')
     const [error, setError] = React.useState(null)
-    const [usuario, setUsuario] = React.useState('')
-
-
 
     const [esRegistro, setEsRegistro] = React.useState(false)
-    React.useEffect(() => {
-        console.log(props.login1);
-        setEsRegistro(props.login1);
-    }, [props.login1])
 
     const procesarDatos = e => {
         e.preventDefault()
@@ -53,10 +199,26 @@ const Login = (props) => {
         try {
             const res = await auth.signInWithEmailAndPassword(email, pass)
             console.log(res.user)
+
+
+            const usuario = {
+                uid: res.user.uid,
+                email: res.user.email,
+                nombre: "",
+                fotoURL: "https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg"
+            }//usuario
+            localStorage.setItem('usuario', JSON.stringify(usuario))
+
+
             setEmail('')
             setPass('')
             setError(null)
-            props.history.push('/')
+
+            setTimeout(() => {
+                props.history.push('/')
+                window.location.reload()
+            }, 100)
+
         } catch (error) {
             console.log(error)
             if (error.code === 'auth/invalid-email') {
@@ -76,23 +238,54 @@ const Login = (props) => {
         try {
             const res = await auth.createUserWithEmailAndPassword(email, pass)
             console.log(res.user)
-            await db.collection('usuario').doc(res.user.uid).set({
+            await db.collection('usuarios').doc(res.user.email).set({
                 uid: res.user.uid,
                 email: res.user.email,
                 nombre: "",
-                fotoURL: ""
+                fotoURL: "https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg"
 
             })
-            await db.collection(res.user.uid).add({
-                nombre: '',
-                user: usuario
-            })
+
+            const usuario = {
+                uid: res.user.uid,
+                email: res.user.email,
+                nombre: "",
+                fotoURL: "https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg"
+            }//usuario
+
+
+            const datas = {
+                email: res.user.email,
+                uid: res.user.uid,
+                url_Imagen: "https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg",
+            };
+
+
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify(datas);
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch("http://localhost:8080/api/productos/", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
+
             setEmail('')
             setPass('')
-
-            setUsuario('')
             setError(null)
-            props.history.push('/')
+            localStorage.setItem('usuario', JSON.stringify(usuario))
+            setTimeout(() => {
+                props.history.push('/')
+                window.location.reload()
+            }, 100)
         } catch (error) {
             console.log(error)
             if (error.code === 'auth/invalid-email') {
@@ -103,31 +296,7 @@ const Login = (props) => {
             }
         }
 
-    }, [email, pass, props.history, usuario])
-
-
-    const dispatch = useDispatch()
-
-    const loading = useSelector(store => store.usuario.loading)
-
-
-
-
-    React.useEffect(() => {
-        const fetchUser = () => {
-            auth.onAuthStateChanged(user => {
-                console.log(user)
-                if (user) {
-                    setTimeout(() => {
-                        props.history.push('/')
-                    }, 2500)
-                } else {
-
-                }
-            })
-        }
-        fetchUser()
-    }, [props.history])
+    }, [email, pass, props.history])
 
 
 
