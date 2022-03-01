@@ -8,7 +8,7 @@ const sofi = require.context('../global/assets/images', true);
 
     return (    
         
-        <div className="container-xxl">
+        <div className="container-xl">
         <main className="pt-5 mt-5">
         <div className="row">
             <div className="col-lg-4 ">
