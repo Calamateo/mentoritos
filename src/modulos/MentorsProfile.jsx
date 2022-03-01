@@ -2,7 +2,6 @@ import React from 'react'
 /*import '../Css/mentorsProfile.css'*/
 import {AcordionItem} from './mentorsProfileModules/AcordionItem'
 import { Modal } from './mentorsProfileModules/EditarModal'
-import { Modalpruebacaro } from './mentorsProfileModules/modalprueba'
 
 const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfileFunction}) =>{
     const imageMentor = require.context('../global/assets/images', true);
@@ -47,12 +46,10 @@ const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfi
                             </iframe>
                         </div>
                     </div>
-                                <button type="button" class="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#modaltestcaro">
+                                <button type="button" class="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Editar Perfil
                                 </button>
                             </div>
-
-                            <Modalpruebacaro/>
 
                             <Modal mentorprofileInformation = {mentorProfileInformationParameter} setMentorProfile={setMentorProfileFunction}/>{/*modal*/}
 
