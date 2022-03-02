@@ -2,30 +2,29 @@ import { useEffect } from "react";
 
 export default function CardsMentores(props){
 
-    
+    const imageAbout = require.context('../global/assets/images', true);    
    
 
 function inputMentor(item,element,number=item.length) {
    let conten="";
-   let star=""
+   let star="";
   
-  for (let i = 0; i < number; i++) {
   
-  }
     for (let index = 0; index < number ;index++) {
         for (let i = 0; i < 5; i++) {
             if (i<item[index].star) {
                 star+=`  <div class="col-1 ">
-                <img src="../STAR.svg" width="24px" alt="start" onclick=putStart(${index},${i+1})> 
+                <img src={imageAbout('./STAR.svg')} width="24px" alt="start" /> 
               </div>`;
             } else {
                 star+=`<div class="col-1 ">
-                <img src="../STARg.svg" width="24px" alt="start" onclick=putStart(${index},${i+1})>
+                <img src="../global/assets/images/STARg.svg" width="24px" alt="start" />
               </div>`;
             }
         }
         conten += `
-        <div name="item" className=" m-3 position-relative"  id= "mentorCard" style="width: 18rem;">
+        <div>
+    <div name="item" className="  position-relative "  id= "mentorCard" style="width: 2em;">
         <a href="#mentorsCards" data-bs-toggle="modal" onclick=ConstructorModal(${index}) href="#">
      <img src="${item[index].img}" className="  card-img-top"  data-bs-toggle="mentorsCards"  alt="..." style="border-radius: 30px;">
      </a>
@@ -39,11 +38,12 @@ function inputMentor(item,element,number=item.length) {
               ${item[index].price} MNX/Hr
     </div>
 </div>
-            <div className="row g-0 justify-content-around"> <!--contenedor estrellas-->
+            <div className=" g-0 justify-content-around"> <!--contenedor estrellas-->
                 ${star}
             </div>
         </div>
       </div>
+    </div>
         `;
         star=""
     }
@@ -74,10 +74,6 @@ function ConstructorModal( id, array = props.mentor ){
 */
 
   
-
-
-
-
 
 
 return(
