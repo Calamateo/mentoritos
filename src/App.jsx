@@ -11,8 +11,7 @@ import Configuracion from './modulos/Configuracion';
 import { MentorsProfileModule } from "./modulos/MentorsProfile";
 import { Mentor } from "./mentor"
 import { UrlDynamic } from './modulos/urlDynamic';
-
-
+import Loading from './modulos/Loading'
 
 function App() {
 
@@ -110,6 +109,10 @@ function App() {
 
           <Route path="/configuracion" exact>
             <Configuracion />
+          </Route>
+
+          <Route path="*">
+            <Page404 />
           </Route>
         </Switch >
       </div >

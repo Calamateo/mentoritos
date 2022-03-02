@@ -51,7 +51,6 @@ const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfi
                                 </button>
                             </div>
 
-                            <Modalpruebacaro />
 
                             <Modal mentorprofileInformation={mentorProfileInformationParameter} setMentorProfile={setMentorProfileFunction} />{/*modal*/}
 
