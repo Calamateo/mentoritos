@@ -283,7 +283,7 @@ const Login = (props) => {
             setError(null)
             localStorage.setItem('usuario', JSON.stringify(usuario))
             setTimeout(() => {
-                props.history.push('/')
+                props.history.push('/continuarRegistro')
                 window.location.reload()
             }, 100)
         } catch (error) {
