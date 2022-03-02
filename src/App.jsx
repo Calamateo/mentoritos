@@ -2,6 +2,7 @@ import React from 'react'
 import AboutUs from "./modulos/AboutUs";
 import Home from "./modulos/Home";
 import Navbar from "./modulos/Navbar";
+import Page404 from './modulos/Page404';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Login from "./modulos/Login";
 
@@ -66,16 +67,18 @@ function App() {
             <Home />
           </Route>
           <Route path="/mentorsProfile">
-            <MentorsProfileModule mentorP={mentorProfile} />
+            <MentorsProfileModule mentorP={mentorProfile} firebaseUser={firebaseUser}/>
           </Route>
           
           <Route path="/userProfileInfo">
             <UserProfileInformation mentorP={mentorProfile} />
           </Route>
-
           <RutaPrivada path="/configuracion" exact>
             <Configuracion />
           </RutaPrivada>
+          <Route path="*">
+            <Page404 />
+          </Route>
         </Switch>
       </div>
     </Router>

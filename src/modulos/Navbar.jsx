@@ -19,6 +19,7 @@ function Navbar(props) {
     const usuario = useSelector(store => store.usuario.user)
     return (
         <div>
+            {console.log(props.firebaseUser)}
             {
                 props.firebaseUser !== null ? (
                     <nav className="navbar navbar-expand-lg bg-white fixed-top">
