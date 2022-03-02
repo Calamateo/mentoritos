@@ -7,7 +7,9 @@ import Login from "./modulos/Login";
 import { auth } from './firebase'
 import Configuracion from './modulos/Configuracion';
 import {MentorsProfileModule} from "./modulos/MentorsProfile";
-import reactDom from 'react-dom';
+
+import { UrlDynamic } from './modulos/urlDynamic';
+
 
 
 function App() {  
@@ -16,7 +18,12 @@ function App() {
     "name":"Merida valiente",
     "sobremi":"hola yo soy merida valiente",
     "educacion": "por el momento no tengo educacion",
-    "datosCuriosos":"Soy super ensenando"
+    "datosCuriosos":"Soy super ensenando",
+    "nombrePerfil":"Sofía Aguilar",
+    "locacionPerfil":"Guadalajara, Jalisco",
+    "emailPerfil":"sa.aguilarvaldez@gmail.com",
+    "presentacion":"¡Hola! Me llamo Sofía y estoy buscando un mentor para aprender matemáticas.",
+    "imagePerfil":"./Rosa Carrillo Saturno.png"
     })
 
   const [firebaseUser, setFirebaseUser] = React.useState(false)
@@ -66,13 +73,21 @@ function App() {
             <Home />
           </Route>
           
-          <Route path="/mentorsProfile">
+          <Route path="/mentorsProfil">
             <MentorsProfileModule mentorProfileInformationParameter = {mentorprofileInformation} setMentorProfileFunction = {setMentorProfile}/>{/* Se pueden utilizar props se eliminariam mentorProfileInformationParameter setMentorProfileFunction*/}
           </Route>
           
-          {/*<Route path="/userProfileInfo">
-            <UserProfileInformation mentorP={mentorProfile} />
-  </Route>*/}
+          <Route path="/:typeP/:userId">
+            <UrlDynamic 
+              
+              error={null} 
+
+              mentor={mentorprofileInformation} 
+              
+              setmentor={setMentorProfile}
+             />
+            {/* Se pueden utilizar props se eliminariam mentorProfileInformationParameter setMentorProfileFunction*/}
+          </Route>
 
           <RutaPrivada path="/configuracion" exact>
             <Configuracion />
