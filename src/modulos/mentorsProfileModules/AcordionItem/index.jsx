@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const AcordionItem = ({ acorTitle, mentorInformation, numAcordion }) => {
+const AcordionItem = ({acorTitle, mentorInformation, numAcordion}) => {
     return (
         <div className="accordion-item">
             <h2 className="accordion-header" id={`flush-heading${numAcordion}`}>
@@ -23,4 +23,4 @@ const AcordionItem = ({ acorTitle, mentorInformation, numAcordion }) => {
 
 
 
-export { AcordionItem }
+export {AcordionItem}
