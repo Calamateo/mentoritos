@@ -1,5 +1,6 @@
-import { Provider } from "react-redux";
+//import { Provider } from "react-redux";
 import { auth, firebase, storage, db } from "../firebase";
+
 
 
 //Data inicial
@@ -9,39 +10,38 @@ const dataInicial = {
 }//data inicial
 
 //Types
-const LOADING ='LOADING'
-const USUARIO_ERROR ='USUARIO_ERROR'
-const USUARO_EXITO ='USUARO_EXITO'
-const CERRAR_SESION ='CERRAR_SESION'
+const LOADING = 'LOADING'
+const USUARIO_ERROR = 'USUARIO_ERROR'
+const USUARIO_EXITO = 'USUARIO_EXITO'
+const CERRAR_SESION = 'CERRAR_SESION'
 
 //Reducer
-export default function usuarioReducer (state=dataInicial, action){
+export default function usuarioReducer(state = dataInicial, action) {
     switch (action.type) {
         case LOADING:
-            return{...state,loading:true}
+            return { ...state, loading: true }
         case USUARIO_ERROR:
-            return{...dataInicial}
-        case USUARO_EXITO:
-            return{...state,loading:false, user:action.payload, action:true}
+            return { ...dataInicial }
+        case USUARIO_EXITO:
+            return { ...state, loading: false, user: action.payload, action: true }
         case CERRAR_SESION:
-            return{...dataInicial}
+            return { ...dataInicial }
         default:
-            return{...state}
+            return { ...state }
     }//switch
 }//usuarioReducer
 
 //action
-export const ingresoUsuarioAccion =() => async (dispatch,props) => {
+export const ingresoUsuarioAccion = () => async (dispatch) => {
     dispatch({
         type: LOADING
-    })//Dispatch
+    })
     try {
-        //se accede a los servicios de Google
-        const provider = new firebase.auth.GoogleAuthProvider();
-        //aqui genera un Popup para ingresar por medio de google
-        const res = await auth.signInWithPopup(provider);
 
-        //aqui se crea el objeto para guardar datos
+        const provider = new firebase.auth.GoogleAuthProvider();
+        const res = await auth.signInWithPopup(provider)
+
+        console.log(res.user)
 
         const usuario = {
             uid: res.user.uid,
@@ -49,62 +49,86 @@ export const ingresoUsuarioAccion =() => async (dispatch,props) => {
             nombre: res.user.displayName,
             fotoURL: res.user.photoURL
         }//usuario
-        
+
         //se guardaran los datos relacionados con el inicio de sesion
-        const usuarioDB = await db.collection('usuarios').doc(usuario.uid).get()
+        const usuarioDB = await db.collection('usuarios').doc(usuario.email).get()
         console.log(usuarioDB)
         if (usuarioDB.exists) {
-            //Cuando el usuario exista en firebase
+            // cuando existe el usuario en firestore
             dispatch({
-                type: USUARO_EXITO,
+                type: USUARIO_EXITO,
                 payload: usuarioDB.data()
-
             })
-            
-            localStorage.setItem('usuario',JSON.stringify(usuarioDB.data()))
-        }//if
-        else{
-            //No existe usuario en firebase
-            await db.collection('usuario').doc(usuario.uid).set(usuario)
+
+            const datas = {
+                email: res.user.email,
+                uid: res.user.uid,
+                url_Imagen: res.user.photoURL,
+            };
+
+
+
+
+            localStorage.setItem('usuario', JSON.stringify(usuarioDB.data()))
+            localStorage.setItem('usuario', JSON.stringify(datas))
+        } else {
+            // no existe el usuario en firestore
+
+            const datas = {
+                email: res.user.email,
+                uid: res.user.uid,
+                url_Imagen: res.user.photoURL,
+            };
+
+
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify(datas);
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch("http://localhost:8080/api/users/", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
+
+
+
+
+
+
+            await db.collection('usuarios').doc(usuario.email).set(usuario)
             dispatch({
-                type:USUARO_EXITO,
-                payload: usuario,
-                
+                type: USUARIO_EXITO,
+                payload: usuario
             })
-            const foto = usuario.fotoURL 
-            const nombrePerfil = usuario.nombre
-            await db.collection(res.user.uid).doc(usuario.uid).set({
-                fotoPerfil: foto,
-                nombrePerfil: nombrePerfil,
-                sobreMi:"",
-                educacion:"",
-                datosCuriosos: "",
-                duracionClase: "",
-                costoClase:"",
-                materia: "",
-                videoURL: "https://youtu.be/5p2hwlq341Y"
+            localStorage.setItem('usuario', JSON.stringify(usuario))
+            localStorage.setItem('usuario', JSON.stringify(datas))
 
-            })
-            localStorage.setItem('usuario',JSON.stringify(usuario))
-        }//else
+        }
 
-    }// try 
-    catch (error) {
+    } catch (error) {
         console.log(error)
         dispatch({
-            type:USUARIO_ERROR
+            type: USUARIO_ERROR
         })
-    }//catch
-}//ingresaUsuarioAccion
+    }
+}
 
 
 //Aqui se leera la informacion del usuario
-export const leerUsuarioActivoAccion = () => (dispatch) =>{
+export const leerUsuarioActivoAccion = () => (dispatch) => {
     //leer la informacion en almacenamiento local
-    if(localStorage.getItem('usuario')){
+    if (localStorage.getItem('usuario')) {
         dispatch({
-            type:USUARO_EXITO,
-            payload:JSON.parse(localStorage.getItem('usuario'))
+            type: USUARIO_EXITO,
+            payload: JSON.parse(localStorage.getItem('usuario'))
         })//dispatch
     }//if
 }//leerUsuarioActivoAccion
@@ -112,19 +136,19 @@ export const leerUsuarioActivoAccion = () => (dispatch) =>{
 //Cerrar la sesion
 export const cerrarSesionAccion = () => (dispatch) => {
     auth.signOut()
-    localStorage.removeItem('usuario')
     dispatch({
-        type:CERRAR_SESION
-    })//Dispatch
-}//cerrarSesionAccion 
+        type: CERRAR_SESION
+    })
+    localStorage.removeItem('usuario')
+}
 
 //Actualizar datos
-export const actualizarUsuarioAccion = (nombreActualizado) => async (dispatch,getState) => {
+export const actualizarUsuarioAccion = (nombreActualizado) => async (dispatch, getState) => {
     dispatch({
-        tipe:LOADING
+        tipe: LOADING
     })//dispatch
 
-    const {user} = getState().usuario
+    const { user } = getState().usuario
     console.log(user)
 
     try {
@@ -133,28 +157,28 @@ export const actualizarUsuarioAccion = (nombreActualizado) => async (dispatch,ge
         })
 
         const usuario = {
-                ...user,
+            ...user,
             nombre: nombreActualizado
         }//usuario
 
         dispatch({
-            type:USUARO_EXITO,
+            type: USUARIO_EXITO,
             payload: usuario
         })
-        localStorage.setItem('usuario',JSON.stringify(usuario))
+        localStorage.setItem('usuario', JSON.stringify(usuario))
     }//try 
     catch (error) {
-        console.log(error)        
+        console.log(error)
     }//catch
 
 }//actualizarUsuarioAccion
 
 //Editar foto de perfil
-export const editarFotoAccion = (imagenEditada) => async (dispatch, getState) =>{
+export const editarFotoAccion = (imagenEditada) => async (dispatch, getState) => {
     dispatch({
-        type:LOADING
+        type: LOADING
     })
-    const {user} = getState().usuario
+    const { user } = getState().usuario
     console.log(user)
 
     try {
@@ -172,11 +196,11 @@ export const editarFotoAccion = (imagenEditada) => async (dispatch, getState) =>
         }//usuario
 
         dispatch({
-            type:USUARO_EXITO,
+            type: USUARIO_EXITO,
             payload: usuario
         })//dispatch
 
-        localStorage.setItem('usuario',JSON.stringify(usuario))
+        localStorage.setItem('usuario', JSON.stringify(usuario))
     }//try 
     catch (error) {
         console.log(error)

@@ -4,6 +4,8 @@ import { AcordionItem } from './AcordionItem'
 const MentorsProfileModule = ({ mentorP }) => {
     const imageAbout = require.context('../global/assets/images', true);
 
+    const isMyProfile = true;
+
     return (
 
         <div className="container-xl">
@@ -19,29 +21,12 @@ const MentorsProfileModule = ({ mentorP }) => {
                             </div>
                             <div className="card-body">
                                 <div className="d-flex justify-content-center">
-                                    <i className="fa-solid fa-meteor me-md-2"></i>
-                                    <p> Matemáticas</p>
+                                    {/*<i className="fa-solid fa-meteor me-md-2"></i>*/}
+                                    <h4 className='fw-bold'> Matemáticas</h4>
                                 </div>
-                                <div className="d-flex justify-content-center my-3 ">
-                                    <button className="btn btn-sm rounded-pill me-md-2" type="submit">Presencial</button>
-                                    <button className="btn btn btn-sm rounded-pill me-md-2" type="submit">Online</button>
-                                </div>
-                                <div>
-                                    <button className="btn btn-outline-success rounded-pill me-1" type="submit">Seguir
-                                    </button>
-                                    <button type="button" className="btn btn-sm rounded-pill me-md-2">
-                                        <i className="far fa-heart profile-icons icons-size"></i>
-                                    </button>
-                                    <button type="button" className="btn btn-sm rounded-pill me-md-2">
-                                        <i className="fas fa-share profile-icons icons-size"></i>
-                                    </button>
-                                    <button className="btn dropdown-toggle btn-sm rounded-pill" type="button"
-                                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i className="fas fa-ellipsis-h profile-icons icons-size"></i>
-                                    </button>
-                                    <ul id="dropdown" className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a className="dropdown-item" href="#">Reportar</a></li>
-                                    </ul>
+                                <div className="d-flex justify-content-center mt-1 mb-4 ">
+                                    <span className="me-md-4">Presencial</span>
+                                    <span className="me-md-2">Online</span>
                                 </div>
                                 <div className="d-flex justify-content-start mt-3">
                                     <i className="fas fa-map-marked-alt icons-size me-md-2"></i>
@@ -74,9 +59,20 @@ const MentorsProfileModule = ({ mentorP }) => {
                                         </iframe>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Editar Perfil
-                                </button>
+                                {
+                                    //console.log(props.firebaseUser)
+                                }
+                                {
+                                    
+                                    isMyProfile ? 
+                                    (<button type="button" className="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Editar Perfil
+                                    </button>)
+                                    :
+                                    (<button type="button" className="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Reservar clase
+                                    </button>)
+                                }
 
                             </div>
 
@@ -90,19 +86,19 @@ const MentorsProfileModule = ({ mentorP }) => {
 
 
 
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div className="modal-dialog">
+                                        <div className="modal-content">
+                                            <div className="modal-header">
+                                                <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body">
+                                            <div className="modal-body">
                                                 ...
                                             </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            <div className="modal-footer">
+                                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" className="btn btn-primary">Save changes</button>
                                             </div>
                                         </div>
                                     </div>

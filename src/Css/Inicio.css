@@ -362,3 +362,14 @@ footer i {
     height: 11rem !important;
     object-fit: cover;
 }
+
+.not-found {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 5rem !important;
+}
+
+h4 {
+    color: var(--colorSecondarySubtitle);
+}

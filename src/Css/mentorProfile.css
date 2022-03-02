@@ -1,0 +1,8 @@
+@import url("../global/css/variables.css");
+
+h2 {
+    font-family: var(--font-h2);
+    font-size: var(--fontH2Size);
+    font-weight: var(--font-semi-bold);
+    color: var(--colorMainSubtitle);
+}
