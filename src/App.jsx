@@ -7,21 +7,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Login from "./modulos/Login";
 import { auth } from './firebase'
 import Configuracion from './modulos/Configuracion';
-<<<<<<< HEAD
-import { MentorsProfileModule } from './modulos/MentorsProfileModules';
-import {UserProfileInformation} from './modulos/UserProfile'
-import {Mentor, mentor} from "./mentor"
-let mentorProfile = {
-  "name": "Merida valiente",
-  "sobremi": "hola yo soy merida valiente",
-  "educacion": "por el momento no tengo educacion",
-  "datosCuriosos": "Soy super ensenando"
-}
-=======
 import {MentorsProfileModule} from "./modulos/MentorsProfile";
-import reactDom from 'react-dom';
+import {Mentor} from "./mentor"
+import { UrlDynamic } from './modulos/urlDynamic';
 
->>>>>>> 0fbb75286e6468d0021adcbf818f555ed57a6152
+
 
 function App() {  
 
@@ -29,7 +19,12 @@ function App() {
     "name":"Merida valiente",
     "sobremi":"hola yo soy merida valiente",
     "educacion": "por el momento no tengo educacion",
-    "datosCuriosos":"Soy super ensenando"
+    "datosCuriosos":"Soy super ensenando",
+    "nombrePerfil":"Sofía Aguilar",
+    "locacionPerfil":"Guadalajara, Jalisco",
+    "emailPerfil":"sa.aguilarvaldez@gmail.com",
+    "presentacion":"¡Hola! Me llamo Sofía y estoy buscando un mentor para aprender matemáticas.",
+    "imagePerfil":"./Rosa Carrillo Saturno.png"
     })
 
   const [firebaseUser, setFirebaseUser] = React.useState(false)
@@ -78,20 +73,25 @@ function App() {
           <Route path="/" exact>
             <Home />
           </Route>
-<<<<<<< HEAD
           <Route path="/MentorsMenu">
             <MentorsMenu info={Mentor}/>
           </Route>
-=======
-          
->>>>>>> 0fbb75286e6468d0021adcbf818f555ed57a6152
+           
           <Route path="/mentorsProfile">
-            <MentorsProfileModule mentorProfileInformationParameter = {mentorprofileInformation} setMentorProfileFunction = {setMentorProfile}/>{/* Se pueden utilizar props se eliminariam mentorProfileInformationParameter setMentorProfileFunction*/}
-          </Route>
+            <MentorsProfileModule mentorProfileInformationParameter = {mentorprofileInformation} setMentorProfileFunction = {setMentorProfile}/>{/* Se pueden utilizar props se eliminariam mentorProfileInformationParameter setMentorProfileFunction*/} 
+          </Route> 
           
-          {/*<Route path="/userProfileInfo">
-            <UserProfileInformation mentorP={mentorProfile} />
-  </Route>*/}
+          <Route path="/:typeP/:userId">
+            <UrlDynamic 
+              
+              error={null} 
+
+              mentor={mentorprofileInformation} 
+              
+              setmentor={setMentorProfile}
+             />
+            {/* Se pueden utilizar props se eliminariam mentorProfileInformationParameter setMentorProfileFunction*/}
+          </Route>
 
           
 

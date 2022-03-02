@@ -9,11 +9,6 @@ const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfi
     const imageAbout = require.context('../global/assets/images', true);
 
     return (    
-<<<<<<< HEAD
-        
-        
-=======
->>>>>>> 0fbb75286e6468d0021adcbf818f555ed57a6152
         <div className="container-xxl">
         <main className="pt-5 mt-5">
         <div className="row">
