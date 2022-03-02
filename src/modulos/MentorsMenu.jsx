@@ -3,17 +3,14 @@ import React,{useState} from 'react'
 import FiltroBusqueda from '../Redux/FiltroBusqueda';
 import {CardMentor} from './cardMentor';
 
-function MentorsMenu(props){
-    
-
-   
-    const[mentor,setMentor] = useState(props.info);
-    const cont =props.info.map((item,index)=><CardMentor name={item.name}class={item.class} price={item.price } />)
-        console.log(props.info)
-
+function MentorsMenu(props){    
+  console.log(props.info.items)
+  const [mentor,setMentor]=useState(props.info.items)
+  const cont =mentor.map((item)=><CardMentor price={item.price} name={item.name} img={item.img} class={item.class}/>)
+  
     return (
       <>
-        <div class="container">
+              <div className="container">
           <div className="mt-4" id="main">
             <section className="titulo">
               <div className="text-center mt-3  pt-5">
@@ -30,11 +27,12 @@ function MentorsMenu(props){
             <hr />
             <FiltroBusqueda  mentor={mentor} setMentor={setMentor}/>
             <hr />
-            <div>
-            {cont}
-            </div>
+            
           </div>
         </div>
+        <div className=" row justify-content-md-center position-relative py-3">
+            {cont}
+            </div>
       </>
     );
 

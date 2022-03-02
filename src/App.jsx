@@ -14,7 +14,7 @@ import { UrlDynamic } from './modulos/urlDynamic';
 
 
 function App() {  
-
+  console.log(Mentor)
   const [mentorprofileInformation, setMentorProfile] = React.useState({
     "name":"Merida valiente",
     "sobremi":"hola yo soy merida valiente",
@@ -32,7 +32,7 @@ function App() {
   React.useEffect(() => {
     const fetchUser = () => {
       auth.onAuthStateChanged(user => {
-        console.log(user)
+       
         if (user) {
           setFirebaseUser(user)
         } else {
