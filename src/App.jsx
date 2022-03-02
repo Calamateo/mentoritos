@@ -3,6 +3,7 @@ import AboutUs from "./modulos/AboutUs";
 import MentorsMenu from "./modulos/MentorsMenu";
 import Home from "./modulos/Home";
 import Navbar from "./modulos/Navbar";
+import Page404 from './modulos/Page404';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Login from "./modulos/Login";
 import { auth } from './firebase'
