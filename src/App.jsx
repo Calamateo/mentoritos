@@ -10,6 +10,7 @@ import Configuracion from './modulos/Configuracion';
 import { MentorsProfileModule } from "./modulos/MentorsProfile";
 import { Mentor } from "./mentor"
 import { UrlDynamic } from './modulos/urlDynamic';
+import Loading from './modulos/Loading';
 
 
 
@@ -77,9 +78,7 @@ function App() {
             <Login login1={true} />
           </Route>
 
-          <Route path="/loading">
-            <Loading />
-          </Route>
+
 
           <Route path="/" exact>
             <Home />
