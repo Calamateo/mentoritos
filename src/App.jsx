@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from "react";
 import AboutUs from "./modulos/AboutUs";
 import MentorsMenu from "./modulos/MentorsMenu";
 import Home from "./modulos/Home";
@@ -12,8 +12,18 @@ import { MentorsProfileModule } from "./modulos/MentorsProfile";
 import { Mentor } from "./mentor"
 import { UrlDynamic } from './modulos/urlDynamic';
 import Loading from './modulos/Loading'
+import PersonalInfoStep from "./modulos/MultiStepForm/PersonalnfoStep";
+import MentorInfoStep from "./modulos/MultiStepForm/MentorInfoStep";
+import StudentInfoStep from "./modulos/MultiStepForm/StudentInfoStep";
 
 function App() {
+  const [firebaseUser, setFirebaseUser] = React.useState(false);
+
+  const [user, setUser] = useState({});
+
+  const updateUser = (values) => {
+    setUser((prevUser) => ({ ...prevUser, ...values }));
+  };
 
   const [mentorprofileInformation, setMentorProfile] = React.useState({
     "name": "Merida valiente",
@@ -61,14 +71,29 @@ function App() {
 
   return firebaseUser !== false ? (
     <Router>
-      <div >
+      <div>
         <Navbar firebaseUser={firebaseUser} />
         <Switch>
 
           <Route path="/login">
             <Login login1={false} />
           </Route>
-
+          <Route
+            render={(props) => (
+              <PersonalInfoStep
+                {...props}
+                user={user}
+                updateUser={updateUser}
+              />
+            )}
+            path="/first"
+          ></Route>
+          <Route path="/MentorInfoStep">
+            <MentorInfoStep />
+          </Route>
+          <Route path="/StudentInfoStep">
+            <StudentInfoStep />
+          </Route>
           <Route path="/aboutUs">
             <AboutUs />
           </Route>

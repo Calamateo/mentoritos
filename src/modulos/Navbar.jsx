@@ -26,7 +26,6 @@ function Navbar(props) {
     const usuario = useSelector(store => store.usuario.user)
     return (
         <div>
-            {console.log(props.firebaseUser)}
             {
                 props.firebaseUser !== null ?
                     (
