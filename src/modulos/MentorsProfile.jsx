@@ -46,7 +46,7 @@ const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfi
                                         </iframe>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#modaltestcaro">
+                                <button type="button" class="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Editar Perfil
                                 </button>
                             </div>
