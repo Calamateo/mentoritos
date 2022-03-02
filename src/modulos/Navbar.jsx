@@ -56,7 +56,8 @@ function Navbar(props) {
                                         <Link className="nav-link dropdown-toggle" to="!#" id="navbarDropdownMenuLink" role="button"
                                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <img id="profileImg"
-                                                src={usuario.fotoURL}
+                                                
+                                                /*src={usuario.fotoURL}*/
                                                 width="40" height="40" className="rounded-circle" alt="" />
                                         </Link>
                                         <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

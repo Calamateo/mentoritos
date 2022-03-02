@@ -5,9 +5,9 @@ import Home from "./modulos/Home";
 import Navbar from "./modulos/Navbar";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Login from "./modulos/Login";
-
 import { auth } from './firebase'
 import Configuracion from './modulos/Configuracion';
+<<<<<<< HEAD
 import { MentorsProfileModule } from './modulos/MentorsProfileModules';
 import {UserProfileInformation} from './modulos/UserProfile'
 import {Mentor, mentor} from "./mentor"
@@ -17,8 +17,20 @@ let mentorProfile = {
   "educacion": "por el momento no tengo educacion",
   "datosCuriosos": "Soy super ensenando"
 }
+=======
+import {MentorsProfileModule} from "./modulos/MentorsProfile";
+import reactDom from 'react-dom';
 
-function App() {
+>>>>>>> 0fbb75286e6468d0021adcbf818f555ed57a6152
+
+function App() {  
+
+  const [mentorprofileInformation, setMentorProfile] = React.useState({
+    "name":"Merida valiente",
+    "sobremi":"hola yo soy merida valiente",
+    "educacion": "por el momento no tengo educacion",
+    "datosCuriosos":"Soy super ensenando"
+    })
 
   const [firebaseUser, setFirebaseUser] = React.useState(false)
 
@@ -66,16 +78,20 @@ function App() {
           <Route path="/" exact>
             <Home />
           </Route>
+<<<<<<< HEAD
           <Route path="/MentorsMenu">
             <MentorsMenu info={Mentor}/>
           </Route>
+=======
+          
+>>>>>>> 0fbb75286e6468d0021adcbf818f555ed57a6152
           <Route path="/mentorsProfile">
-            <MentorsProfileModule mentorP={mentorProfile} />
+            <MentorsProfileModule mentorProfileInformationParameter = {mentorprofileInformation} setMentorProfileFunction = {setMentorProfile}/>{/* Se pueden utilizar props se eliminariam mentorProfileInformationParameter setMentorProfileFunction*/}
           </Route>
           
-          <Route path="/userProfileInfo">
+          {/*<Route path="/userProfileInfo">
             <UserProfileInformation mentorP={mentorProfile} />
-          </Route>
+  </Route>*/}
 
           
 
