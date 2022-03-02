@@ -2,10 +2,13 @@ import React from 'react'
 /*import '../Css/mentorsProfile.css'*/
 import {AcordionItem} from './mentorsProfileModules/AcordionItem'
 import { Modal } from './mentorsProfileModules/EditarModal'
+import ShoppingCar1 from "./ShoppingCar/ShoppingCar1";
 
 const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfileFunction}) =>{
     const imageMentor = require.context('../global/assets/images', true);
     const imageAbout = require.context('../global/assets/images', true);
+
+    let myProfile = false;
 
     return (    
         <div className="container-xxl">
@@ -46,12 +49,18 @@ const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfi
                                         </iframe>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Editar Perfil
-                                </button>
+                                {
+                                    myProfile ? 
+                                    (<button type="button" class="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Editar Perfil
+                                    </button>) :
+                                    (<button type="button" class="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#payment">
+                                        Reservar clase
+                                    </button>)
+                                }
                             </div>
 
-
+                            <ShoppingCar1 />
                             <Modal mentorprofileInformation={mentorProfileInformationParameter} setMentorProfile={setMentorProfileFunction} />{/*modal*/}
 
                             <div className="card-body" id="drop-description">

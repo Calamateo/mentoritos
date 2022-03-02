@@ -16,6 +16,10 @@ import PersonalInfoStep from "./modulos/MultiStepForm/PersonalnfoStep";
 import MentorInfoStep from "./modulos/MultiStepForm/MentorInfoStep";
 import StudentInfoStep from "./modulos/MultiStepForm/StudentInfoStep";
 import { UserProfileInformation } from "./modulos/UserProfile";
+import ShoppingCar1 from "./modulos/ShoppingCar/ShoppingCar1";
+import ShoppingCar2 from "./modulos/ShoppingCar/ShoppingCar2";
+import ShoppingCar3 from "./modulos/ShoppingCar/ShoppingCar3";
+import ShoppingCar4 from "./modulos/ShoppingCar/ShoppingCar4";
 
 function App() {
   const [user, setUser] = useState({});
@@ -108,10 +112,7 @@ function App() {
             <MentorsMenu info={Mentor} />
           </Route>
 
-          <Route path="/UserProfile">
-            <UserProfileInformation />
-          </Route>
-
+          
           <Route path="/mentorsProfile">
             <MentorsProfileModule
               mentorProfileInformationParameter={mentorprofileInformation}
@@ -127,6 +128,22 @@ function App() {
               setmentor={setMentorProfile}
             />
             {/* Se pueden utilizar props se eliminariam mentorProfileInformationParameter setMentorProfileFunction*/}
+          </Route>
+
+          <Route path="/ShoppingCar1">
+            <ShoppingCar1 />
+          </Route>
+
+          <Route path="/ShoppingCar2">
+            <ShoppingCar2 />
+          </Route>
+
+          <Route path="/ShoppingCar3">
+            <ShoppingCar3 />
+          </Route>
+
+          <Route path="/ShoppingCar4">
+            <ShoppingCar4 />
           </Route>
 
           <Route path="/configuracion" exact>
