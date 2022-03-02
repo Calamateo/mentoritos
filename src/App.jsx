@@ -1,5 +1,6 @@
 import React from 'react'
 import AboutUs from "./modulos/AboutUs";
+import MentorsMenu from "./modulos/MentorsMenu";
 import Home from "./modulos/Home";
 import Navbar from "./modulos/Navbar";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -7,7 +8,7 @@ import Login from "./modulos/Login";
 import { auth } from './firebase'
 import Configuracion from './modulos/Configuracion';
 import {MentorsProfileModule} from "./modulos/MentorsProfile";
-
+import {Mentor} from "./mentor"
 import { UrlDynamic } from './modulos/urlDynamic';
 
 
@@ -72,10 +73,13 @@ function App() {
           <Route path="/" exact>
             <Home />
           </Route>
-          
-          <Route path="/mentorsProfil">
-            <MentorsProfileModule mentorProfileInformationParameter = {mentorprofileInformation} setMentorProfileFunction = {setMentorProfile}/>{/* Se pueden utilizar props se eliminariam mentorProfileInformationParameter setMentorProfileFunction*/}
+          <Route path="/MentorsMenu">
+            <MentorsMenu info={Mentor}/>
           </Route>
+           
+          <Route path="/mentorsProfile">
+            <MentorsProfileModule mentorProfileInformationParameter = {mentorprofileInformation} setMentorProfileFunction = {setMentorProfile}/>{/* Se pueden utilizar props se eliminariam mentorProfileInformationParameter setMentorProfileFunction*/} 
+          </Route> 
           
           <Route path="/:typeP/:userId">
             <UrlDynamic 
@@ -88,6 +92,8 @@ function App() {
              />
             {/* Se pueden utilizar props se eliminariam mentorProfileInformationParameter setMentorProfileFunction*/}
           </Route>
+
+          
 
           <RutaPrivada path="/configuracion" exact>
             <Configuracion />

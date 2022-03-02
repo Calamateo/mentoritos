@@ -12,7 +12,7 @@ const UrlDynamic= (props) =>{
 const {userId}=useParams();
 const {typeP}=useParams();
 const [user,steUser]=useState({"hola":""});
-const [mentor,setMentor]=useState({"hola":""});
+const [mentor,setMentor]=useState();
 
     //props.mentor.state=true;
     // React.useEffect(() => {
