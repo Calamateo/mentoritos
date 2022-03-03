@@ -22,6 +22,8 @@ import ShoppingCar4 from "./modulos/ShoppingCar/ShoppingCar4";
 import {MentorsProfileOwn} from "./modulos/MentorsProfileOwn";
 import PrivacyPolicy from "./modulos/PrivacyPolicy";
 import Terms from "./modulos/Terms"
+import Obtener from "./modulos/Obtener";
+
 
 function App() {
   const [user, setUser] = useState({});
@@ -113,9 +115,11 @@ function App() {
           </Route>
 
 
+
           {/* <Route path="/datos">
             <Obtener />
           </Route> */}
+
 
           <Route path="/mentorsProfile">
             <MentorsProfileModule
@@ -127,12 +131,12 @@ function App() {
 
           <Route path="/mentorsProfileOwn">
             <MentorsProfileOwn mentorProfileInformationParameter={mentorprofileInformation}
-              setMentorProfileFunction={setMentorProfile}/>
+              setMentorProfileFunction={setMentorProfile} />
           </Route>
 
           <Route path="/:typeP/:userId">
             <UrlDynamic
-              error={null}
+              error={<Page404 />}
               mentor={mentorprofileInformation}
               setmentor={setMentorProfile}
             />

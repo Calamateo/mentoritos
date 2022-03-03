@@ -80,6 +80,12 @@ h1 span {
     background-repeat: no-repeat;
 }
 
+#banner button{
+    background-color: var(--colorSecondaryBg);
+    border-style: none;
+    font-family: var(--font-body);
+}
+
 /*  animacion de planteta de home    */
 
 /*

@@ -31,8 +31,9 @@ const MentorInfoStep = (props) => {
   const [education, setEducation] = useState("")
   const [portafolio, setPortafolio] = useState("")
   const [videoUrl, setVideoUrl] = useState("")
-  const [terminos, setTerminos] = useState(false)
   const [infoMentor, setInfoMentor] = useState([])
+  const [terminos, setTerminos] = useState(false)
+  const [reg, setReg] = useState(false)
 
   const mat = {
     1: 'Cocina japonesa',
@@ -118,6 +119,8 @@ const MentorInfoStep = (props) => {
         .catch((error) => console.log("error", error));
 
       sessionStorage.setItem("infomentor", JSON.stringify(data));
+      setReg(!reg)
+      setTerminos(!terminos)
     }
   }
 
@@ -357,7 +360,14 @@ const MentorInfoStep = (props) => {
                   </Button>
                   <Button variant="contained"
                     onClick={agrgarDatos}
-                    disabled={!terminos} >Completar Registro</Button>
+                    disabled={!terminos} >Guardar Registro</Button>
+
+                  <Button variant="contained"
+                    sx={{ marginLeft: 4 }}
+                    disabled={!reg}
+                    onClick={() => props.history.push("/")}
+                    disabled={!reg} >Completar Registro</Button>
+
                 </div>
               </Form>
             )}

@@ -2,7 +2,7 @@ import React from "react"
 
 
 const CardMentor =(props)=>{
-console.log(props)
+
 return(
     
     <div name="item" className=" m-3 position-relative"  id= "mentorCard"  style={{"width": "18rem"}} >
