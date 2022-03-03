@@ -54,39 +54,6 @@ const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfi
                                     (<Link to="/ShoppingCar" className="btn btn-primary buttons rounded-pill mt-3">Reservar clase</Link>)
                                 }
                             </div>
-
-                            {/*<ShoppingCar shoppingCar1={shoppingCar1} setShoppingCar1={setShoppingCar1} shoppingCar2={shoppingCar2} setShoppingCar2={setShoppingCar2}>
-                                {
-                                    // if (shoppingCar1) {
-                                    //     <h3>¿Qué tipo de clase estás buscando?</h3>
-                                    // }
-                                }
-                                 <h3>¿Qué tipo de clase estás buscando?</h3>
-                                <div className="form-check mt-3">
-                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
-                                    <label className="form-check-label" htmlFor="flexRadioDefault1">
-                                        Presencial
-                                    </label>
-                                </div>
-                                <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                                    <label className="form-check-label" htmlFor="flexRadioDefault2">
-                                        En linea
-                                    </label>
-                                </div>
-                                <div className="modal-footer mt-4">
-                                    <button
-                                        type="button"
-                                        className="btn btn-secondary"
-                                        data-bs-dismiss="modal"
-                                    >
-                                        Cancelar
-                                    </button>
-                                    <button type="button" class="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#payment2">
-                                        Siguiente
-                                    </button>
-                                </div> 
-                            </ShoppingCar> */}
                             <Modal mentorprofileInformation={mentorProfileInformationParameter} setMentorProfile={setMentorProfileFunction} />{/*modal*/}
 
                             <div className="card-body" id="drop-description">
@@ -98,46 +65,6 @@ const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfi
 
 
                             </div>
-                        </div>
-
-
-                        <div id='calendar'></div>
-                        <div className="card-footer">
-                            <h2 className="mb-3">Comentarios</h2>
-                            <div className="row">
-                                <div className="col-3">
-                                    <img src={imageAbout('./about-us/avatar.png')} className="rounded-circle" style={{ width: "100px" }} alt="..." />
-                                </div>
-                                <div className="col-6">
-                                    <h2 className="titulo-comentario">Harry</h2>
-                                    <p className="cometario"><small>Lorem ipsum, dolor sit amet consectetur adipisicing
-                                        elit. Est, nostrum autem voluptates a quia architecto omnis atque quos sunt
-                                        quas vel illo, voluptas hic, molestiae et accusamus culpa fugiat
-                                        aliquid.</small></p>
-                                </div>
-                                <div className="col-3 text-warning">
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-3">
-                                    <img src={imageAbout('./about-us/avatar.png')} className="rounded-circle" style={{ width: "100px" }} alt="..." />
-                                </div>
-                                <div className="col-6">
-                                    <h2 className="titulo-comentario">Draco</h2>
-                                    <p className="cometario"><small>Pesimo servicio, tuvo la osadia de hablarme como si
-                                        fuera su igual, es un sangre sucia inmunda.
-                                        Mi padre se enterara de esto!</small></p>
-                                </div>
-                                <div className="col-3 text-warning">
-                                    <i className="fas fa-star"></i>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
