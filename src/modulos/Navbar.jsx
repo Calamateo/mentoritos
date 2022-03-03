@@ -55,10 +55,10 @@ function Navbar(props) {
                                             <NavLink className="nav-link" to="/aboutUs">sobre nosotros</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link" to="/mentorsProfile">mi perfil mentor</Link>
+                                            <Link className="nav-link" to="/mentorsProfile">perfil mentor</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link" to="/userProfileInfo">mi perfil usuario</Link>
+                                            <Link className="nav-link" to="/mentorsProfileOwn">mi perfil usuario</Link>
                                         </li>
                                         <li className="nav-item dropstart">
                                             <Link className="nav-link dropdown-toggle" to="!#" id="navbarDropdownMenuLink" role="button"

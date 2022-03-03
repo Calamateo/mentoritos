@@ -34,9 +34,9 @@ function App() {
 
   const [mentorprofileInformation, setMentorProfile] = React.useState({
     name: "Merida valiente",
-    sobremi: "hola yo soy merida valiente",
-    educacion: "por el momento no tengo educacion",
-    datosCuriosos: "Soy super ensenando",
+    sobremi: "Todos tenemos algo que enseñar y algo que aprender, amo esa frase",
+    educacion: "Mi educación es licenciatura en ingeniería biomédica",
+    datosCuriosos: "Amo los gatitos y perritos",
     nombrePerfil: "Sofía Aguilar",
     locacionPerfil: "Guadalajara, Jalisco",
     emailPerfil: "sa.aguilarvaldez@gmail.com",
