@@ -81,25 +81,25 @@ const PersonalInfoStep = (props) => {
       } else {
         setPagina('/StudentInfoStep')
         const bd = { datos: JSON.parse(localStorage.getItem('usuario')) };
-        const data = {
+        const datas = {
           uid: bd.datos.uid,
-          image_profile: bd.datos.url_Imagen,
           name: nombre,
           lastname: apellido,
-          birthday: "",
+          birthday: "2000-01-01",
+          image_profile: bd.datos.fotoURL,
           location: ubicacion,
           phone: telefono,
           about: "",
           education: "",
           interests: "",
-          register_date: "",
+          registerDate: "2022-03-15T05:23:12",
           user_id: getId
         }
         setInformacion([
           ...informacion,
-          data
+          datas
         ])
-        sessionStorage.setItem("informacionPersonal", JSON.stringify(data))
+        sessionStorage.setItem("informacionPersonalStudent", JSON.stringify(datas))
       }
     }
     console.log(informacion);

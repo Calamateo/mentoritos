@@ -11,9 +11,9 @@ const StudentInfoStep = (props) => {
   const registrar = (e) => {
     e.preventDefault();
 
-    if (sessionStorage.getItem("informacionPersonal")) {
+    if (sessionStorage.getItem("informacionPersonalStudent")) {
       const db = {
-        d: JSON.parse(sessionStorage.getItem("informacionPersonal")),
+        d: JSON.parse(sessionStorage.getItem("informacionPersonalStudent")),
       };
 
       console.log(db);
@@ -31,7 +31,7 @@ const StudentInfoStep = (props) => {
         about: about,
         education: education,
         interests: portafolio,
-        register_date: "2022-03-15T05:23:12"
+        registerDate: "2022-01-01T05:23:12"
       };
 
       console.log(data);
