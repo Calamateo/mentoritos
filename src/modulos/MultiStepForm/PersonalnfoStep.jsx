@@ -1,12 +1,27 @@
 import React from "react";
 
 import { Formik, Form, Field } from "formik";
-import { FormControlLabel, FormControl, FormLabel, Radio, RadioGroup, Button, TextField } from "@mui/material";
+import {
+  FormControlLabel,
+  FormControl,
+  FormLabel,
+  Radio,
+  RadioGroup,
+  Button,
+  TextField,
+} from "@mui/material";
 
 import { withRouter } from "react-router-dom";
 
 const PersonalInfoStep = (props) => {
-
+  const [nombre, setNombre] = React.useState("");
+  const [apellido, setApellido] = React.useState("");
+  const [telefono, setTelefono] = React.useState("");
+  const [ubicacion, setUbicacion] = React.useState("");
+  const [mentor, setMentor] = React.useState(false);
+  const [guardado, setGuardado] = React.useState(false);
+  const [pagina, setPagina] = React.useState("");
+  const [informacion, setInformacion] = React.useState([]);
   const [nombre, setNombre] = React.useState('')
   const [apellido, setApellido] = React.useState('')
   const [telefono, setTelefono] = React.useState('')
@@ -43,17 +58,17 @@ const PersonalInfoStep = (props) => {
   const agregarInfo = e => {
     e.preventDefault()
     if (!nombre.trim()) {
-      console.log('Campo vacio')
-      return
+      console.log("Campo vacio");
+      return;
     }
-    if (localStorage.getItem('usuario')) {
-      const bd = { datos: JSON.parse(localStorage.getItem('usuario')) };
+    if (localStorage.getItem("usuario")) {
+      const bd = { datos: JSON.parse(localStorage.getItem("usuario")) };
       console.log(bd);
-      console.log(bd.datos.uid)
+      console.log(bd.datos.uid);
 
       setGuardado(!guardado);
       if (mentor) {
-        setPagina('/MentorInfoStep')
+        setPagina("/MentorInfoStep");
         const data = {
           price: "",
           portfolio: "",
@@ -78,8 +93,9 @@ const PersonalInfoStep = (props) => {
 
         sessionStorage.setItem("informacionPersonal", JSON.stringify(data))
 
+        sessionStorage.setItem("informacionPersonal", JSON.stringify(data));
       } else {
-        setPagina('/StudentInfoStep')
+        setPagina("/StudentInfoStep");
         const data = {
           uid: bd.datos.uid,
           name: nombre,
@@ -102,22 +118,23 @@ const PersonalInfoStep = (props) => {
       }
     }
     console.log(informacion);
-
-
-  }
-
-
-
+  };
 
   return (
     <div className="form-section">
-      <div className="row">
-        <div className="col "></div>
+      <div className="text-form">
+        <h2>Te damos la bienvenida a </h2>
+        <h1>Mentoritos</h1>
+        <p className="text-white">
+          Por favor llena los siguientes campos para crear tu cuenta.
+        </p>
+      </div>
+      <div className="row justify-content-center">
         <div
-          className="col-md-6 card py-5 px-4"
+          className="col-md-6 card form-container"
           style={{ backgroundColor: "beige" }}
         >
-          <div className="form-container mt-5">
+          <div>
             <Formik
               initialValues={{
                 userName: "",
@@ -153,31 +170,40 @@ const PersonalInfoStep = (props) => {
               {({ handleSubmit }) => (
                 <Form onSubmit={handleSubmit}>
                   <div className="mt-5">
-                    <h3>Cuéntanos más sobre de ti</h3>
-                    <Field
-                      name="firstName"
-                      component={TextField}
-                      onChange={e => setNombre(e.target.value)}
-                      label="Nombre"
-                    ></Field>
-                    <Field
-                      name="lastName"
-                      component={TextField}
-                      onChange={e => setApellido(e.target.value)}
-                      label="Apellido"
-                    ></Field>
+                    <div className="col-ms">
+                      <Field
+                        sx={{ marginRight: 6, minWidth: 300 }}
+                        name="firstName"
+                        component={TextField}
+                        onChange={(e) => setNombre(e.target.value)}
+                        label="Nombre"
+                      ></Field>
+                    </div>
+                    <div className="col-ms">
+                      <Field
+                        sx={{ marginRight: 6, minWidth: 300 }}
+                        name="lastName"
+                        component={TextField}
+                        onChange={(e) => setApellido(e.target.value)}
+                        label="Apellido"
+                      ></Field>
+                    </div>
                     {/* <Field
                       name="birthday"
                       component={TextField}
                       label="Fecha de nacimiento"
                     ></Field> */}
+                    <div className="col-ms">
+                      <Field
+                        sx={{ marginRight: 6, minWidth: 300 }}
+                        name="location"
+                        component={TextField}
+                        label="Ubicación"
+                        onChange={(e) => setUbicacion(e.target.value)}
+                      ></Field>
+                    </div>
                     <Field
-                      name="location"
-                      component={TextField}
-                      label="Ubicación"
-                      onChange={e => setUbicacion(e.target.value)}
-                    ></Field>
-                    <Field
+                      sx={{ marginRight: 6, minWidth: 300 }}
                       name="phone"
                       type="number"
                       component={TextField}
@@ -187,8 +213,10 @@ const PersonalInfoStep = (props) => {
                       }}
                       label="Teléfono"
                     ></Field>
-                    <h3>Elige como usaras Mentoritos ... </h3>
 
+                    <h3 style={{ marginTop: "30px" }}>
+                      Elige como usaras Mentoritos ...{" "}
+                    </h3>
                     <FormControl>
                       <FormLabel id="demo-row-radio-buttons-group-label"></FormLabel>
                       <RadioGroup
@@ -200,19 +228,18 @@ const PersonalInfoStep = (props) => {
                           value="Mentor"
                           control={<Radio />}
                           label="Mentor"
-                          onChange={e => setMentor(true)}
+                          onChange={(e) => setMentor(true)}
                         />
                         <FormControlLabel
                           value="Estudiante"
                           control={<Radio />}
                           label="Estudiante"
-                          onChange={e => setMentor(false)}
+                          onChange={(e) => setMentor(false)}
                         />
                       </RadioGroup>
                     </FormControl>
-
-
                     <Button
+                      className="buttons"
                       variant="contained"
                       onClick={agregarInfo}
                       disabled={guardado}
