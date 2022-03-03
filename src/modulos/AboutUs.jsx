@@ -290,7 +290,7 @@ const AboutUs = () => {
                                             <br /><br />
                                             <a href="https://github.com/Jorge-Mercado" target="_blanck" className='me-2'><i className="fab fa-github fs-2 network"></i></a>
                                             <a href="https://www.linkedin.com/in/jorge-mercado9530/" target="_blanck"><i className="fab fa-linkedin fs-2 network"></i></a>
-                                            </small></p>
+                                        </small></p>
                                     </div>
                                 </div>
                             </div>
@@ -319,7 +319,7 @@ const AboutUs = () => {
                                             <br /><br />
                                             <a href="https://github.com/Calamateo" target="_blanck" className='me-2'><i className="fab fa-github fs-2 network"></i></a>
                                             <a href="https://www.linkedin.com/in/calamateo/" target="_blanck"><i className="fab fa-linkedin fs-2 network"></i></a>
-                                            </small></p>
+                                        </small></p>
                                     </div>
                                 </div>
                             </div>
@@ -385,7 +385,7 @@ const AboutUs = () => {
                                             <br /><br />
                                             <a href="https://github.com/CaroCarrillo" target="_blanck" className='me-2'><i className="fab fa-github fs-2 network"></i></a>
                                             <a href="https://www.linkedin.com/in/carolina-carrillo-57416a182/" target="_blanck"><i className="fab fa-linkedin fs-2 network"></i></a>
-                                            </small></p>
+                                        </small></p>
                                     </div>
                                 </div>
                             </div>
@@ -452,7 +452,7 @@ const AboutUs = () => {
                                             <br /><br />
                                             <a href="https://github.com/sophisms" target="_blanck" className='me-2'><i className="fab fa-github fs-2 network"></i></a>
                                             <a href="https://www.linkedin.com/in/aguilarsofia/" target="_blanck"><i className="fab fa-linkedin fs-2 network"></i></a>
-                                            </small></p>
+                                        </small></p>
                                     </div>
                                 </div>
                             </div>
@@ -488,7 +488,7 @@ const AboutUs = () => {
                                             <br /><br />
                                             <a href="https://github.com/rosecs" target="_blanck" className='me-2'><i className="fab fa-github fs-2 network"></i></a>
                                             <a href="https://www.linkedin.com/in/rosa-laura-carrillo-soledad-9446791ba/" target="_blanck"><i className="fab fa-linkedin fs-2 network"></i></a>
-                                            </small></p>
+                                        </small></p>
                                     </div>
                                 </div>
                             </div>
@@ -550,7 +550,7 @@ const AboutUs = () => {
                             <h3>Generation México</h3>
                             <p className="text-white">Nuestro equipo inició con una capacitación como Desarrollador Java Full Stack
                                 donde comenzamos
-                                nuestras bases para poder iniciar con "Mentoritos"</p>
+                                nuestras bases para poder iniciar con "Mentoritos".</p>
 
                         </div>
                     </div>
@@ -577,7 +577,7 @@ const AboutUs = () => {
                             <div>
                                 <h3>Programación Frontend</h3>
                             </div>
-                            <p className="text-white">Creamos diseños agradables visualmente para que los usuarios de Mentoris
+                            <p className="text-white">Creamos diseños agradables visualmente para que los usuarios de Mentoritos
                                 disfruten la experiencia
                                 visual con nosotros.</p>
 
@@ -592,7 +592,7 @@ const AboutUs = () => {
                             <div className="date">24 ENE 2022</div>
                             <p className="text-white">Manejamos operaciones con bases de datos y autenticación de usuarios, siempre
                                 buscando nuevas ideas
-                                para proteger a nuestros usuarios de Mentoris.</p>
+                                para proteger a nuestros usuarios de Mentoritos.</p>
 
                         </div>
 
@@ -621,7 +621,7 @@ const AboutUs = () => {
 
             {/* <!-- contact form --> */}
             <section id="contact-form" className="space-between-sections">
-                <ContactForm/>
+                <ContactForm />
             </section >
             {/* <!-- contact form --> */}
 
@@ -629,12 +629,6 @@ const AboutUs = () => {
             <footer>
                 <div className="container-xl">
                     <div className="row">
-                        <div className="col py-5">
-                            <br />
-                            <a href="!#" className="mb-0 pt-5">Enseña con nosotros</a><br />
-                            <a href="!#" className="mb-0">FAQ</a><br />
-                            <a href="!#">Reportar malas prácticas</a>
-                        </div>
                         <div className="col py-5">
                             <br />
                             <a href="!#" className="mb-0 pt-5">Enseña con nosotros</a><br />
