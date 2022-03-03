@@ -45,9 +45,9 @@ function Navbar(props) {
                                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="navbar-toggler-icon"></span>
                                 </button>
-                                <div className="collapse navbar-collapse justify-content-lg-end justify-content-sm-start"
+                                <div className="collapse navbar-collapse justify-content-lg-end justify-content-sm-start align-items-center"
                                     id="navbarNavAltMarkup">
-                                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                                         <li className="nav-item">
                                             <Link className="nav-link" to="/mentorsMenu">mentores</Link>
                                         </li>
