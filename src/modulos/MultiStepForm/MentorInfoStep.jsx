@@ -130,9 +130,9 @@ const MentorInfoStep = (props) => {
   return (
     <div className=" form-section ">
       <div className="text-form mb-5">
-        <h2>Cuentános más de ti...</h2>
+        <h2>Configura tu perfil de mentor</h2>
         <p className="text-white">
-          Por favor llena los siguientes campos que se adecuan a ti como mentor.
+          Por favor llena los siguientes campos que se adecuan a tí como mentor.
         </p>
       </div>
       <div

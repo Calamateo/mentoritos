@@ -81,10 +81,9 @@ const PersonalInfoStep = (props) => {
   return (
     <div className="form-section">
       <div className="text-form">
-        <h2>Te damos la bienvenida a </h2>
-        <h1>Mentoritos</h1>
+        <h2>Queremos conocerte</h2>
         <p className="text-white">
-          Por favor llena los siguientes campos para crear tu cuenta.
+          Por favor llena los siguientes campos con tu información personal.
         </p>
       </div>
       <div className="row justify-content-center">

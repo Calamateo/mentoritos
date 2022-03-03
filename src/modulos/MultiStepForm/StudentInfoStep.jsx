@@ -60,12 +60,10 @@ const StudentInfoStep = (props) => {
     <>
       <section className="form-section">
         <div className="text-form">
-          <h2>Cuentános más de ti... </h2>
-          <p className="text-white">
-            Por favor llena los siguientes campos para personalizar tu perfil.
-          </p>
+          <h2>Configura tu perfil de estudiante </h2>
+          <p className="text-white">Por favor llena los siguientes campos.</p>
         </div>
-        <div className=" form-container row mt-5  justify-content-center">
+        <div className=" form-container row mt-5 git a justify-content-center">
           <div
             className=" col-md-6 text-center "
             style={{ backgroundColor: "beige" }}
