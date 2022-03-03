@@ -207,7 +207,6 @@ console.log(temp);
     );
   
 
-    
 }
 
 export default MentorsMenu

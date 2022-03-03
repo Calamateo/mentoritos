@@ -16,6 +16,11 @@ import PersonalInfoStep from "./modulos/MultiStepForm/PersonalnfoStep";
 import MentorInfoStep from "./modulos/MultiStepForm/MentorInfoStep";
 import StudentInfoStep from "./modulos/MultiStepForm/StudentInfoStep";
 import { UserProfileInformation } from "./modulos/UserProfile";
+import ShoppingCar from "./modulos/ShoppingCar/ShoppingCar";
+import ShoppingCar2 from "./modulos/ShoppingCar/ShoppingCar2";
+import ShoppingCar3 from "./modulos/ShoppingCar/ShoppingCar3";
+import ShoppingCar4 from "./modulos/ShoppingCar/ShoppingCar4";
+import {MentorsProfileOwn} from "./modulos/MentorsProfileOwn"
 
 function App() {
   const [user, setUser] = useState({});
@@ -69,9 +74,6 @@ function App() {
       <div>
         <Navbar firebaseUser={firebaseUser} />
         <Switch>
-          <Route path="/login">
-            <Login login1={false} />
-          </Route>
           <Route
             render={(props) => (
               <PersonalInfoStep
@@ -92,13 +94,14 @@ function App() {
             <AboutUs />
           </Route>
 
+          <Route path="/login">
+            <Login login1={false} />
+          </Route>
           <Route path="/singUp">
             <Login login1={true} />
           </Route>
 
-          <Route path="/loading">
-            <Loading />
-          </Route>
+
 
           <Route path="/" exact>
             <Home />
@@ -108,8 +111,9 @@ function App() {
             <MentorsMenu info={Mentor} />
           </Route>
 
-          <Route path="/UserProfile">
-            <UserProfileInformation />
+
+          <Route path="/datos">
+            <Obtener />
           </Route>
 
           <Route path="/mentorsProfile">
@@ -120,6 +124,11 @@ function App() {
             {/* Se pueden utilizar props se eliminariam mentorProfileInformationParameter setMentorProfileFunction*/}
           </Route>
 
+          <Route path="/mentorsProfileOwn">
+            <MentorsProfileOwn mentorProfileInformationParameter={mentorprofileInformation}
+              setMentorProfileFunction={setMentorProfile}/>
+          </Route>
+
           <Route path="/:typeP/:userId">
             <UrlDynamic
               error={null}
@@ -127,6 +136,22 @@ function App() {
               setmentor={setMentorProfile}
             />
             {/* Se pueden utilizar props se eliminariam mentorProfileInformationParameter setMentorProfileFunction*/}
+          </Route>
+
+          <Route path="/ShoppingCar">
+            <ShoppingCar />
+          </Route>
+
+          <Route path="/ShoppingCar2">
+            <ShoppingCar2 />
+          </Route>
+
+          <Route path="/ShoppingCar3">
+            <ShoppingCar3 />
+          </Route>
+
+          <Route path="/ShoppingCar4">
+            <ShoppingCar4 />
           </Route>
 
           <Route path="/configuracion" exact>
