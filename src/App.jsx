@@ -19,7 +19,9 @@ import ShoppingCar from "./modulos/ShoppingCar/ShoppingCar";
 import ShoppingCar2 from "./modulos/ShoppingCar/ShoppingCar2";
 import ShoppingCar3 from "./modulos/ShoppingCar/ShoppingCar3";
 import ShoppingCar4 from "./modulos/ShoppingCar/ShoppingCar4";
-import {MentorsProfileOwn} from "./modulos/MentorsProfileOwn"
+import {MentorsProfileOwn} from "./modulos/MentorsProfileOwn";
+import PrivacyPolicy from "./modulos/PrivacyPolicy";
+import Terms from "./modulos/Terms"
 
 function App() {
   const [user, setUser] = useState({});
@@ -111,9 +113,9 @@ function App() {
           </Route>
 
 
-          <Route path="/datos">
+          {/* <Route path="/datos">
             <Obtener />
-          </Route>
+          </Route> */}
 
           <Route path="/mentorsProfile">
             <MentorsProfileModule
@@ -155,6 +157,14 @@ function App() {
 
           <Route path="/configuracion" exact>
             <Configuracion />
+          </Route>
+
+          <Route path="/privacyPolicy">
+            <PrivacyPolicy />
+          </Route>
+
+          <Route path="/terms">
+            <Terms />
           </Route>
 
           <Route path="*">

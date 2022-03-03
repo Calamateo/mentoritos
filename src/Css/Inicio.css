@@ -383,6 +383,14 @@ h4 {
     /* width: 5px; */
 }
 
+#text-justify p{
+    text-align: justify;
+} 
+
+#text-justify2 p{
+    text-align: justify;
+} 
+
 /* .modal-width {
     width: 70%;
 } */
