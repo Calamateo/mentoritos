@@ -1,93 +1,171 @@
 import React, { useState } from 'react'
 
-export default function FiltroBusqueda({mentor,setMentor}) {
+export default function FiltroBusqueda(props) {
 
   const [clase, setClase] = useState("");
   const [estrellas, setEstrellas] = useState("");
 
-    
-  const handleSubmit = (e) => {
-    
-    let filtrado = [];
+  const handleSubmit = e => {
 
-    if(clase != "") filtrado.push({"name":"class","valu":clase}) 
-    if(estrellas != "") filtrado.push({"name":"star","valu":estrellas})
+
+
+
+    e.preventDefault();
     alert("filtro de busqueda activado" + clase + " " + estrellas);
+    let filtro = ["star", "class"];
 
-     getOptionSearchBar(filtrado, mentor)
-   
-     e.preventDefault();
-   
-    
-  } 
+    let filtrado = {
+      star: `${estrellas}`,
+      class: `${clase}`,
+    };
 
-  function getOptionSearchBar(Categoryvalue, items ) {
-    var res =Categoryvalue.map((el)=>items.filter((item)=> !isNaN(parseInt(el.valu)) ? item[`${el.name}`] === parseInt( el.valu) : item[`${el.name}`] === el.valu ) )
-    let pibote=[]
-  
-    if(res.length!=0){
-      for (let i = 0; i < res[0].length ; i++) {
-        for (let a = 0; a < res[1].length; a++) {
-          if (res[0][i].id=== res[1][a].id) {
-            pibote.push(res[0][i])
-          }     
-        }
-      }
-      console.log(pibote,"pibote")
+
+    getOptionSearchBar(filtro, filtrado);
+
+  }
+
+  function getOptionSearchBar(CategoryOption, Categoryvalue, item = props.mentor) {
+
+
+    let cont = [];
+    let banderaStar = 0;
+    let banderaClass = 0;
+
+
+    if (Categoryvalue.star != "Selecciona..") {
+
+      banderaStar = 1;
+
     }
-    else{ console.log(res,"respuesta")}
-    
+
+    if (Categoryvalue.class != "Selecciona..") {
+
+      banderaClass = 1;
+    }
+
+
+    if (banderaClass == 1 && banderaStar == 0) {
+
+      for (let el = 0; el < item.length; el++) {
+        if (Categoryvalue.class == item[el].class) {
+
+          cont.push(item[el]);
+          // cont[index][variable] = item;
+
+
+        }
+
+      }
+
+    }
+
+
+    if (banderaClass == 0 && banderaStar == 1) {
+
+      for (let el = 0; el < item.length; el++) {
+        if (Categoryvalue.star == item[el].star) {
+
+          cont.push(item[el]);
+          // cont[index][variable] = item;
+
+
+        }
+
+      }
+
+    }
+
+
+    if (banderaClass == 1 && banderaStar == 1) {
+
+      for (let el = 0; el < item.length; el++) {
+        if (Categoryvalue.star == item[el].star && Categoryvalue.class == item[el].class) {
+
+          cont.push(item[el]);
+          // cont[index][variable] = item;
+
+
+        }
+
+      }
+
+
+      props.setMentor(cont);
+
+
+      //return (cont)
+      console.log(cont);
+    }
+  }
+
+  /*
+  function ClearSearch(){
   
+      let cont = [];
+      cont = mentor.items;
+  
+      inputMentor(cont,"Cards-Mentores");
   
   }
+  */
+
+
 
   return (
     <>
-      <h2>Formulario de busqueda</h2>
-      <div className="container-xl ">
-        <form className='row' onSubmit={ e => {handleSubmit(e) } }>
+      <h2>Formulario de búsqueda</h2>
+      <div className="container-xl">
+        <form onSubmit={handleSubmit}>
+          <div className="row">
             <div className="col-4">
-              <label htmlFor="">Filtrar por Asignatura</label>
-              <select
-                id="FilterClass"
-                className="form-control"
-                name="FilterClass"
-                onChange={(e) => setClase(e.target.value)}
-              >
-                <option selected>Selecciona..</option>
-                <option value="Música">Música</option>
-                <option value="Matemáticas">Matemáticas</option>
-                <option value="Quimica">Quimica</option>
-                <option value="Canto">Canto</option>
-                <option value="Pintura Óleo">Pintura Óleo</option>
-                <option value="Acuarela">Acuarela</option>
-                <option value="Inglés">Inglés</option>
-                <option value="Danza Contemporanea">
-                  Danza Contemporanea
-                </option>
-                <option value="Programación">Programación</option>
-                <option value="Electrónica">Electrónica</option>
-              </select>            
-            </div>  
+              <form>
+                <label htmlFor="">Filtrar por asignatura</label>
+                <select
+                  id="FilterClass"
+                  className="form-control"
+                  name="FilterClass"
+                  onChange={(e) => setClase(e.target.value)}
+                >
+                  <option selected>Selecciona..</option>
+                  <option value="Música">Música</option>
+                  <option value="Matemáticas">Matemáticas</option>
+                  <option value="Quimica">Química</option>
+                  <option value="Canto">Canto</option>
+                  <option value="Pintura Óleo">Pintura óleo</option>
+                  <option value="Acuarela">Acuarela</option>
+                  <option value="Inglés">Inglés</option>
+                  <option value="Danza Contemporanea">
+                    Danza Contemporanea
+                  </option>
+                  <option value="Programación">Programación</option>
+                  <option value="Electrónica">Electrónica</option>
+                </select>
+              </form>
+            </div>
+
             <div className="col-4">
-            <label htmlFor="">Filtrar por Estrellas</label>
-              <select
-                id="FilterStars"
-                className="form-control"
-                name="FilterStars"
-                onChange={(e) => setEstrellas(e.target.value)}
-              >
-                <option selected>Selecciona..</option>
-                <option value="1">1 Estrella</option>
-                <option value="2">2 Estrellas</option>
-                <option value="3">3 Estrellas</option>
-                <option value="4">4 Estrellas</option>
-                <option value="5">5 Estrellas</option>
-              </select>
+              <form>
+                <label htmlFor="">Filtrar por estrellas</label>
+                <select
+                  id="FilterStars"
+                  className="form-control"
+                  name="FilterStars"
+                  onChange={(e) => setEstrellas(e.target.value)}
+                >
+                  <option selected>Selecciona..</option>
+                  <option value="1">1 Estrella</option>
+                  <option value="2">2 Estrellas</option>
+                  <option value="3">3 Estrellas</option>
+                  <option value="4">4 Estrellas</option>
+                  <option value="5">5 Estrellas</option>
+                </select>
+              </form>
             </div>
-            <div className='col-4 mt-4' >
-            <button type="submit" className="btn rounded-pill buttons">enviar</button>
+
+            <div className="col-2 mt-4">
+              <input type="submit" label='Buscar'></input>
             </div>
+          </div>
         </form>
       </div>
     </>

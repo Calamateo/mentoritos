@@ -80,6 +80,12 @@ h1 span {
     background-repeat: no-repeat;
 }
 
+#banner button{
+    background-color: var(--colorSecondaryBg);
+    border-style: none;
+    font-family: var(--font-body);
+}
+
 /*  animacion de planteta de home    */
 
 /*
@@ -373,3 +379,22 @@ footer i {
 h4 {
     color: var(--colorSecondarySubtitle);
 }
+
+.margin-top-payment {
+    margin-top: 10rem !important;
+}
+
+.color-lila{
+    background-color: var(--colorSecondaryBg);
+    /* width: 5px; */
+}
+
+/* .modal-width {
+    width: 70%;
+} */
+
+/* .centered {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+} */

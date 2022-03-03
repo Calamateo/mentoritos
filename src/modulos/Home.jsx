@@ -2,6 +2,8 @@ import React from "react";
 import "./menu.css";
 import "../Css/Inicio.css";
 import ContactForm from "./contactUs";
+import { Link } from 'react-router-dom'
+
 
 function Home() {
   const imageHome = require.context("../global/assets/images", true);
@@ -22,20 +24,24 @@ function Home() {
             <div className="row">
               <div className="col">
                 <h1>
-                  <span>Todos</span> tenemos algo que enseñar, <br /> y algo que
+                  <span>Todos</span> tenemos algo que enseñar <br /> y algo que
                   aprender
                 </h1>
               </div>
             </div>
             <div className="row my-4">
               <div className="col">
+                <form className="d-flex">
+                  <Link to="/MentorsMenu" className="btn btn-outline-success rounded-pill mx-5">Escoge a tu mentorito favorito</Link>
+                </form>
+
                 <p
                   id="link-join"
                   className="text-end"
                   style={{ marginRight: "120px important" }}
                 >
                   ¿Te gustaría enseñar?
-                  <a href="./Login" className="highlighted-text">
+                  <a href="./Login" className="highlighted-text ms-1">
                     Únete aquí
                   </a>
                 </p>
@@ -152,7 +158,7 @@ function Home() {
           <div className="row">
             <div className="col">
               <h2 style={{ textAlign: "right" }}>
-                Encuentra tu mentor favorito facilmente
+                Encuentra a tu mentor favorito fácilmente
               </h2>
             </div>
           </div>
@@ -255,12 +261,6 @@ function Home() {
                             <div className="card-body">
                               <h5 className="card-title">Andrea Jiménez</h5>
                               <p className="card-text">Matemáticas</p>
-                              <a
-                                href="!#"
-                                className="btn btn-primary buttons rounded-pill"
-                              >
-                                Conocer
-                              </a>
                             </div>
                           </div>
                         </div>
@@ -277,14 +277,8 @@ function Home() {
                               alt="..."
                             />
                             <div className="card-body">
-                              <h5 className="card-title">Julio Ramirez</h5>
+                              <h5 className="card-title">Julio Ramírez</h5>
                               <p className="card-text">Filosofía</p>
-                              <a
-                                href="!#"
-                                className="btn btn-primary buttons rounded-pill"
-                              >
-                                Conocer
-                              </a>
                             </div>
                           </div>
                         </div>
@@ -303,12 +297,6 @@ function Home() {
                             <div className="card-body">
                               <h5 className="card-title">María Cárdenas</h5>
                               <p className="card-text">Yoga</p>
-                              <a
-                                href="!#"
-                                className="btn btn-primary buttons rounded-pill"
-                              >
-                                Conocer
-                              </a>
                             </div>
                           </div>
                         </div>
@@ -377,7 +365,7 @@ function Home() {
                               alt="..."
                             />
                             <div className="card-body">
-                              <h5 className="card-title">Javier Perez</h5>
+                              <h5 className="card-title">Javier Pérez</h5>
                               <p className="card-text">Animación</p>
                               <a
                                 href="!#"
@@ -491,14 +479,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="row mt-3">
-            <div className="col text-center">
-              <button className="btn ms-5 me-3 rounded-pill buttons mt-5">
-                Tomar clase gratis
-              </button>
-            </div>
           </div>
-        </div>
       </section>
       {/* <!-- featured mentors --> */}
 
@@ -523,12 +504,12 @@ function Home() {
             </div>
             <div className="col-md-2 col-4 px-1">
               <div className="card subcategory text-center" id="toefl">
-                <p className="card-text text-white">Examen toefl</p>
+                <p className="card-text text-white">Examen TOEFL</p>
               </div>
             </div>
             <div className="col-md-4 col-8 px-1">
               <div className="card category text-center" id="guitarra">
-                <p className="card-text text-white">Física</p>
+                <p className="card-text text-white">Guitarra</p>
               </div>
             </div>
           </div>
@@ -615,7 +596,7 @@ function Home() {
             </div>
             <div className="col-md-2 col-4 px-1">
               <div className="card subcategory text-center" id="photo">
-                <p className="card-text text-white">Photshop</p>
+                <p className="card-text text-white">Photoshop</p>
               </div>
             </div>
             <div className="col-md-4 col-8 px-1">
@@ -650,22 +631,11 @@ function Home() {
               <br />
               <a href="!#">Reportar malas prácticas</a>
             </div>
+
             <div className="col py-5">
               <br />
               <a href="!#" className="mb-0 pt-5">
-                Enseña con nosotros
-              </a>
-              <br />
-              <a href="!#" className="mb-0">
-                FAQ
-              </a>
-              <br />
-              <a href="!#">Reportar malas prácticas</a>
-            </div>
-            <div className="col py-5">
-              <br />
-              <a href="!#" className="mb-0 pt-5">
-                Aviso de provacidad
+                Aviso de privacidad
               </a>
               <br />
               <a href="!#" className="mb-0">

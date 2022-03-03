@@ -1,6 +1,7 @@
 import React from 'react'
 import { AcordionItem } from './AcordionItem'
 
+
 const MentorsProfileModule = ({ mentorP }) => {
     const imageAbout = require.context('../global/assets/images', true);
 
