@@ -29,7 +29,7 @@ const myPromise0 = new Promise((resolve, reject) => {
   });
 
   const myPromise1 = new Promise((resolve, reject) => {
-    if(false) setTimeout(() => {resolve(
+    if(true) setTimeout(() => {resolve(
       {
                 name: "Merida valiente",
                 sobremi: "hola yo soy merida valiente",
