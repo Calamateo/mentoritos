@@ -1,15 +1,11 @@
-import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 /*import '../Css/mentorsProfile.css'*/
 import {AcordionItem} from './mentorsProfileModules/AcordionItem'
 import { Modal } from './mentorsProfileModules/EditarModal'
-import ShoppingCar from "./ShoppingCar/ShoppingCar";
 
 const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfileFunction}) =>{
     const imageMentor = require.context('../global/assets/images', true);
     const imageAbout = require.context('../global/assets/images', true);
-    const [shoppingCar1, setShoppingCar1] = useState(false);
-    const [shoppingCar2, setShoppingCar2] = useState(false);
 
     let myProfile = false;
 
