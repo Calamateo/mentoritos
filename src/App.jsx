@@ -20,7 +20,9 @@ import ShoppingCar from "./modulos/ShoppingCar/ShoppingCar";
 import ShoppingCar2 from "./modulos/ShoppingCar/ShoppingCar2";
 import ShoppingCar3 from "./modulos/ShoppingCar/ShoppingCar3";
 import ShoppingCar4 from "./modulos/ShoppingCar/ShoppingCar4";
-import {MentorsProfileOwn} from "./modulos/MentorsProfileOwn"
+import { MentorsProfileOwn } from "./modulos/MentorsProfileOwn"
+import Obtener from "./modulos/Obtener";
+
 
 function App() {
   const [user, setUser] = useState({});
@@ -126,7 +128,7 @@ function App() {
 
           <Route path="/mentorsProfileOwn">
             <MentorsProfileOwn mentorProfileInformationParameter={mentorprofileInformation}
-              setMentorProfileFunction={setMentorProfile}/>
+              setMentorProfileFunction={setMentorProfile} />
           </Route>
 
           <Route path="/:typeP/:userId">

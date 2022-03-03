@@ -68,7 +68,6 @@ export const ingresoUsuarioAccion = () => async (dispatch) => {
 
 
 
-
             localStorage.setItem('usuario', JSON.stringify(usuarioDB.data()))
             localStorage.setItem('usuario', JSON.stringify(datas))
         } else {
@@ -77,9 +76,8 @@ export const ingresoUsuarioAccion = () => async (dispatch) => {
             const datas = {
                 email: res.user.email,
                 uid: res.user.uid,
-                url_Imagen: res.user.photoURL,
+                url_Imagen: res.user.photoURL
             };
-
 
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
@@ -87,17 +85,16 @@ export const ingresoUsuarioAccion = () => async (dispatch) => {
             var raw = JSON.stringify(datas);
 
             var requestOptions = {
-                method: 'POST',
+                method: "POST",
                 headers: myHeaders,
                 body: raw,
-                redirect: 'follow'
+                redirect: "follow",
             };
 
             fetch("http://localhost:8080/api/users/", requestOptions)
-                .then(response => response.text())
-                .then(result => console.log(result))
-                .catch(error => console.log('error', error));
-
+                .then((response) => response.text())
+                .then((result) => console.log(result))
+                .catch((error) => console.log("error", error));
 
 
 
