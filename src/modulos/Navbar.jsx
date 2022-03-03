@@ -47,7 +47,7 @@ function Navbar(props) {
                                             <Link className="nav-link" to="/mentorsProfile">perfil mentor</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link" to="/mentorsProfileOwn">mi perfil usuario</Link>
+                                            <Link className="nav-link" to="/UserProfile_">mi perfil usuario</Link>
                                         </li>
                                         <li className="nav-item dropstart">
                                             <Link className="nav-link dropdown-toggle" to="!#" id="navbarDropdownMenuLink" role="button"

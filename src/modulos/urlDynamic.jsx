@@ -11,7 +11,7 @@ const [user,setUser]=React.useState();
 const [mentor,setMentor]=React.useState();
 
 const myPromise0 = new Promise((resolve, reject) => {
-  if(false) setTimeout(() => {resolve(
+  if(true) setTimeout(() => {resolve(
     {
               name: "Merida valiente",
               sobremi: "hola yo soy merida valiente",
@@ -29,7 +29,7 @@ const myPromise0 = new Promise((resolve, reject) => {
   });
 
   const myPromise1 = new Promise((resolve, reject) => {
-    if(true) setTimeout(() => {resolve(
+    if(false) setTimeout(() => {resolve(
       {
                 name: "Merida valiente",
                 sobremi: "hola yo soy merida valiente",
