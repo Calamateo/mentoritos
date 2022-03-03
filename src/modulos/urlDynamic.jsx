@@ -17,9 +17,9 @@ const myPromise0 = new Promise((resolve, reject) => {
               sobremi: "hola yo soy merida valiente",
               educacion: "por el momento no tengo educacion",
               datosCuriosos: "Soy super ensenando",
-              nombrePerfil: "Sofía Aguilar",
+              nombrePerfil: "Rosa Carrillo",
               locacionPerfil: "Guadalajara, Jalisco",
-              emailPerfil: "sa.aguilarvaldez@gmail.com",
+              emailPerfil: "rosa.carrillo@gmail.com",
               presentacion:
                 "¡Hola! Me llamo Sofía y estoy buscando un mentor para aprender matemáticas.",
               imagePerfil: "./Rosa Carrillo Saturno.png",
@@ -35,9 +35,9 @@ const myPromise0 = new Promise((resolve, reject) => {
                 sobremi: "hola yo soy merida valiente",
                 educacion: "por el momento no tengo educacion",
                 datosCuriosos: "Soy super ensenando",
-                nombrePerfil: "Sofía Aguilar",
+                nombrePerfil: "Rosa Carrillo",
                 locacionPerfil: "Guadalajara, Jalisco",
-                emailPerfil: "sa.aguilarvaldez@gmail.com",
+                emailPerfil: "rosa.carrillo@gmail.com",
                 presentacion:
                   "¡Hola! Me llamo Sofía y estoy buscando un mentor para aprender matemáticas.",
                 imagePerfil: "./Rosa Carrillo Saturno.png",

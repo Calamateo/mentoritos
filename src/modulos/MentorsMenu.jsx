@@ -6,53 +6,32 @@ import {CardMentor} from './cardMentor';
 
 
 let temp = [];
-let Vclase ="";
-let Vestrellas="";
 
+let Vclase ="";
+let Vprice="";
+ let todo = Mentor.items;
 
 //FiltroBusqueda
 function MentorsMenu(props){   
     
     const[clase,setClase] = useState("");
-    const[estrellas,setEstrellas] = useState("");
+    const[price,setPrice] = useState("");
     const [mentor,setMentor]=useState(props.info.items)
     let cont =mentor.map((item)=><CardMentor price={item.price} name={item.name} img={item.img} class={item.class} cardWidth={"16.5rem"}/>)
-
-  const handleSubmit = (e) =>{
-    Vclase= clase;
-    Vestrellas=estrellas;
-
-    e.preventDefault();
-    alert("filtro de busqueda activado" + Vclase +" "+Vestrellas);
-    temp=[];
-
-    let filtrado = {
-      star: `${Vestrellas}`,
-      class: `${Vclase}`,
-    };
-
-
-
-getOptionSearchBar(filtrado);
-Vclase="";
-Vclase="";
-console.log(temp);
-//showdata(1);
-}
-
-
+       
+   
   function getOptionSearchBar(Categoryvalue, item = Mentor.items){
 
 
         
-    let banderaStar = 0;
+    let banderaPrice = 0;
     let banderaClass = 0;
 
 
-    if( Categoryvalue.star != ""){
+    if( Categoryvalue.price != ""){
 
-        banderaStar = 1;
-        console.log("estoy filtrando por estrellas");
+        banderaPrice = 1;
+        console.log("estoy filtrando por rango de precios ");
     }
     
     if( Categoryvalue.class != ""){
@@ -62,7 +41,7 @@ console.log(temp);
     }
     
     
-    if( banderaClass == 1 && banderaStar == 0) {
+    if( banderaClass == 1 && banderaPrice == 0) {
 
         for (let el = 0; el < item.length; el++) {
             if(Categoryvalue.class ==item[el].class){
@@ -78,34 +57,70 @@ console.log(temp);
     }
 
 
-    if( banderaClass == 0 && banderaStar == 1) {
+    if( banderaClass == 0 && banderaPrice == 1) {
 
         for (let el = 0; el < item.length; el++) {
-            if(Categoryvalue.star ==item[el].star){
+            if(Categoryvalue.price == "1"){
 
-                 temp.push(item[el]);
-                  // cont[index][variable] = item;
-                 
+              if(item[el].price < 100){
+  
+                temp.push(item[el]);
+              }
+            }else if(Categoryvalue.price == "2"){
+              if(item[el].price >= 100 && item[el].price < 200 ){
+  
+                temp.push(item[el]);
+              }
 
+            }else if(Categoryvalue.price == "3"){
+              if(item[el].price >= 200 && item[el].price < 300 ){
+  
+                temp.push(item[el]);
+              }
+
+              }else if(Categoryvalue.price == "4"){
+                if(item[el].price >= 300){
+    
+                  temp.push(item[el]);
                 }
+  
+              }
+
+            }
+          } // fitlro por rango de precios
             
-        }
 
-    }
+          if( banderaClass == 1 && banderaPrice == 1) {
 
-
-    if( banderaClass == 1 && banderaStar == 1) {
-
-        for (let el = 0; el < item.length; el++) {
-            if(Categoryvalue.star ==item[el].star && Categoryvalue.class ==item[el].class){
-
-                 temp.push(item[el]);
-                  // cont[index][variable] = item;
-                 
-
-                }   
-        }
-}
+            for (let el = 0; el < item.length; el++) {
+                if(Categoryvalue.price == "1"){
+    
+                  if(item[el].price < 100 && Categoryvalue.class ==item[el].class){
+      
+                    temp.push(item[el]);
+                  }
+                }else if(Categoryvalue.price == "2"){
+                  if(item[el].price >= 100 && item[el].price < 200 && Categoryvalue.class ==item[el].class ){
+      
+                    temp.push(item[el]);
+                  }
+    
+                }else if(Categoryvalue.price == "3"){
+                  if(item[el].price >= 200 && item[el].price < 300  && Categoryvalue.class ==item[el].class){
+      
+                    temp.push(item[el]);
+                  }
+    
+                  }else if(Categoryvalue.price == "4"){
+                    if(item[el].price >= 300 && Categoryvalue.class ==item[el].class){
+        
+                      temp.push(item[el]);
+                    }
+      
+                  }
+    
+                }
+              } // fitlro por ambas categorias
 
 } 
  
@@ -126,65 +141,99 @@ console.log(temp);
             </section>
 
             <h2>Formulario de busqueda</h2>
-            <form onSubmit={handleSubmit}>
-            <div className="container-xl">
-              <div className="row">
-                <div className="col-4">
-                  <form>
-                    <label htmlFor="">Filtrar por Asignatura</label>
-                    <select
-                      id="FilterClass"
-                      className="form-control"
-                      name="FilterClass"
-                      onChange={(e) => setClase(e.target.value)}
-                    >
-                      <option selected value="">
-                        Selecciona..
-                      </option>
-                      <option value="Música">Música</option>
-                      <option value="Matemáticas">Matemáticas</option>
-                      <option value="Quimica">Quimica</option>
-                      <option value="Canto">Canto</option>
-                      <option value="Pintura Óleo">Pintura Óleo</option>
-                      <option value="Acuarela">Acuarela</option>
-                      <option value="Inglés">Inglés</option>
-                      <option value="Danza Contemporanea">
-                        Danza Contemporanea
-                      </option>
-                      <option value="Programación">Programación</option>
-                      <option value="Electrónica">Electrónica</option>
-                    </select>
-                  </form>
-                </div>
+            <form>
+              <div className="container-xl">
+                <div className="row">
+                  <div className="col-4">
+                    <form>
+                      <label htmlFor="">Filtrar por Asignatura</label>
+                      <select
+                        id="FilterClass"
+                        className="form-control"
+                        name="FilterClass"
+                        onChange={(e) => setClase(e.target.value)}
+                      >
+                        <option selected value="">
+                          Selecciona..
+                        </option>
+                        <option value="Música">Música</option>
+                        <option value="Matemáticas">Matemáticas</option>
+                        <option value="Quimica">Quimica</option>
+                        <option value="Canto">Canto</option>
+                        <option value="Pintura Óleo">Pintura Óleo</option>
+                        <option value="Acuarela">Acuarela</option>
+                        <option value="Inglés">Inglés</option>
+                        <option value="Danza Contemporanea">
+                          Danza Contemporanea
+                        </option>
+                        <option value="Programación">Programación</option>
+                        <option value="Electrónica">Electrónica</option>
+                      </select>
+                    </form>
+                  </div>
 
-                <div className="col-4">
-                  <form>
-                    <label htmlFor="">Filtrar por Estrellas</label>
-                    <select
-                      id="FilterStars"
-                      className="form-control"
-                      name="FilterStars"
-                      onChange={(e) => setEstrellas(e.target.value)}
-                    >
-                      <option selected value="">
-                        Selecciona..
-                      </option>
-                      <option value="1">1 Estrella</option>
-                      <option value="2">2 Estrellas</option>
-                      <option value="3">3 Estrellas</option>
-                      <option value="4">4 Estrellas</option>
-                      <option value="5">5 Estrellas</option>
-                    </select>
-                  </form>
-                </div>
+                  <div className="col-4">
+                    <form>
+                      <label htmlFor=""> por Rango de Precios</label>
+                      <select
+                        id="FilterStars"
+                        className="form-control"
+                        name="FilterStars"
+                        onChange={(e) => setPrice(e.target.value)}
+                      >
+                        <option selected value="">
+                          Selecciona..
+                        </option>
+                        <option value="1"> menor de 100$ MXN</option>
+                        <option value="2">entre 100$ y 200$ MXN </option>
+                        <option value="3">entre 200$ y 300$ MXN</option>
+                        <option value="4">mayor que 300$ MXN</option>
+                        
+                      </select>
+                    </form>
+                  </div>
 
-                <div className="col-2 mt-4">
-                  <input type="submit"
-                         onClick={(e)=> setMentor(temp)}
-                  ></input>
+                  <div className="col-2 mt-4">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      onClick={(e) => {
+                        setMentor(temp);
+                        Vclase = clase;
+                        Vprice = price;
+
+                        temp = [];
+
+                        let filtrado = {
+                          price: `${Vprice}`,
+                          class: `${Vclase}`,
+                        };
+
+                        getOptionSearchBar(filtrado);
+                        Vprice = "";
+                        Vclase = "";
+                        console.log(temp);
+                        e.preventDefault();
+                      }}
+                    >
+                      Filtrar
+                    </button>
+                  </div>
+
+                  <div className="col-2 mt-4">
+                    <button
+                    type="button"
+                    class="btn btn-primary"
+                    onClick={(e)=>{
+                       
+                      setMentor(todo)
+                      e.preventDefault();
+                    }}
+                    >
+                      Limpiar</button>
+                  </div>
                 </div>
               </div>
-            </div>
             </form>
           </div>
         </div>
