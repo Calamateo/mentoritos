@@ -13,15 +13,15 @@ const [mentor,setMentor]=React.useState();
 const myPromise0 = new Promise((resolve, reject) => {
   if(true) setTimeout(() => {resolve(
     {
-              name: "Merida valiente",
-              sobremi: "hola yo soy merida valiente",
-              educacion: "por el momento no tengo educacion",
-              datosCuriosos: "Soy super ensenando",
+              name: "Rosa Carrillo",
+              sobremi: "Hola yo soy Rosa",
+              educacion: "Java FullStack bootcamp en Generation",
+              datosCuriosos: "Soy super aprendiendo",
               nombrePerfil: "Rosa Carrillo",
               locacionPerfil: "Guadalajara, Jalisco",
               emailPerfil: "rosa.carrillo@gmail.com",
               presentacion:
-                "¡Hola! Me llamo Sofía y estoy buscando un mentor para aprender matemáticas.",
+                "¡Hola! Me llamo Rosa y estoy buscando un mentor para aprender matemáticas.",
               imagePerfil: "./Rosa Carrillo Saturno.png",
             }
   )}, 500);
@@ -31,15 +31,15 @@ const myPromise0 = new Promise((resolve, reject) => {
   const myPromise1 = new Promise((resolve, reject) => {
     if(false) setTimeout(() => {resolve(
       {
-                name: "Merida valiente",
-                sobremi: "hola yo soy merida valiente",
+                name: "Rosa Carrillo",
+                sobremi: "Hola yo soy Rosa",
                 educacion: "por el momento no tengo educacion",
                 datosCuriosos: "Soy super ensenando",
                 nombrePerfil: "Rosa Carrillo",
                 locacionPerfil: "Guadalajara, Jalisco",
                 emailPerfil: "rosa.carrillo@gmail.com",
                 presentacion:
-                  "¡Hola! Me llamo Sofía y estoy buscando un mentor para aprender matemáticas.",
+                  "¡Hola! Me llamo Rosa y estoy buscando un mentor para aprender matemáticas.",
                 imagePerfil: "./Rosa Carrillo Saturno.png",
               }
     )}, 500);
