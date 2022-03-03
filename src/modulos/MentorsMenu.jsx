@@ -174,7 +174,7 @@ function MentorsMenu(props){
 
                   <div className="col-4">
                     <form>
-                      <label htmlFor="">Filtrar por Rango de Precios</label>
+                      <label htmlFor=""> por Rango de Precios</label>
                       <select
                         id="FilterStars"
                         className="form-control"
