@@ -15,16 +15,16 @@ const MentorsProfileOwn = ({mentorProfileInformationParameter, setMentorProfileF
                     <div className="col-lg-4 ">
                         <div className="card text-center sticky-md-top profile-card ">
                             <div className="card-header bg-white">
-                                <h2 className="mt-2">Merida Valiente</h2>
+                                <h2 className="mt-2">Sofía Aguilar</h2>
                             </div>
                             <div className="card-img mt-3">
-                                <img src={imageMentor('./Carolina Carrillo_Tierra..png')} className="rounded-circle w-50" alt="..." />
+                                <img src={imageMentor('./Sofía Acosta Neptuno.png')} className="rounded-circle w-50" alt="..." />
                             </div>
                             <div className="card-body">
                                 <div className="justify-content-center mt-3">
                                     <p>Guadalajara, Jalisco</p>
-                                    <p>merida.carrillo@gmail.com</p>
-                                    <p>¡Hola! Mi nombre es Merida, me encantaría aprender matemáticas.</p>
+                                    <p>sofia@gmail.com</p>
+                                    <p>¡Hola! Mi nombre es Sofía, me encantaría aprender matemáticas.</p>
                                 </div>
                             </div>
                         </div>
