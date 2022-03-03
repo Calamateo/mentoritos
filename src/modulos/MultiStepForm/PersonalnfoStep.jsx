@@ -15,7 +15,30 @@ const PersonalInfoStep = (props) => {
   const [guardado, setGuardado] = React.useState(false)
   const [pagina, setPagina] = React.useState('')
   const [informacion, setInformacion] = React.useState([])
+  const [usuarios, setUsuarios] = React.useState([])
+  const [getId, setId] = React.useState([])
 
+  React.useEffect(() => {
+    fetchData()
+  }, [])
+
+  const fetchData = async () => {
+    const data = await fetch('http://localhost:8080/api/users/')
+    const users = await data.json()
+    // console.log(users)
+    setUsuarios(users)
+
+    const db = { datos: JSON.parse(localStorage.getItem('usuario')) }
+
+    console.log(db.datos.uid);
+    var registros = await usuarios.filter(info => info.uid === db.datos.uid)
+    try {
+      await setId(registros[0].id)
+      await console.log(registros[0].id)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   const agregarInfo = e => {
     e.preventDefault()
@@ -45,7 +68,8 @@ const PersonalInfoStep = (props) => {
           image_profile: bd.datos.url_Imagen,
           phone: telefono,
           birthdate: "",
-          register_date: ""
+          register_date: "",
+          user_id: getId
         }
         setInformacion([
           ...informacion,
@@ -67,7 +91,8 @@ const PersonalInfoStep = (props) => {
           about: "",
           education: "",
           interests: "",
-          register_date: ""
+          register_date: "",
+          user_id: getId
         }
         setInformacion([
           ...informacion,
@@ -154,8 +179,12 @@ const PersonalInfoStep = (props) => {
                     ></Field>
                     <Field
                       name="phone"
+                      type="number"
                       component={TextField}
-                      onChange={e => setTelefono(e.target.value)}
+                      onChange={e => {
+                        setTelefono(e.target.value);
+                        fetchData();
+                      }}
                       label="Teléfono"
                     ></Field>
                     <h3>Elige como usaras Mentoritos ... </h3>

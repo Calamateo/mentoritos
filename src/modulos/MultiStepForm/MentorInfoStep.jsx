@@ -41,7 +41,7 @@ const MentorInfoStep = (props) => {
     4: 'Canto',
     5: 'Programación en C#',
     6: 'Yoga',
-    7: 'Tatro',
+    7: 'Teatro',
     8: 'Geografía',
     9: 'Pintura',
     10: 'Solfeo',
@@ -62,7 +62,7 @@ const MentorInfoStep = (props) => {
   }
 
   console.log(materia)
-  console.log(materia1)
+  console.log(modality1)
 
   const agrgarDatos = e => {
     e.preventDefault()
@@ -70,17 +70,20 @@ const MentorInfoStep = (props) => {
       console.log("datos vacios");
     }
 
+    console.log(materia1)
     setMateria1(mat[materia])
     setModality1(modalidad[modality])
 
     if (sessionStorage.getItem("informacionPersonal")) {
       const bd = { datos: JSON.parse(sessionStorage.getItem("informacionPersonal")) }
       console.log(bd)
+      setModality1(modalidad[modality])
 
       const data = {
         price: price,
         portfolio: portafolio,
         about: about,
+        user_id: bd.datos.user_id,
         modality: modality1,
         video: videoUrl,
         education: education,
@@ -91,19 +94,27 @@ const MentorInfoStep = (props) => {
         image_profile: bd.datos.image_profile,
         phone: bd.datos.phone,
         birthdate: "2000-01-01",
-        register_date: "2202-03-03"
+        id_subject: materia,
+        register_date: "2022-03-15T05:23:12"
       }
       setInfoMentor([
         ...infoMentor,
         data
       ])
 
+      sessionStorage.setItem("infomentor", JSON.stringify(data));
       console.log(infoMentor)
       console.log(data)
+
+
+
+
+
+
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
 
-      var raw = JSON.stringify(infoMentor);
+      var raw = sessionStorage.getItem("infomentor");
 
       var requestOptions = {
         method: "POST",
@@ -117,7 +128,6 @@ const MentorInfoStep = (props) => {
         .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
 
-      sessionStorage.setItem("infomentor", JSON.stringify(data));
     }
   }
 
@@ -193,7 +203,7 @@ const MentorInfoStep = (props) => {
                       <MenuItem value={4}>Canto</MenuItem>
                       <MenuItem value={5}>Programación en C#</MenuItem>
                       <MenuItem value={6}>Yoga</MenuItem>
-                      <MenuItem value={7}>Tatro</MenuItem>
+                      <MenuItem value={7}>Teatro</MenuItem>
                       <MenuItem value={8}>Geografía</MenuItem>
                       <MenuItem value={9}>Pintura</MenuItem>
                       <MenuItem value={100}>Solfeo</MenuItem>
@@ -213,31 +223,26 @@ const MentorInfoStep = (props) => {
                   </FormControl>
                   {/* Materia */}
 
-                  {/* Horario */}
-                  <Select
-                    value={horario}
-                    onChange={handleChange1}
-                    displayEmpty
-                    inputProps={{ "aria-label": "Without label" }}
-                  >
-                    <MenuItem value="">
-                      <em>--Seleccionar horario</em>
-                    </MenuItem>
-                    <MenuItem value={1}>8:00-9:00</MenuItem>
-                    <MenuItem value={2}>9:00-10:00</MenuItem>
-                    <MenuItem value={3}>10:00-11:00</MenuItem>
-                    <MenuItem value={4}>11:00-12:00</MenuItem>
-                    <MenuItem value={5}>12:00-13:00</MenuItem>
-                    <MenuItem value={6}>13:00-14:00</MenuItem>
-                    <MenuItem value={7}>14:00-15:00</MenuItem>
-                    <MenuItem value={8}>15:00-16:00</MenuItem>
-                    <MenuItem value={9}>16:00-17:00</MenuItem>
-                    <MenuItem value={10}>17:00-18:00</MenuItem>
-                    <MenuItem value={12}>18:00-19:00</MenuItem>
-                    <MenuItem value={13}>19:00-20:00</MenuItem>
-                    <MenuItem value={14}>20:00-21:00</MenuItem>
-                  </Select>
-                  {/* Horario */}
+                  {/* tarifa */}
+                  <FormControl sx={{ marginLeft: 3, minWidth: 120 }}>
+                    <Select
+                      value={modality}
+                      onChange={handleChange2}
+                      displayEmpty
+                      inputProps={{ "aria-label": "Without label" }}
+                    >
+                      <MenuItem value="">
+                        <em>--Seleccionar modalidad</em>
+                      </MenuItem>
+                      <MenuItem value={1}>Presencial</MenuItem>
+                      <MenuItem value={2}>En línea</MenuItem>
+                    </Select>
+                    <FormHelperText>
+                      Elige la modalidad
+                    </FormHelperText>
+                  </FormControl>
+                  {/* tarifa */}
+
                   {/* Dias de la semana */}
                   <FormGroup>
                     <FormControlLabel
@@ -287,25 +292,33 @@ const MentorInfoStep = (props) => {
                     startAdornment={<InputAdornment position="start">$</InputAdornment>}
                     onChange={e => setPrice(e.target.value)}
                   ></Field>
-                  {/* tarifa */}
-                  <FormControl sx={{ marginLeft: 3, minWidth: 120 }}>
-                    <Select
-                      value={modality}
-                      onChange={handleChange2}
-                      displayEmpty
-                      inputProps={{ "aria-label": "Without label" }}
-                    >
-                      <MenuItem value="">
-                        <em>--Seleccionar modalidad</em>
-                      </MenuItem>
-                      <MenuItem value={1}>Presencial</MenuItem>
-                      <MenuItem value={2}>En línea</MenuItem>
-                    </Select>
 
-                    <FormHelperText>
-                      Elige la materia que te gustaría impartir
-                    </FormHelperText>
-                  </FormControl>
+                  {/* Horario */}
+                  <Select
+                    value={horario}
+                    onChange={handleChange1}
+                    displayEmpty
+                    inputProps={{ "aria-label": "Without label" }}
+                  >
+                    <MenuItem value="">
+                      <em>--Seleccionar horario</em>
+                    </MenuItem>
+                    <MenuItem value={1}>8:00-9:00</MenuItem>
+                    <MenuItem value={2}>9:00-10:00</MenuItem>
+                    <MenuItem value={3}>10:00-11:00</MenuItem>
+                    <MenuItem value={4}>11:00-12:00</MenuItem>
+                    <MenuItem value={5}>12:00-13:00</MenuItem>
+                    <MenuItem value={6}>13:00-14:00</MenuItem>
+                    <MenuItem value={7}>14:00-15:00</MenuItem>
+                    <MenuItem value={8}>15:00-16:00</MenuItem>
+                    <MenuItem value={9}>16:00-17:00</MenuItem>
+                    <MenuItem value={10}>17:00-18:00</MenuItem>
+                    <MenuItem value={12}>18:00-19:00</MenuItem>
+                    <MenuItem value={13}>19:00-20:00</MenuItem>
+                    <MenuItem value={14}>20:00-21:00</MenuItem>
+                  </Select>
+                  {/* Horario */}
+
                   <h4> Sobre mí</h4>
                   <TextareaAutosize
                     sx={{ m: 2 }}
