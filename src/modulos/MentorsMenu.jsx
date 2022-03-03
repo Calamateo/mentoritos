@@ -17,7 +17,7 @@ function MentorsMenu(props){
     const[clase,setClase] = useState("");
     const[price,setPrice] = useState("");
     const [mentor,setMentor]=useState(props.info.items)
-    let cont =mentor.map((item)=><CardMentor price={item.price} name={item.name} img={item.img} class={item.class}/>)
+    let cont =mentor.map((item)=><CardMentor price={item.price} name={item.name} img={item.img} class={item.class} cardWidth={"16.5rem"}/>)
        
    
   function getOptionSearchBar(Categoryvalue, item = Mentor.items){
