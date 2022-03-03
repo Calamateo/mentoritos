@@ -4,8 +4,8 @@ import FiltroBusqueda from '../Redux/FiltroBusqueda';
 import {CardMentor} from './cardMentor';
 
 function MentorsMenu(props){    
-  console.log(props.info.items)
-  const [mentor,setMentor]=useState(props.info.items)
+  
+  const [mentor,setMentor]=React.useState(props.info.items)
   const cont =mentor.map((item)=><CardMentor price={item.price} name={item.name} img={item.img} class={item.class}/>)
   
     return (

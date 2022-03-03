@@ -108,21 +108,11 @@ function App() {
             <MentorsMenu info={Mentor} />
           </Route>
 
-          <Route path="/UserProfile">
-            <UserProfileInformation />
-          </Route>
-
-          <Route path="/mentorsProfile">
-            <MentorsProfileModule
-              mentorProfileInformationParameter={mentorprofileInformation}
-              setMentorProfileFunction={setMentorProfile}
-            />
-            {/* Se pueden utilizar props se eliminariam mentorProfileInformationParameter setMentorProfileFunction*/}
-          </Route>
+        
 
           <Route path="/:typeP/:userId">
             <UrlDynamic
-              error={null}
+              error={<Page404 />}
               mentor={mentorprofileInformation}
               setmentor={setMentorProfile}
             />

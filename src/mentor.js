@@ -8,6 +8,7 @@ const Mentor={
             ,class:"Música"
             ,modality:"en linea"
             ,price:150
+            ,id:0
            
         },
         {
@@ -17,7 +18,7 @@ const Mentor={
             ,class:"Pintura Óleo"
             ,modality:"en linea"
             ,price:200
-           
+            ,id:1
         },
         {
             name:"Mon"
@@ -26,7 +27,7 @@ const Mentor={
             ,class:"Danza Contemporanea"
             ,modality:"en linea"
             ,price:350
-        
+            ,id:2
         },
         {
             name:"Karen"
@@ -35,7 +36,7 @@ const Mentor={
             ,class:"Inglés"
             ,modality:"en linea"
             ,price:350
-          
+            ,id:3
         },
         
         {
@@ -45,7 +46,7 @@ const Mentor={
             ,class:"Programación"
             ,modality:"en linea"
             ,price:250
-           
+            ,id:4
         },
         {
             name:"Pablo"
@@ -54,7 +55,7 @@ const Mentor={
             ,class:"Electrónica"
             ,modality:"en linea"
             ,price:300
-            
+            ,id:5
         },
         {
             name:"Pedro"
@@ -63,7 +64,7 @@ const Mentor={
             ,class:"Acuarela"
             ,modality:"en linea"
             ,price:350
-           
+            ,id:6
         },
         {
             name:"Mario"
@@ -72,7 +73,7 @@ const Mentor={
             ,class:"Matemáticas"
             ,modality:"en linea"
             ,price:50
-            
+            ,id:7
         },
         {
             name:"Luis"
@@ -81,7 +82,7 @@ const Mentor={
             ,class:"Electrónica"
             ,modality:"en linea"
             ,price:150
-           
+            ,id:8
         },
         {
             name:"Mayrelin"
@@ -90,7 +91,7 @@ const Mentor={
             ,class:"Electrónica"
             ,modality:"en linea"
             ,price:300
-    
+            ,id:9
         }
     ]
 };
