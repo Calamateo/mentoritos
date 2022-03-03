@@ -22,7 +22,7 @@ function Home() {
             <div className="row">
               <div className="col">
                 <h1>
-                  <span>Todos</span> tenemos algo que enseñar, <br /> y algo que
+                  <span>Todos</span> tenemos algo que enseñar <br /> y algo que
                   aprender
                 </h1>
               </div>
@@ -35,7 +35,7 @@ function Home() {
                   style={{ marginRight: "120px important" }}
                 >
                   ¿Te gustaría enseñar?
-                  <a href="./Login" className="highlighted-text">
+                  <a href="./Login" className="highlighted-text ms-1">
                     Únete aquí
                   </a>
                 </p>
@@ -152,7 +152,7 @@ function Home() {
           <div className="row">
             <div className="col">
               <h2 style={{ textAlign: "right" }}>
-                Encuentra tu mentor favorito facilmente
+                Encuentra a tu mentor favorito fácilmente
               </h2>
             </div>
           </div>
@@ -277,7 +277,7 @@ function Home() {
                               alt="..."
                             />
                             <div className="card-body">
-                              <h5 className="card-title">Julio Ramirez</h5>
+                              <h5 className="card-title">Julio Ramírez</h5>
                               <p className="card-text">Filosofía</p>
                               <a
                                 href="!#"
@@ -377,7 +377,7 @@ function Home() {
                               alt="..."
                             />
                             <div className="card-body">
-                              <h5 className="card-title">Javier Perez</h5>
+                              <h5 className="card-title">Javier Pérez</h5>
                               <p className="card-text">Animación</p>
                               <a
                                 href="!#"
@@ -523,12 +523,12 @@ function Home() {
             </div>
             <div className="col-md-2 col-4 px-1">
               <div className="card subcategory text-center" id="toefl">
-                <p className="card-text text-white">Examen toefl</p>
+                <p className="card-text text-white">Examen TOEFL</p>
               </div>
             </div>
             <div className="col-md-4 col-8 px-1">
               <div className="card category text-center" id="guitarra">
-                <p className="card-text text-white">Física</p>
+                <p className="card-text text-white">Guitarra</p>
               </div>
             </div>
           </div>
@@ -615,7 +615,7 @@ function Home() {
             </div>
             <div className="col-md-2 col-4 px-1">
               <div className="card subcategory text-center" id="photo">
-                <p className="card-text text-white">Photshop</p>
+                <p className="card-text text-white">Photoshop</p>
               </div>
             </div>
             <div className="col-md-4 col-8 px-1">
@@ -650,22 +650,11 @@ function Home() {
               <br />
               <a href="!#">Reportar malas prácticas</a>
             </div>
+
             <div className="col py-5">
               <br />
               <a href="!#" className="mb-0 pt-5">
-                Enseña con nosotros
-              </a>
-              <br />
-              <a href="!#" className="mb-0">
-                FAQ
-              </a>
-              <br />
-              <a href="!#">Reportar malas prácticas</a>
-            </div>
-            <div className="col py-5">
-              <br />
-              <a href="!#" className="mb-0 pt-5">
-                Aviso de provacidad
+                Aviso de privacidad
               </a>
               <br />
               <a href="!#" className="mb-0">

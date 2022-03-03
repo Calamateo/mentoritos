@@ -74,9 +74,6 @@ function App() {
       <div>
         <Navbar firebaseUser={firebaseUser} />
         <Switch>
-          <Route path="/login">
-            <Login login1={false} />
-          </Route>
           <Route
             render={(props) => (
               <PersonalInfoStep
@@ -97,13 +94,14 @@ function App() {
             <AboutUs />
           </Route>
 
+          <Route path="/login">
+            <Login login1={false} />
+          </Route>
           <Route path="/singUp">
             <Login login1={true} />
           </Route>
 
-          <Route path="/loading">
-            <Loading />
-          </Route>
+
 
           <Route path="/" exact>
             <Home />
@@ -112,7 +110,12 @@ function App() {
           <Route path="/MentorsMenu">
             <MentorsMenu info={Mentor} />
           </Route>
-          
+
+
+          <Route path="/datos">
+            <Obtener />
+          </Route>
+
           <Route path="/mentorsProfile">
             <MentorsProfileModule
               mentorProfileInformationParameter={mentorprofileInformation}
