@@ -25,20 +25,22 @@ const StudentInfoStep = (props) => {
         lastname: db.d.lastname,
         birthday: "1970-04-19",
         location: db.d.location,
+        user_id: db.d.user_id,
         phone: db.d.phone,
         imageProfile: db.d.image_profile,
         about: about,
         education: education,
         interests: portafolio,
-        registerDate: "2022-03-02T21:20:16",
+        register_date: "2022-03-15T05:23:12"
       };
 
       console.log(data);
 
+      sessionStorage.setItem("Informacion", JSON.stringify(data));
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
 
-      var raw = JSON.stringify(data);
+      var raw = sessionStorage.getItem("Informacion");
 
       var requestOptions = {
         method: "POST",

@@ -65,10 +65,10 @@ const PersonalInfoStep = (props) => {
           name: nombre,
           lastname: apellido,
           location: ubicacion,
-          image_profile: bd.datos.url_Imagen,
+          image_profile: bd.datos.fotoURL,
           phone: telefono,
-          birthdate: "",
-          register_date: "",
+          birthdate: "2000-01-01",
+          register_date: "2022-03-15T05:23:12",
           user_id: getId
         }
         setInformacion([
@@ -80,14 +80,15 @@ const PersonalInfoStep = (props) => {
 
       } else {
         setPagina('/StudentInfoStep')
+        const bd = { datos: JSON.parse(localStorage.getItem('usuario')) };
         const data = {
           uid: bd.datos.uid,
+          image_profile: bd.datos.url_Imagen,
           name: nombre,
           lastname: apellido,
           birthday: "",
           location: ubicacion,
           phone: telefono,
-          image_profile: bd.datos.url_Imagen,
           about: "",
           education: "",
           interests: "",
