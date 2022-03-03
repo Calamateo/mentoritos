@@ -15,12 +15,13 @@ import Loading from "./modulos/Loading";
 import PersonalInfoStep from "./modulos/MultiStepForm/PersonalnfoStep";
 import MentorInfoStep from "./modulos/MultiStepForm/MentorInfoStep";
 import StudentInfoStep from "./modulos/MultiStepForm/StudentInfoStep";
-import { UserProfileInformation } from "./modulos/UserProfile";
 import ShoppingCar from "./modulos/ShoppingCar/ShoppingCar";
 import ShoppingCar2 from "./modulos/ShoppingCar/ShoppingCar2";
 import ShoppingCar3 from "./modulos/ShoppingCar/ShoppingCar3";
 import ShoppingCar4 from "./modulos/ShoppingCar/ShoppingCar4";
-import { MentorsProfileOwn } from "./modulos/MentorsProfileOwn"
+import {MentorsProfileOwn} from "./modulos/MentorsProfileOwn";
+import PrivacyPolicy from "./modulos/PrivacyPolicy";
+import Terms from "./modulos/Terms"
 import Obtener from "./modulos/Obtener";
 
 
@@ -114,9 +115,11 @@ function App() {
           </Route>
 
 
-          <Route path="/datos">
+
+          {/* <Route path="/datos">
             <Obtener />
-          </Route>
+          </Route> */}
+
 
           <Route path="/mentorsProfile">
             <MentorsProfileModule
@@ -133,7 +136,7 @@ function App() {
 
           <Route path="/:typeP/:userId">
             <UrlDynamic
-              error={null}
+              error={<Page404 />}
               mentor={mentorprofileInformation}
               setmentor={setMentorProfile}
             />
@@ -158,6 +161,14 @@ function App() {
 
           <Route path="/configuracion" exact>
             <Configuracion />
+          </Route>
+
+          <Route path="/privacyPolicy">
+            <PrivacyPolicy />
+          </Route>
+
+          <Route path="/terms">
+            <Terms />
           </Route>
 
           <Route path="*">

@@ -631,14 +631,12 @@ const AboutUs = () => {
                     <div className="row">
                         <div className="col py-5">
                             <br />
-                            <a href="!#" className="mb-0 pt-5">Enseña con nosotros</a><br />
-                            <a href="!#" className="mb-0">FAQ</a><br />
-                            <a href="!#">Reportar malas prácticas</a>
+                            <a href="/Login" className="mb-0 pt-5">Enseña con nosotros</a><br />
                         </div>
                         <div className="col py-5">
                             <br />
-                            <a href="!#" className="mb-0 pt-5">Aviso de provacidad</a><br />
-                            <a href="!#" className="mb-0">Términos y condiciones</a><br />
+                            <a href="/privacyPolicy" className="mb-0 pt-5">Aviso de privacidad</a><br />
+                            <a href="/terms" className="mb-0">Términos y condiciones</a><br />
                         </div>
                         <div className="col py-5">
                             <br />
