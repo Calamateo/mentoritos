@@ -16,22 +16,21 @@ const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfi
                     <div className="col-lg-4 ">
                         <div className="card text-center sticky-md-top profile-card ">
                             <div className="card-header bg-white">
-                                <h2 className="mt-2">Carolina Carrillo</h2>
+                                <h2 className="mt-2">Luis Carrillo</h2>
                             </div>
                             <div className="card-img mt-3">
-                                <img src={imageMentor('./Carolina Carrillo_Tierra..png')} className="rounded-circle w-50" alt="..." />
+                                <img src="https://images.pexels.com/photos/953703/pexels-photo-953703.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" className="rounded-circle w-50" alt="..." />
                             </div>
                             <div className="card-body">
                                 <div className="d-flex justify-content-center">
-                                    <p> Matemáticas</p>
+                                    <p> Música</p>
                                 </div>
                                 <div className="d-flex justify-content-center">
-                                    <button className="btn btn-sm rounded-pill me-md-2" type="submit">Presencial</button>
-                                    <button className="btn btn btn-sm rounded-pill me-md-2" type="submit">Online</button>
+                                    <button className="btn btn btn-sm rounded-pill me-md-2" type="submit">En línea</button>
                                 </div>
                                 <div className="justify-content-center mt-3">
                                     <p>Guadalajara, Jalisco</p>
-                                    <p>Costo por hora: $200</p>
+                                    <p>Costo por hora: $150</p>
                                 </div>
                             </div>
                         </div>
@@ -41,11 +40,10 @@ const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfi
                             <div className="card-header text-center mt-3 bg-white">
                                 <div className="video-container pd-2">
                                     <div className="video ratio ratio-16x9">
-                                        <iframe className="container-xxl-fluid" width=" 660" height="415"
-                                            src="https://www.youtube.com/embed/5p2hwlq341Y" title="YouTube video player" frameBorder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen>
+                                        
+                                        <iframe className="container-xxl-fluid" width="660" height="415" src="https://www.youtube.com/embed/_KFsJvgPfHg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                                         </iframe>
+
                                     </div>
                                 </div>
                                 {
