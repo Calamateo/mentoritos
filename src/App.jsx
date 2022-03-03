@@ -15,7 +15,6 @@ import Loading from "./modulos/Loading";
 import PersonalInfoStep from "./modulos/MultiStepForm/PersonalnfoStep";
 import MentorInfoStep from "./modulos/MultiStepForm/MentorInfoStep";
 import StudentInfoStep from "./modulos/MultiStepForm/StudentInfoStep";
-import { UserProfileInformation } from "./modulos/UserProfile";
 import ShoppingCar from "./modulos/ShoppingCar/ShoppingCar";
 import ShoppingCar2 from "./modulos/ShoppingCar/ShoppingCar2";
 import ShoppingCar3 from "./modulos/ShoppingCar/ShoppingCar3";
