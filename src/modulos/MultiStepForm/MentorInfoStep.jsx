@@ -42,7 +42,7 @@ const MentorInfoStep = (props) => {
     4: 'Canto',
     5: 'Programación en C#',
     6: 'Yoga',
-    7: 'Tatro',
+    7: 'Teatro',
     8: 'Geografía',
     9: 'Pintura',
     10: 'Solfeo',
@@ -82,29 +82,32 @@ const MentorInfoStep = (props) => {
         price: price,
         portfolio: portafolio,
         about: about,
-        modality: modality1,
+        modality: modality,
         video: videoUrl,
         education: education,
         uid: bd.datos.uid,
+        user_id: bd.datos.user_id,
         name: bd.datos.name,
         lastname: bd.datos.lastname,
         location: bd.datos.location,
         image_profile: bd.datos.image_profile,
         phone: bd.datos.phone,
         birthdate: "2000-01-01",
-        register_date: "2202-03-03"
+        id_subject: materia,
+        register_date: "2022-03-15T05:23:12"
       }
       setInfoMentor([
         ...infoMentor,
         data
       ])
+      sessionStorage.setItem("infomentor", JSON.stringify(data));
 
       console.log(infoMentor)
       console.log(data)
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
 
-      var raw = JSON.stringify(infoMentor);
+      var raw = sessionStorage.getItem("infomentor");
 
       var requestOptions = {
         method: "POST",
@@ -118,7 +121,6 @@ const MentorInfoStep = (props) => {
         .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
 
-      sessionStorage.setItem("infomentor", JSON.stringify(data));
       setReg(!reg)
       setTerminos(!terminos)
     }
@@ -196,7 +198,7 @@ const MentorInfoStep = (props) => {
                       <MenuItem value={4}>Canto</MenuItem>
                       <MenuItem value={5}>Programación en C#</MenuItem>
                       <MenuItem value={6}>Yoga</MenuItem>
-                      <MenuItem value={7}>Tatro</MenuItem>
+                      <MenuItem value={7}>Teatro</MenuItem>
                       <MenuItem value={8}>Geografía</MenuItem>
                       <MenuItem value={9}>Pintura</MenuItem>
                       <MenuItem value={100}>Solfeo</MenuItem>
