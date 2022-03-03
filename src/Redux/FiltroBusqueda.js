@@ -1,18 +1,19 @@
 import React,{useState} from 'react'
 
+
+let temp = [];
+
 export default function FiltroBusqueda(props){
 
+   
     const[clase,setClase] = useState("");
     const[estrellas,setEstrellas] = useState("");
 
     const handleSubmit = e =>{
 
-  
-  
-
         e.preventDefault();
         alert("filtro de busqueda activado" + clase +" "+estrellas);
-        let filtro = ["star", "class"];
+      
 
         let filtrado = {
           star: `${estrellas}`,
@@ -20,27 +21,29 @@ export default function FiltroBusqueda(props){
         };
     
     
-    getOptionSearchBar(filtro,filtrado);
-
+    getOptionSearchBar(filtrado);
+    console.log(temp);
+    
     }
                                  
-    function getOptionSearchBar(CategoryOption, Categoryvalue, item = props.mentor){
+    function getOptionSearchBar(Categoryvalue, item = props.mentor){
 
 
-        let cont = [];
+        
         let banderaStar = 0;
         let banderaClass = 0;
     
     
-        if( Categoryvalue.star != "Selecciona.."){
+        if( Categoryvalue.star != ""){
     
             banderaStar = 1;
-    
+            console.log("estoy filtrando por estrellas");
         }
         
-        if( Categoryvalue.class != "Selecciona.."){
+        if( Categoryvalue.class != ""){
     
             banderaClass = 1;
+            console.log("estoy filtrando por clases");
         }
         
         
@@ -49,7 +52,7 @@ export default function FiltroBusqueda(props){
             for (let el = 0; el < item.length; el++) {
                 if(Categoryvalue.class ==item[el].class){
     
-                     cont.push(item[el]);
+                     temp.push(item[el]);
                       // cont[index][variable] = item;
                      
     
@@ -65,7 +68,7 @@ export default function FiltroBusqueda(props){
             for (let el = 0; el < item.length; el++) {
                 if(Categoryvalue.star ==item[el].star){
     
-                     cont.push(item[el]);
+                     temp.push(item[el]);
                       // cont[index][variable] = item;
                      
     
@@ -81,7 +84,7 @@ export default function FiltroBusqueda(props){
             for (let el = 0; el < item.length; el++) {
                 if(Categoryvalue.star ==item[el].star && Categoryvalue.class ==item[el].class){
     
-                     cont.push(item[el]);
+                     temp.push(item[el]);
                       // cont[index][variable] = item;
                      
     
@@ -90,11 +93,11 @@ export default function FiltroBusqueda(props){
             }
     
         
-            props.setMentor(cont);
+            props.setMentor(temp);
             
         
         //return (cont)
-        console.log(cont);
+        
     }
   }
     
@@ -126,7 +129,7 @@ export default function FiltroBusqueda(props){
                     name="FilterClass"
                     onChange={(e) => setClase(e.target.value)}
                   >
-                    <option selected>Selecciona..</option>
+                    <option selected value="">Selecciona..</option>
                     <option value="Música">Música</option>
                     <option value="Matemáticas">Matemáticas</option>
                     <option value="Quimica">Quimica</option>
@@ -152,7 +155,7 @@ export default function FiltroBusqueda(props){
                     name="FilterStars"
                     onChange={(e) => setEstrellas(e.target.value)}
                   >
-                    <option selected>Selecciona..</option>
+                    <option selected value="">Selecciona..</option>
                     <option value="1">1 Estrella</option>
                     <option value="2">2 Estrellas</option>
                     <option value="3">3 Estrellas</option>
