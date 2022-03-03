@@ -19,7 +19,7 @@ import ShoppingCar from "./modulos/ShoppingCar/ShoppingCar";
 import ShoppingCar2 from "./modulos/ShoppingCar/ShoppingCar2";
 import ShoppingCar3 from "./modulos/ShoppingCar/ShoppingCar3";
 import ShoppingCar4 from "./modulos/ShoppingCar/ShoppingCar4";
-import {MentorsProfileOwn} from "./modulos/MentorsProfileOwn";
+import {MentorsProfileOwn} from "./modulos/UserProfile_";
 import PrivacyPolicy from "./modulos/PrivacyPolicy";
 import Terms from "./modulos/Terms"
 import Obtener from "./modulos/Obtener";
@@ -34,9 +34,9 @@ function App() {
 
   const [mentorprofileInformation, setMentorProfile] = React.useState({
     name: "Merida valiente",
-    sobremi: "hola yo soy merida valiente",
-    educacion: "por el momento no tengo educacion",
-    datosCuriosos: "Soy super ensenando",
+    sobremi: "Todos tenemos algo que enseñar y algo que aprender, amo esa frase",
+    educacion: "Mi educación es licenciatura en ingeniería biomédica",
+    datosCuriosos: "Amo los gatitos y perritos",
     nombrePerfil: "Sofía Aguilar",
     locacionPerfil: "Guadalajara, Jalisco",
     emailPerfil: "sa.aguilarvaldez@gmail.com",
@@ -129,7 +129,7 @@ function App() {
             {/* Se pueden utilizar props se eliminariam mentorProfileInformationParameter setMentorProfileFunction*/}
           </Route>
 
-          <Route path="/mentorsProfileOwn">
+          <Route path="/userProfile_">
             <MentorsProfileOwn mentorProfileInformationParameter={mentorprofileInformation}
               setMentorProfileFunction={setMentorProfile} />
           </Route>

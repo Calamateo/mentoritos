@@ -14,15 +14,15 @@ const UrlDynamic = (props) => {
     if (true) setTimeout(() => {
       resolve(
         {
-          name: "Merida valiente",
-          sobremi: "hola yo soy merida valiente",
-          educacion: "por el momento no tengo educacion",
-          datosCuriosos: "Soy super ensenando",
-          nombrePerfil: "Sofía Aguilar",
+          name: "Rosa Carrillo",
+          sobremi: "Hola yo soy Rosa",
+          educacion: "Java FullStack bootcamp en Generation",
+          datosCuriosos: "Soy super aprendiendo",
+          nombrePerfil: "Rosa Carrillo",
           locacionPerfil: "Guadalajara, Jalisco",
-          emailPerfil: "sa.aguilarvaldez@gmail.com",
+          emailPerfil: "rosa.carrillo@gmail.com",
           presentacion:
-            "¡Hola! Me llamo Sofía y estoy buscando un mentor para aprender matemáticas.",
+            "¡Hola! Me llamo Rosa y estoy buscando un mentor para aprender matemáticas.",
           imagePerfil: "./Rosa Carrillo Saturno.png",
         }
       )
@@ -31,18 +31,18 @@ const UrlDynamic = (props) => {
   });
 
   const myPromise1 = new Promise((resolve, reject) => {
-    if (true) setTimeout(() => {
+    if (false) setTimeout(() => {
       resolve(
         {
-          name: "Merida valiente",
-          sobremi: "hola yo soy merida valiente",
+          name: "Rosa Carrillo",
+          sobremi: "Hola yo soy Rosa",
           educacion: "por el momento no tengo educacion",
           datosCuriosos: "Soy super ensenando",
-          nombrePerfil: "Sofía Aguilar",
+          nombrePerfil: "Rosa Carrillo",
           locacionPerfil: "Guadalajara, Jalisco",
-          emailPerfil: "sa.aguilarvaldez@gmail.com",
+          emailPerfil: "rosa.carrillo@gmail.com",
           presentacion:
-            "¡Hola! Me llamo Sofía y estoy buscando un mentor para aprender matemáticas.",
+            "¡Hola! Me llamo Rosa y estoy buscando un mentor para aprender matemáticas.",
           imagePerfil: "./Rosa Carrillo Saturno.png",
         }
       )

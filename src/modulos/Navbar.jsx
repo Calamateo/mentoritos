@@ -34,17 +34,6 @@ function Navbar(props) {
                                 <Link className="navbar-brand" to="/"><img src={meteoro} alt=""
                                     width="50" className="d-inline-block align-text-middle" />
                                     Mentoritos</Link>
-                                <div className="ms-lg-4">
-                                    <form className="d-flex">
-                                        <input className="form-control me-lg-2 form-input rounded-pill" type="search"
-                                            placeholder="Encontrar un mentor" aria-label="Search" />
-                                        <button className="btn btn-outline-success rounded-pill" type="submit">Buscar</button>
-                                    </form>
-                                </div>
-                                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span className="navbar-toggler-icon"></span>
-                                </button>
                                 <div className="collapse navbar-collapse justify-content-lg-end justify-content-sm-start align-items-center"
                                     id="navbarNavAltMarkup">
                                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
@@ -55,10 +44,10 @@ function Navbar(props) {
                                             <NavLink className="nav-link" to="/aboutUs">sobre nosotros</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link" to="/mentorsProfile">mi perfil mentor</Link>
+                                            <Link className="nav-link" to="/mentorsProfile">perfil mentor</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link" to="/userProfileInfo">mi perfil usuario</Link>
+                                            <Link className="nav-link" to="/UserProfile_">mi perfil usuario</Link>
                                         </li>
                                         <li className="nav-item dropstart">
                                             <Link className="nav-link dropdown-toggle" to="!#" id="navbarDropdownMenuLink" role="button"
@@ -84,17 +73,6 @@ function Navbar(props) {
                             <Link className="navbar-brand" to="/"><img src={meteoro} alt=""
                                 width="50" className="d-inline-block align-text-middle" />
                                 Mentoritos</Link>
-                            <div className="ms-lg-4">
-                                <form className="d-flex">
-                                    <input className="form-control me-lg-2 form-input rounded-pill" type="search"
-                                        placeholder="Encontrar un mentor" aria-label="Search" />
-                                    <button className="btn btn-outline-success rounded-pill" type="submit">Buscar</button>
-                                </form>
-                            </div>
-                            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                                <span className="navbar-toggler-icon"></span>
-                            </button>
                             <div className="collapse navbar-collapse justify-content-lg-end justify-content-sm-start"
                                 id="navbarNavAltMarkup">
                                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
