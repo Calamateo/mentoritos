@@ -347,15 +347,7 @@ footer i {
     margin-left: 0.5rem;
 }
 
-.not-found {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin-top: 200rem !important; 
-    /*font-family:"Nunito Sans";
-    color: var(--blue);
-    font-size: 1em;*/
-}
+
 
 /* Carousel */
 /*.carousel-item {
