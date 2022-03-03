@@ -2,6 +2,8 @@ import React from "react";
 import "./menu.css";
 import "../Css/Inicio.css";
 import ContactForm from "./contactUs";
+import { Link } from 'react-router-dom'
+
 
 function Home() {
   const imageHome = require.context("../global/assets/images", true);
@@ -29,6 +31,10 @@ function Home() {
             </div>
             <div className="row my-4">
               <div className="col">
+                <form className="d-flex">
+                  <Link to="/MentorsMenu" className="btn btn-outline-success rounded-pill mx-5">Escoge a tu mentorito favorito</Link>
+                </form>
+
                 <p
                   id="link-join"
                   className="text-end"
@@ -255,12 +261,6 @@ function Home() {
                             <div className="card-body">
                               <h5 className="card-title">Andrea Jiménez</h5>
                               <p className="card-text">Matemáticas</p>
-                              <a
-                                href="!#"
-                                className="btn btn-primary buttons rounded-pill"
-                              >
-                                Conocer
-                              </a>
                             </div>
                           </div>
                         </div>
@@ -279,12 +279,6 @@ function Home() {
                             <div className="card-body">
                               <h5 className="card-title">Julio Ramírez</h5>
                               <p className="card-text">Filosofía</p>
-                              <a
-                                href="!#"
-                                className="btn btn-primary buttons rounded-pill"
-                              >
-                                Conocer
-                              </a>
                             </div>
                           </div>
                         </div>
@@ -303,12 +297,6 @@ function Home() {
                             <div className="card-body">
                               <h5 className="card-title">María Cárdenas</h5>
                               <p className="card-text">Yoga</p>
-                              <a
-                                href="!#"
-                                className="btn btn-primary buttons rounded-pill"
-                              >
-                                Conocer
-                              </a>
                             </div>
                           </div>
                         </div>
@@ -491,14 +479,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="row mt-3">
-            <div className="col text-center">
-              <button className="btn ms-5 me-3 rounded-pill buttons mt-5">
-                Tomar clase gratis
-              </button>
-            </div>
           </div>
-        </div>
       </section>
       {/* <!-- featured mentors --> */}
 
