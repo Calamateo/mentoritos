@@ -3,7 +3,7 @@ import "./menu.css";
 import "../Css/Inicio.css";
 import ContactForm from "./contactUs";
 import { Link } from 'react-router-dom'
-
+import {CardMentor} from './cardMentor';
 
 function Home() {
   const imageHome = require.context("../global/assets/images", true);
@@ -247,57 +247,23 @@ function Home() {
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <div className="row">
-                      <div className="col-md-4">
-                        <div className="single-box">
+                      <div className="col-md-5">
+                        <div className="">
                           <div
-                            className="card mx-auto"
-                            style={{ width: "15rem" }}
+                            className=" mx-auto"
+                            style={{ width: "10rem" }}
                           >
-                            <img
-                              src={imageHome("./mentor.jfif")}
-                              className="card-img-top featured"
-                              alt="..."
-                            />
-                            <div className="card-body">
-                              <h5 className="card-title">Andrea Jiménez</h5>
-                              <p className="card-text">Matemáticas</p>
-                            </div>
+                            <CardMentor price={350} name={"Mon"} img={"https://images.pexels.com/photos/5795034/pexels-photo-5795034.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"} class={"Danza Contemporánea"} cardWidth={"18rem"}/>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-4">
-                        <div className="single-box">
+                        <div className="">
                           <div
-                            className="card mx-auto"
-                            style={{ width: "15rem" }}
+                            className=" mx-auto"
+                            style={{ width: "5rem" }}
                           >
-                            <img
-                              src={imageHome("./mentor3.jpg")}
-                              className="card-img-top featured"
-                              alt="..."
-                            />
-                            <div className="card-body">
-                              <h5 className="card-title">Julio Ramírez</h5>
-                              <p className="card-text">Filosofía</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="single-box">
-                          <div
-                            className="card mx-auto"
-                            style={{ width: "15rem" }}
-                          >
-                            <img
-                              src={imageHome("./mentor2.jpg")}
-                              className="card-img-top featured"
-                              alt="..."
-                            />
-                            <div className="card-body">
-                              <h5 className="card-title">María Cárdenas</h5>
-                              <p className="card-text">Yoga</p>
-                            </div>
+                            <CardMentor price={350} name={"Mon"} img={"https://images.pexels.com/photos/5795034/pexels-photo-5795034.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"} class={"Danza Contemporánea"}/>
                           </div>
                         </div>
                       </div>
@@ -305,75 +271,23 @@ function Home() {
                   </div>
                   <div className="carousel-item">
                     <div className="row">
-                      <div className="col-md-4">
-                        <div className="single-box">
+                      <div className="col-md-5">
+                        <div className="">
                           <div
-                            className="card mx-auto"
-                            style={{ width: "15rem" }}
+                            className=" mx-auto"
+                            style={{ width: "10rem" }}
                           >
-                            <img
-                              src={imageHome("./mentor6.jpg")}
-                              className="card-img-top featured"
-                              alt="..."
-                            />
-                            <div className="card-body">
-                              <h5 className="card-title">José Gutiérrez</h5>
-                              <p className="card-text">Inglés</p>
-                              <a
-                                href="!#"
-                                className="btn btn-primary buttons rounded-pill"
-                              >
-                                Conocer
-                              </a>
-                            </div>
+                            <CardMentor price={350} name={"Mon"} img={"https://images.pexels.com/photos/5795034/pexels-photo-5795034.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"} class={"Danza Contemporánea"} cardWidth={"18rem"}/>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-4">
-                        <div className="single-box">
+                        <div className="">
                           <div
-                            className="card mx-auto"
-                            style={{ width: "15rem" }}
+                            className=" mx-auto"
+                            style={{ width: "5rem" }}
                           >
-                            <img
-                              src={imageHome("./mentora2.jfif")}
-                              className="card-img-top featured"
-                              alt="..."
-                            />
-                            <div className="card-body">
-                              <h5 className="card-title">Lorena Estrada</h5>
-                              <p className="card-text">Acuarela</p>
-                              <a
-                                href="!#"
-                                className="btn btn-primary buttons rounded-pill"
-                              >
-                                Conocer
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="single-box">
-                          <div
-                            className="card mx-auto"
-                            style={{ width: "15rem" }}
-                          >
-                            <img
-                              src={imageHome("./mentor5.png")}
-                              className="card-img-top featured"
-                              alt="..."
-                            />
-                            <div className="card-body">
-                              <h5 className="card-title">Javier Pérez</h5>
-                              <p className="card-text">Animación</p>
-                              <a
-                                href="!#"
-                                className="btn btn-primary buttons rounded-pill"
-                              >
-                                Conocer
-                              </a>
-                            </div>
+                            <CardMentor price={350} name={"Mon"} img={"https://images.pexels.com/photos/5795034/pexels-photo-5795034.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"} class={"Danza Contemporánea"}/>
                           </div>
                         </div>
                       </div>

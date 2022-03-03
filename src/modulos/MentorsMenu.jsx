@@ -16,19 +16,7 @@ function MentorsMenu(props){
     const[clase,setClase] = useState("");
     const[estrellas,setEstrellas] = useState("");
     const [mentor,setMentor]=useState(props.info.items)
-    let cont =mentor.map((item)=><CardMentor price={item.price} name={item.name} img={item.img} class={item.class}/>)
-
-    function showdata( flag){
-   if(flag == 0){
-
-   cont =mentor.map((item)=><CardMentor price={item.price} name={item.name} img={item.img} class={item.class}/>)
-  
-   }else{
-    
-    cont =temp.map((item)=><CardMentor price={item.price} name={item.name} img={item.img} class={item.class}/>)
-
-   }
-  }
+    let cont =mentor.map((item)=><CardMentor price={item.price} name={item.name} img={item.img} class={item.class} cardWidth={"16.5rem"}/>)
 
   const handleSubmit = (e) =>{
     Vclase= clase;
