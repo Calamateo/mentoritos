@@ -112,9 +112,9 @@ function App() {
           </Route>
 
 
-          <Route path="/datos">
+          {/*<Route path="/datos">
             <Obtener />
-          </Route>
+          </Route>*/}
 
           <Route path="/mentorsProfile">
             <MentorsProfileModule
