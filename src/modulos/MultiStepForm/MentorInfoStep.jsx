@@ -55,10 +55,10 @@ const MentorInfoStep = (props) => {
     19: 'Fotografía'
   }
 
-  const modalidad = {
-    1: "Presencial",
-    2: "En Línea"
-  }
+  // const modalidad = {
+  //   1: "Presencial",
+  //   2: "En Línea"
+  // }
 
   console.log(materia)
   console.log(materia1)
@@ -366,7 +366,7 @@ const MentorInfoStep = (props) => {
                     sx={{ marginLeft: 4 }}
                     disabled={!reg}
                     onClick={() => props.history.push("/")}
-                    disabled={!reg} >Completar Registro</Button>
+                  >Completar Registro</Button>
 
                 </div>
               </Form>
