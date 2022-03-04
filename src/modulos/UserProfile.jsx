@@ -1,22 +1,21 @@
 import React from 'react'
 /*import '../Css/mentorsProfile.css'*/
-import { AcordionItem } from './mentorsProfileModules/AcordionItem'; 
+//import { AcordionItem } from './mentorsProfileModules/AcordionItem'; 
 import {
-    BrowserRouter as Router,
-    useParams
-  } from "react-router-dom";
+    BrowserRouter as Router
+} from "react-router-dom";
 
 
-const UserProfileInformation = ({mentorP}) =>{
+const UserProfileInformation = ({ mentorP }) => {
     <Router></Router>
-//     const {userId}=useParams();
-//    userId
-const imageProfile = require.context('../global/assets/images', true);
-const [MentorP] = React.useState(mentorP);
-  
+    //     const {userId}=useParams();
+    //    userId
+    const imageProfile = require.context('../global/assets/images', true);
+    const [MentorP] = React.useState(mentorP);
+
     let imagen = imageProfile(`${MentorP.imagePerfil}`)
-    return (    
-        
+    return (
+
         <div className="container-xxl mt-5">
             <main className="pt-3 mt-5">
                 <div className="row mt-5">
@@ -69,5 +68,5 @@ const [MentorP] = React.useState(mentorP);
         </div>
     );
 }
-       
-export  {UserProfileInformation};
+
+export { UserProfileInformation };

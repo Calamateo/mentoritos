@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const alert = () => {
-    alert("Pago realizado correctamente");
-}
+// const alert = () => {
+//     alert("Pago realizado correctamente");
+// }
 
 const ShoppingCar4 = () => {
     return (
@@ -21,26 +21,26 @@ const ShoppingCar4 = () => {
                                     <h1>Ingresar tarjeta</h1>
                                     <div className="row my-3">
                                         <div className="col-md-12">
-                                            <input type="text" className="form-control" placeholder="Ingresa tu número de tarjeta" required/>
+                                            <input type="text" className="form-control" placeholder="Ingresa tu número de tarjeta" required />
                                         </div>
                                     </div>
                                     <div className="row my-3">
                                         <div className="col-md-3 col-sm-3 col-xs-3">
                                             <span className="help-block text-muted small-font"> Mes de expiración</span>
-                                            <input type="text" className="form-control" placeholder="MM" required/>
+                                            <input type="text" className="form-control" placeholder="MM" required />
                                         </div>
                                         <div className="col-md-3 col-sm-3 col-xs-3">
                                             <span className="help-block text-muted small-font"> Año de expiración</span>
-                                            <input type="text" className="form-control" placeholder="AAAA" required/>
+                                            <input type="text" className="form-control" placeholder="AAAA" required />
                                         </div>
                                         <div className="col-md-3 col-sm-3 col-xs-3">
                                             <span className="help-block text-muted small-font">CCV</span>
-                                            <input type="text" className="form-control" placeholder="CCV" required/>
+                                            <input type="password" className="form-control" placeholder="CCV" required />
                                         </div>
                                     </div>
                                     <div className="row my-3">
                                         <div className="col-md-12 pad-adjust">
-                                            <input type="text" className="form-control" placeholder="Nombre del propietario***" required/>
+                                            <input type="text" className="form-control" placeholder="Nombre del propietario***" required />
                                         </div>
                                     </div>
                                 </div>

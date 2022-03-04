@@ -12,9 +12,7 @@ import {
   Select,
   TextField,
   TextareaAutosize,
-  InputAdornment,
-  InputLabel,
-  OutlinedInput
+  InputAdornment
 } from "@mui/material";
 
 
@@ -23,7 +21,7 @@ import {
 const MentorInfoStep = (props) => {
   const [price, setPrice] = useState([]);
   const [modality, setModality] = useState([]);
-  const [modality1, setModality1] = useState("");
+  //const [modality1, setModality1] = useState("");
   const [materia, setMateria] = useState("");
   const [materia1, setMateria1] = useState("");
   const [horario, setHorario] = useState("");
@@ -72,7 +70,7 @@ const MentorInfoStep = (props) => {
     }
 
     setMateria1(mat[materia])
-    setModality1(modalidad[modality])
+    //setModality1(modalidad[modality])
 
     if (sessionStorage.getItem("informacionPersonal")) {
       const bd = { datos: JSON.parse(sessionStorage.getItem("informacionPersonal")) }

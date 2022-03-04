@@ -18,9 +18,8 @@ const PersonalInfoStep = (props) => {
   const [usuarios, setUsuarios] = React.useState([])
   const [getId, setId] = React.useState([])
 
-  React.useEffect(() => {
-    fetchData()
-  }, [])
+
+
 
   const fetchData = async () => {
     const data = await fetch('http://localhost:8080/api/users/')
@@ -154,7 +153,7 @@ const PersonalInfoStep = (props) => {
               {({ handleSubmit }) => (
                 <Form onSubmit={handleSubmit}>
                   <div className="mt-5">
-                    <h3>Cuéntanos más sobre de ti</h3>
+                    <h3>Cuéntanos más sobre ti</h3>
                     <Field
                       name="firstName"
                       component={TextField}
