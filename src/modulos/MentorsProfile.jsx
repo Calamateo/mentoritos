@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom'
 /*import '../Css/mentorsProfile.css'*/
-import {AcordionItem} from './mentorsProfileModules/AcordionItem'
+import { AcordionItem } from './mentorsProfileModules/AcordionItem'
 import { Modal } from './mentorsProfileModules/EditarModal'
 
-const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfileFunction}) =>{
-    const imageMentor = require.context('../global/assets/images', true);
-    const imageAbout = require.context('../global/assets/images', true);
+const MentorsProfileModule = ({ mentorProfileInformationParameter, setMentorProfileFunction }) => {
+    // const imageMentor = require.context('../global/assets/images', true);
+    // const imageAbout = require.context('../global/assets/images', true);
 
     let myProfile = false;
 
-    return (    
+    return (
         <div className="container-xxl">
             <main className="pt-5 mt-5">
                 <div className="row">
@@ -40,18 +40,18 @@ const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfi
                             <div className="card-header text-center mt-3 bg-white">
                                 <div className="video-container pd-2">
                                     <div className="video ratio ratio-16x9">
-                                        
+
                                         <iframe className="container-xxl-fluid" width="660" height="415" src="https://www.youtube.com/embed/_KFsJvgPfHg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                                         </iframe>
 
                                     </div>
                                 </div>
                                 {
-                                    myProfile ? 
-                                    (<button type="button" class="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        Editar Perfil
-                                    </button>) :
-                                    (<Link to="/ShoppingCar" className="btn btn-primary buttons rounded-pill mt-3">Reservar clase</Link>)
+                                    myProfile ?
+                                        (<button type="button" class="btn btn-outline-success rounded-pill my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Editar Perfil
+                                        </button>) :
+                                        (<Link to="/ShoppingCar" className="btn btn-primary buttons rounded-pill mt-3">Reservar clase</Link>)
                                 }
                             </div>
                             <Modal mentorprofileInformation={mentorProfileInformationParameter} setMentorProfile={setMentorProfileFunction} />{/*modal*/}
@@ -73,4 +73,4 @@ const MentorsProfileModule = ({mentorProfileInformationParameter, setMentorProfi
     );
 }
 
-export  {MentorsProfileModule};
+export { MentorsProfileModule };

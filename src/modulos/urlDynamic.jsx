@@ -65,13 +65,16 @@ const UrlDynamic = (props) => {
 
   const promises = [us, mento];
   React.useEffect(() => {
-    Promise.any(promises).then((value) => {
-      if (value.tipo === "usuario") setUser(value.valu)
-      if (value.tipo === "mentor") setMentor(value.valu)
-    }
-    ).catch((e) => alert(`El perfil con el  ${userId} no existe`))
   }, [userId])
+
+  Promise.any(promises).then((value) => {
+    if (value.tipo === "usuario") setUser(value.valu)
+    if (value.tipo === "mentor") setMentor(value.valu)
+  }
+  ).catch((e) => alert(`El perfil con el  ${userId} no existe`))
+
   // if(isNaN(parseInt(userId))) return props.error 
+  if (userId !== "rosa-carrillo") return props.error
   if (typeP === "user" && mentor !== undefined) return <>{<MentorsProfileModule mentorProfileInformationParameter={mentor} setMentorProfileFunction={setMentor} />}</>
   if (typeP === "user" && user !== undefined) return <> {<UserProfileInformation mentorP={user} />}</>
   if (typeP === "userProfileInfo" && user !== undefined) return <> {<UserProfileInformation mentorP={user} />}</>

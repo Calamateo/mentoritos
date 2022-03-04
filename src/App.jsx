@@ -19,10 +19,10 @@ import ShoppingCar from "./modulos/ShoppingCar/ShoppingCar";
 import ShoppingCar2 from "./modulos/ShoppingCar/ShoppingCar2";
 import ShoppingCar3 from "./modulos/ShoppingCar/ShoppingCar3";
 import ShoppingCar4 from "./modulos/ShoppingCar/ShoppingCar4";
-import {MentorsProfileOwn} from "./modulos/UserProfile_";
+import { MentorsProfileOwn } from "./modulos/UserProfile_";
 import PrivacyPolicy from "./modulos/PrivacyPolicy";
 import Terms from "./modulos/Terms"
-import Obtener from "./modulos/Obtener";
+//import Obtener from "./modulos/Obtener";
 
 
 function App() {
